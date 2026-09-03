@@ -3,12 +3,290 @@
  "voice": "George - Warm, Captivating Storyteller",
  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
  "clips": {
+  "1": {
+   "title": "Landfall",
+   "short": {
+    "file": "audio/01-landfall-short.mp3",
+    "sec": 48.039184,
+    "chars": 641
+   },
+   "long": {
+    "file": "audio/01-landfall-long.mp3",
+    "sec": 149.707755,
+    "chars": 2158
+   }
+  },
   "2": {
    "title": "The Threshold",
    "short": {
     "file": "audio/02-threshold-short.mp3",
     "sec": 34.586122,
     "chars": 486
+   },
+   "long": {
+    "file": "audio/02-threshold-long.mp3",
+    "sec": 127.164082,
+    "chars": 1906
+   }
+  },
+  "3": {
+   "title": "A Church Without a Roof",
+   "short": {
+    "file": "audio/03-roofless-short.mp3",
+    "sec": 44.59102,
+    "chars": 586
+   },
+   "long": {
+    "file": "audio/03-roofless-long.mp3",
+    "sec": 133.407347,
+    "chars": 1925
+   }
+  },
+  "4": {
+   "title": "The Law Is Lord of the Sea",
+   "short": {
+    "file": "audio/04-sea-law-short.mp3",
+    "sec": 38.687347,
+    "chars": 546
+   },
+   "long": {
+    "file": "audio/04-sea-law-long.mp3",
+    "sec": 180.114286,
+    "chars": 2598
+   }
+  },
+  "5": {
+   "title": "The Hospital",
+   "short": {
+    "file": "audio/05-hospital-short.mp3",
+    "sec": 49.475918,
+    "chars": 655
+   },
+   "long": {
+    "file": "audio/05-hospital-long.mp3",
+    "sec": 203.467755,
+    "chars": 2874
+   }
+  },
+  "6": {
+   "title": "Seven Tongues",
+   "short": {
+    "file": "audio/06-seven-tongues-short.mp3",
+    "sec": 42.370612,
+    "chars": 579
+   },
+   "long": {
+    "file": "audio/06-seven-tongues-long.mp3",
+    "sec": 222.746122,
+    "chars": 3083
+   }
+  },
+  "7": {
+   "title": "The Vault",
+   "short": {
+    "file": "audio/07-the-vault-short.mp3",
+    "sec": 41.639184,
+    "chars": 592
+   },
+   "long": {
+    "file": "audio/07-the-vault-long.mp3",
+    "sec": 189.387755,
+    "chars": 2771
+   }
+  },
+  "8": {
+   "title": "The Keep on the Sun's Hill",
+   "short": {
+    "file": "audio/08-keep-short.mp3",
+    "sec": 42.919184,
+    "chars": 626
+   },
+   "long": {
+    "file": "audio/08-keep-long.mp3",
+    "sec": 216.032653,
+    "chars": 3160
+   }
+  },
+  "9": {
+   "title": "Draconis Extinctor",
+   "short": {
+    "file": "audio/09-draconis-short.mp3",
+    "sec": 39.627755,
+    "chars": 574
+   },
+   "long": {
+    "file": "audio/09-draconis-long.mp3",
+    "sec": 232.045714,
+    "chars": 3205
+   }
+  },
+  "10": {
+   "title": "The Faction Map",
+   "short": {
+    "file": "audio/10-faction-map-short.mp3",
+    "sec": 46.680816,
+    "chars": 648
+   },
+   "long": {
+    "file": "audio/10-faction-map-long.mp3",
+    "sec": 293.067755,
+    "chars": 4248
+   }
+  },
+  "11": {
+   "title": "La Juderia",
+   "short": {
+    "file": "audio/11-juderia-short.mp3",
+    "sec": 42.03102,
+    "chars": 604
+   },
+   "long": {
+    "file": "audio/11-juderia-long.mp3",
+    "sec": 216.11102,
+    "chars": 3028
+   }
+  },
+  "12": {
+   "title": "Lunch on Sofokleous",
+   "short": {
+    "file": "audio/12-lunch-short.mp3",
+    "sec": 46.680816,
+    "chars": 622
+   },
+   "long": {
+    "file": "audio/12-lunch-long.mp3",
+    "sec": 188.995918,
+    "chars": 2702
+   }
+  },
+  "13": {
+   "title": "Under the Minaret",
+   "short": {
+    "file": "audio/13-minaret-short.mp3",
+    "sec": 45.635918,
+    "chars": 632
+   },
+   "long": {
+    "file": "audio/13-minaret-long.mp3",
+    "sec": 228.127347,
+    "chars": 3378
+   }
+  },
+  "14": {
+   "title": "Sorcerer-Smiths",
+   "short": {
+    "file": "audio/14-sorcerer-smiths-short.mp3",
+    "sec": 41.952653,
+    "chars": 558
+   },
+   "long": {
+    "file": "audio/14-sorcerer-smiths-long.mp3",
+    "sec": 221.387755,
+    "chars": 3141
+   }
+  },
+  "15": {
+   "title": "The City-Taker",
+   "short": {
+    "file": "audio/15-city-taker-short.mp3",
+    "sec": 49.867755,
+    "chars": 680
+   },
+   "long": {
+    "file": "audio/15-city-taker-long.mp3",
+    "sec": 244.035918,
+    "chars": 3491
+   }
+  },
+  "16": {
+   "title": "Where Was the Colossus?",
+   "short": {
+    "file": "audio/16-colossus-short.mp3",
+    "sec": 48.509388,
+    "chars": 657
+   },
+   "long": {
+    "file": "audio/16-colossus-long.mp3",
+    "sec": 321.959184,
+    "chars": 4576
+   }
+  },
+  "17": {
+   "title": "Fort Saint Nicholas",
+   "short": {
+    "file": "audio/17-fort-short.mp3",
+    "sec": 41.795918,
+    "chars": 621
+   },
+   "long": {
+    "file": "audio/17-fort-long.mp3",
+    "sec": 227.970612,
+    "chars": 3376
+   }
+  },
+  "18": {
+   "title": "Birthday",
+   "short": {
+    "file": "audio/18-birthday-short.mp3",
+    "sec": 23.797551,
+    "chars": 336
+   },
+   "long": {
+    "file": "audio/18-birthday-long.mp3",
+    "sec": 77.244082,
+    "chars": 1087
+   }
+  },
+  "19": {
+   "title": "Return by Sea",
+   "short": {
+    "file": "audio/19-return-short.mp3",
+    "sec": 44.512653,
+    "chars": 569
+   },
+   "long": {
+    "file": "audio/19-return-long.mp3",
+    "sec": 219.08898,
+    "chars": 3153
+   }
+  },
+  "20": {
+   "title": "B-side: The Killing Ground",
+   "short": {
+    "file": "audio/20-moat-short.mp3",
+    "sec": 43.807347,
+    "chars": 624
+   },
+   "long": {
+    "file": "audio/20-moat-long.mp3",
+    "sec": 198.530612,
+    "chars": 2910
+   }
+  },
+  "21": {
+   "title": "B-side: Kallithea Springs",
+   "short": {
+    "file": "audio/21-kallithea-short.mp3",
+    "sec": 42.03102,
+    "chars": 564
+   },
+   "long": {
+    "file": "audio/21-kallithea-long.mp3",
+    "sec": 168.672653,
+    "chars": 2329
+   }
+  },
+  "22": {
+   "title": "B-side: The Hill of the Sun",
+   "short": {
+    "file": "audio/22-monte-smith-short.mp3",
+    "sec": 45.792653,
+    "chars": 646
+   },
+   "long": {
+    "file": "audio/22-monte-smith-long.mp3",
+    "sec": 265.717551,
+    "chars": 3807
    }
   }
  }
