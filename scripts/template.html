@@ -189,7 +189,7 @@ const BLANK='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
 let map=null, markers={}, active=null;
 function init(){
   if(!window.L){document.getElementById('map').innerHTML='<p style="padding:20px">The map library did not load. The pin ledger on the right still works, and every row links to Google Maps.</p>';return;}
-  map=L.map('map',{minZoom:15,maxZoom:19,zoomSnap:.5,maxBounds:[[36.418,28.180],[36.478,28.272]],maxBoundsViscosity:.8});
+  map=L.map('map',{minZoom:15,maxZoom:19,zoomSnap:.5,maxBounds:[[36.300,28.135],[36.480,28.295]],maxBoundsViscosity:.8});
   map.setView([36.4462,28.2278],16);
   const Local=L.TileLayer.extend({getTileUrl:function(c){return (typeof TILES!=='undefined'&&TILES[c.z+'/'+c.x+'/'+c.y])||BLANK;}});
   new Local('',{minZoom:15,maxZoom:19,minNativeZoom:15,maxNativeZoom:17,tileSize:256,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);

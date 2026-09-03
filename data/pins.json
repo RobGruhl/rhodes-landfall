@@ -9,7 +9,7 @@
   "lat": 36.44511,
   "lon": 28.23313,
   "sub": "Where the day starts. Berth varies: if the ship is sent to Akandia, add ten minutes.",
-  "blurb": "Scarlet Lady's likely berth on the quay east of the walls, alongside Celestyal Discovery (in port 07:00 to 18:00, so the Palace and museum will be busiest 10:00 to 14:00). Face the walls: this whole waterfront is the harbour Demetrius attacked with ship-mounted siege towers in 305 BC. If the ship is berthed at Akandia instead, walk north along the water; the Gate of the Virgin is about ten minutes.",
+  "blurb": "Scarlet Lady's likely berth on the quay east of the walls. The published schedules put her here 09:00 to 18:00 alongside Celestyal Discovery (07:00 to 18:00); the port fund's own list of late August also names Costa Fortuna and Gemini that morning, so expect three or four ships and a busy Palace from mid-morning. Face the walls: this whole waterfront is the ancient Great Harbour that Demetrius attacked with ship-mounted siege towers in 305 BC. If the ship is berthed at Akandia instead, walk north along the water; the Gate of the Virgin is about ten minutes.",
   "dnd": "The party disembarks in a harbour once closed by a floating boom of spiked logs and fire-ships packed with pitch.",
   "hours": "Ship alongside 09:00 to 18:00; all-aboard about 17:30",
   "src": "https://www.cruisetimetables.com/visitingrhodesgreece-30sep2026.html"
@@ -114,7 +114,7 @@
   "lat": 36.44481,
   "lon": 28.22431,
   "sub": "The Order's church, six Grand Masters' tombs, the Baptist's right hand. Blown up in 1856.",
-  "blurb": "Where the neoclassical school and the clock tower now stand was the Knights' conventual church, begun about 1310: tombs of at least six Grand Masters including the dragon-slayer Gozon, and the treasury of relics, among them the right hand of John the Baptist, attested here from 1413. After 1522 it became the main mosque. On 6 November 1856 lightning struck the gunpowder stored in the cellars under its bell tower; the blast levelled the church, gutted the Palace and killed at least 200 people. Only scraps of foundation show beside the school; Gozon's plain tomb slab went to Paris in 1877, and the Italians rebuilt the church from engravings at Mandraki.",
+  "blurb": "Where the neoclassical school and the clock tower now stand was the Knights' conventual church, begun about 1310: tombs of at least six Grand Masters including the dragon-slayer Gozon, and the treasury of relics, among them the right hand of John the Baptist (one tradition has it here from 1413, another says Sultan Bayezid II sent it in 1484 to sweeten the deal that kept his rival brother a prisoner of the Knights). After 1522 it became the main mosque. On 6 November 1856 lightning struck the gunpowder stored in the cellars under its bell tower; the blast levelled the church, gutted the Palace and killed at least 200 people. Only scraps of foundation show beside the school; Gozon's plain tomb slab went to Paris in 1877, and the Italians rebuilt the church from engravings at Mandraki.",
   "dnd": "A reliquary chapel over a forgotten powder magazine: a dungeon trap with a 334-year fuse. The dragon-slayer's tomb is now in the Musee de Cluny.",
   "hours": "Open square, always",
   "src": "https://en.wikipedia.org/wiki/Church_of_St_John_of_the_Collachium"
@@ -132,8 +132,8 @@
   "sub": "The keep on the sun's hill. Probably where the Colossus actually stood.",
   "blurb": "A Byzantine citadel on the small hill at the head of the Collachium, the Order's headquarters from 1309, wrecked in 1856 and rebuilt 1937 to 1940 for Victor Emmanuel III and Mussolini, who never came. Upstairs, mosaics lifted from Kos (the Medusa, the Nine Muses) and a cast of the Laocoon, carved by Rhodians. Downstairs on a Wednesday: the Ancient Rhodes exhibition, with the stone shot from Demetrius' siege engines, the very sale that paid for the Colossus. Nathan Badoud's 2024 Oxford study puts the sanctuary of Helios, and the statue, on this hill. Buy the walls-walk ticket at the desk.",
   "dnd": "A crusader citadel on a buried sun-temple, later a dictator's summer palace paved with looted mosaics. Grain silos under the courtyard for sieges.",
-  "hours": "Wed 30 Sep: 08:00 to 20:00, last admission 20 minutes before closing (official page, updated 28 Jul 2026; one 2026 guide claims autumn hours shorten, so do not plan on the last hour). Ancient Rhodes exhibition Wed 09:00 to 17:00 (lower level shut for maintenance); Knights-to-Malta exhibition and gardens daily 09:00 to 17:00; the medieval exhibition is closed on Wednesdays. Leaving and re-entering for the walls walk means paying again, so go in about 11:00.",
-  "price": "EUR 20 (the Ministry page also lists a EUR 20 four-site package; ask at the desk); walls walk EUR 5 to 6 extra",
+  "hours": "Wed 30 Sep: 08:00 to 20:00, last admission 20 minutes before closing (official page). Inside, exactly one of the two big exhibitions is open on a Wednesday, 09:00 to 17:00, and the Ministry's two pages disagree on which (the newer one says Ancient Rhodes); the Knights-to-Malta room and the gardens are daily 09:00 to 17:00. Phone +30 22413 65270 to check. Leaving and re-entering for the walls walk means paying again, so go in about 11:00.",
+  "price": "EUR 20, which the Ministry page says is also valid for the Archaeological Museum, Decorative Arts and Our Lady of the Castle; walls walk EUR 5 to 6 extra",
   "src": "https://archaeologicalmuseums.gr/en/museum/5df34af3deca5e2d79e8c140/palace-of-the-grand-master-of-knights"
  },
  {
@@ -339,7 +339,7 @@
   "lat": 36.44633,
   "lon": 28.22956,
   "sub": "A 46-metre lighthouse-keep that held the harbour chain, split by the 1863 earthquake.",
-  "blurb": "On the mole east of St Paul's Gate is the base of the square Tower of Naillac (1396 to 1421), 46 m high, lighthouse, watchtower and anchor of the great chain that closed the commercial harbour at night, the chain Suleiman came down to admire on 29 December 1522. The earthquake of 22 April 1863 split it and the Ottoman administration pulled the rest down: the last of the fortifications to die, and not to an army. The best low-angle view of the harbour mouth. From here it is a level 12-minute walk along the quay to the ship.",
+  "blurb": "On the mole east of St Paul's Gate is the base of the square Tower of Naillac (1396 to 1421), 46 m high, lighthouse, watchtower and anchor of the great chain that closed the commercial harbour at night, stretched across to the Tower of the Windmills on the far mole; in 1522 the Order's fleet sheltered behind it and Suleiman came down to admire it. The earthquake of 22 April 1863 split the tower and the Ottoman administration pulled the rest down: the last of the fortifications to die, and not to an army. Pilgrims felt the harbour's wariness: Felix Fabri, arriving by moonlight weeks after the 1480 siege, was fired on by a cannon, made to anchor outside, and rowed in next morning through the bodies of dead Turks cast up by the sea. From here it is a level 12-minute walk along the quay to the ship.",
   "dnd": "A fallen watchtower and a broken chain, killed by the ground itself.",
   "hours": "Public mole, always",
   "src": "https://en.wikipedia.org/wiki/Fortifications_of_Rhodes"
@@ -360,9 +360,9 @@
   "name": "Summit of Monte Smith (Kebric's site) and the nymphaea",
   "lat": 36.44399,
   "lon": 28.21138,
-  "sub": "Where the city kept its treaties, and where a second colossus was offered to Rome in 167 BC.",
-  "blurb": "The limestone shelf at the top of the acropolis held the Temple of Athena Polias and Zeus Polieus. Robert Kebric argues the Colossus stood here as a light-tower for the harbours, and notes that in 167 BC the cowed Rhodians offered Rome a second, 45-foot colossus in the same precinct. Between the summit and the Apollo terrace are four rock-cut nymphaea: cave sanctuaries with cisterns and niches, the closest thing on the hill to a real dungeon. The ridge is named for Admiral Sidney Smith, posted here in the early 1800s to watch for Napoleon's fleet.",
-  "dnd": "Cave-shrines of the nymphs under a sun-god's hill: water, darkness, offerings. A natural side quest.",
+  "sub": "The treaty-temple of the city, Posidonius' tower, and where a second colossus was offered to Rome in 167 BC.",
+  "blurb": "The limestone shelf at the top of the acropolis held the Temple of Athena Polias and Zeus Polieus, where the city kept its treaties. Robert Kebric argues the Colossus stood here as a light-tower for the harbours. This is also the place for Posidonius, the Stoic under whom Rhodes eclipsed Athens: Pompey, conqueror of East and West, lowered his fasces at his door; he lectured from his sickbed that pain is no evil; Cicero saw his orrery, a bronze sphere that showed the sun, moon and five planets moving; he measured the Earth from the star Canopus grazing this horizon; and the Antikythera mechanism, which uses Hipparchus' lunar theory and was found on a wreck carrying Rhodian pottery, may have been built in his circle. Between the summit and the Apollo terrace are four rock-cut nymphaea, cave sanctuaries with cisterns and niches. The ridge is named for Admiral Sidney Smith, posted here in the early 1800s to watch for Napoleon's fleet.",
+  "dnd": "The archmage's tower: a general kneels at the door, a clockwork cosmos ticks inside, and the artifact in the Athens museum may have been forged here. Cave-shrines beneath.",
   "hours": "Open park, free",
   "src": "https://www.athensjournals.gr/history/2019-5-2-1-Kebric.pdf"
  },
@@ -494,7 +494,7 @@
   "sub": "11th-century Orthodox cathedral, gothicised by the Knights, then the Enderun mosque. Three consecrations on one altar.",
   "blurb": "On the north side of Museum Square: the Byzantine cathedral the Knights rebuilt in 1319 to 1334 as their Latin cathedral, later an Ottoman mosque, now the Byzantine Museum of icons and frescoes. Note the fortified apse built into the sea wall. The small Inn of England (1483, rebuilt 1919 to the old plans) stands at the square's south-east corner; the English tongue was so thin it swapped its wall-post with Aragon after 1480.",
   "dnd": "A temple of an older faith converted by the newcomers, then converted again by the conquerors.",
-  "hours": "08:30 to 15:30, closed Tuesdays (official page, 28 Jul 2026)",
+  "hours": "Uncertain: the Ministry page says 08:30 to 15:30, closed Tuesdays, EUR 5; the Metropolis of Rhodes says the museum is temporarily closed for reinstallation. Ask at the Palace desk.",
   "src": "https://www.gpsmycity.com/attractions/church-of-our-lady-of-the-castle-(museum-square)-33538.html",
   "price": "EUR 5"
  },
@@ -570,9 +570,9 @@
   "name": "Ancient stadium and odeon, Monte Smith",
   "lat": 36.43893,
   "lon": 28.21197,
-  "sub": "A 210-metre track from the 3rd century BC where games were run for Helios and for Tlepolemus.",
-  "blurb": "Below the temple: the Hellenistic stadium with its curved end, officials' seats and the athletes' starting mechanism, and beside it the small marble odeon (mostly Italian reconstruction). Games were held here for Helios and, Pindar says, for Tlepolemus, the Heraclid who killed his great-uncle with an olive staff, founded the three cities and led nine ships to Troy. Walk the track for scale: the Colossus was about one-sixth of its length, lying down.",
-  "dnd": "Funeral games for a fallen paladin; a hero cult with its own arena.",
+  "sub": "A 210-metre track along the meridian, where Hipparchus measured the sky and games were run for Helios.",
+  "blurb": "Below the temple: the Hellenistic stadium with its curved end, officials' seats and the athletes' starting mechanism, and beside it the small marble odeon. The track runs north to south, along the meridian, which is the line Hipparchus of Nicaea worked on here between 147 and 127 BC: he saw a new star appear, dared to catalogue about 850 stars so posterity could tell if any moved, and by comparing Spica with a century-old record discovered that the whole sky wobbles, the precession of the equinoxes. The odeon is the place for the rhetoric school where Cicero declaimed in Greek and Caesar arrived late after forty days with the pirates. Walk the track for scale: the Colossus was about one-sixth of its length, lying down.",
+  "dnd": "A diviner's observatory and a bards' college whose alumni include the two most dangerous men in Rome.",
   "hours": "Open park, free",
   "src": "https://en.wikipedia.org/wiki/Acropolis_of_Rhodes"
  },
@@ -960,7 +960,7 @@
   "lat": 36.44769,
   "lon": 28.22539,
   "sub": "Di Fausto's seven-sided market of 1926 shut on 17 November 2025 for a full rebuild. Look, do not plan to eat.",
-  "blurb": "The Italian market-fortress with its domed fish-market pavilion in the courtyard has been a construction site since November 2025: 52 interior shops demolished, services re-laid. Shopkeepers hoped to return by October 2026 and reopen most shops by Christmas. On 30 September expect restored facades and a locked or half-open courtyard. View the great Gothic gate from the Mandraki side.",
+  "blurb": "The Italian market-fortress with its domed fish-market pavilion in the courtyard: shops shut in November 2025, works from January 2026, 52 interior shops demolished and services re-laid; still a building site in August 2026, with the first merchants expected back in October for fit-out and the first openings gambled on Christmas. On 30 September expect restored facades and a locked or half-open courtyard. View the great Gothic gate from the Mandraki side.",
   "dnd": "The bazaar-fortress is sealed and being re-warded by masons.",
   "hours": "Closed (restoration)",
   "src": "https://www.dimokratiki.gr/12-06-2026/nea-agora-rodou-stin-teliki-efthia-i-apokatastasi/"
@@ -997,5 +997,85 @@
   "hours": "Unverified",
   "price": "Mid to upper",
   "src": "https://www.tripadvisor.com/RestaurantsNear-g635613-d737236-Archaeological_Museum_of_Rhodes_Hospital_of_the_Knights-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html"
+ },
+ {
+  "cat": "lore",
+  "name": "Pervola open-air museum: the secret dockyards (new, June 2026)",
+  "lat": 36.44576,
+  "lon": 28.22607,
+  "sub": "Twenty stremmata sealed for 75 years, opened June 2026: Hellenistic shipsheds, the Roman cardo and tetrapylon, a 700-piece sculpture yard.",
+  "blurb": "Between the Palace and the Liberty Gate, on the seaward side of the moat, a zone used as a depot for 75 years opened to the public on 14 June 2026: the Hellenistic shipsheds of the military harbour, the Roman main street with its four-way arch, a medieval church, the Italian governor's gardens, and an outdoor gallery of some 700 carved stones. This is the ground Strabo wrote about: some of the Rhodian dockyards were kept hidden and forbidden to the people, and death was the penalty for anyone who spied on them or went inside. In 204 BC an agent of Philip of Macedon posed as a defector and, on a rough windy night, burned thirteen sheds with the ships inside. Hours and any fee were not published; the Palace gardens are listed 09:00 to 17:00, so ask at the Palace desk. If it is closed, the fenced excavation is visible from the pavement of Eleftherias street.",
+  "dnd": "A stone-yard of 4,000 catalogued fragments laid over slipways where triremes were built, guarded by a law that killed spies. The sabotage adventure writes itself.",
+  "hours": "Unpublished; Palace gardens 09:00 to 17:00. Ask at the Palace desk.",
+  "src": "https://www.ertnews.gr/perifereiakoi-stathmoi/notio_aigaio/rodos-egkainiastike-to-ypaithrio-mouseio-tis-pervolas-sti-mesaioniki-poli-apo-ti-lina-mendoni/"
+ },
+ {
+  "cat": "walk",
+  "name": "Seaside walkway on the harbour walls (new, June 2026)",
+  "lat": 36.445,
+  "lon": 28.229,
+  "sub": "A restored corridor along the sea wall from the Mills Gate to St Paul's Gate: the direct route from the quay to Mandraki, and the fallback if the walls walk is shut.",
+  "blurb": "Delivered on 10 June 2026: the Apostle Paul bastion, the fortifications of the Naillac mole, the Byzantine sea-gate complex, a spiral stair at the new sea gate and the upper level of the Mills Gate, with an accessible corridor along the walls and lighting. It runs from two minutes off the cruise mole to the root of the Naillac mole, about fifteen minutes, past the Marine Gate. No hours were published; it was framed as public space. Combined with the moat from the d'Amboise Gate, it is a free unticketed substitute if the rampart walk turns out to be closed.",
+  "dnd": "The seaward curtain of the fortress, the way the Genoese came in by night in 1248.",
+  "hours": "Unpublished; treat as public space",
+  "src": "https://www.dimokratiki.gr/11-06-2026/ypourgio-politismou-afta-ine-ta-erga-pou-apodothikan-se-rodo-ke-chalki-ti-egine-simera-sto-temenos-retzep-pasa/"
+ },
+ {
+  "cat": "birthday",
+  "name": "Agios Fanourios, Dorieos Square (the saint of lost things)",
+  "lat": 36.44153,
+  "lon": 28.22597,
+  "sub": "A 13th-century domed church, open 07:00 to 19:00, home of the island's patron. Light a candle, name what you lost, then go find cake.",
+  "blurb": "A working parish in a small cross-shaped church built on Late Roman remains, with three layers of fresco: early 13th century in the sanctuary, a Last Judgement of 1335 over the tombs by the door with the donors painted in paradise, and a 15th-century layer. A mosque under the Ottomans, dedicated to Fanourios only in 1946. The saint was unknown until his icon came out of the rubble of a wall repair with its colours intact, a young soldier ringed by twelve tortures; he is the saint who reveals what was lost. Greeks bake a lenten orange-and-walnut cake, fanouropita, cut it into forty pieces and make a wish. Beside the Rejep Pasha mosque; Ta Mezeklikia is on the same square.",
+  "dnd": "The relic that outlived every regime, and a quest-giver whose whole job is finding what was lost.",
+  "hours": "Summer 07:00 to 19:00",
+  "price": "Free; candle donation",
+  "src": "https://www.imr.gr/article/396/ieros-naos-agioy-fanoyrioy"
+ },
+ {
+  "cat": "history",
+  "name": "Agia Aikaterini, 'Ilk Mihrab' (Suleiman's first prayer)",
+  "lat": 36.44094,
+  "lon": 28.22987,
+  "sub": "A 14th-century church where, by tradition, the Sultan said his first prayer in the captured city. Frescoes of a saint broken on the wheel.",
+  "blurb": "Three aisles and four building phases from the 14th century on Perikleous street, between the Jewish quarter and the Red Gate. Its Ottoman name, Ilk Mihrab, the first prayer niche, records the tradition that Suleiman prayed here first in the winter of 1522. Inside, locked most of the time: Peter and Paul at the door, four healer saints painted after a plague, a kneeling donor couple offering a model of the church, and a cycle of the life of St Catherine unique in the East.",
+  "dnd": "The conqueror's first prayer, in a church painted with a saint broken on the wheel.",
+  "hours": "Locked monument; exterior",
+  "src": "https://www.wikidata.org/wiki/Q38280222"
+ },
+ {
+  "cat": "history",
+  "name": "Gate of the early Byzantine castle (top of Agiou Fanouriou street)",
+  "lat": 36.4444,
+  "lon": 28.22596,
+  "sub": "Where the lane climbs into the Street of the Knights, an arch marks the door between the Byzantine inner ward and the outer town.",
+  "blurb": "The Byzantine city of the 7th to 13th centuries had three parts: the citadel on the Palace hill, the fortified upper town, and an outer town that only came inside the walls in the 12th century. This arched passage is the gate in the south wall of that upper town; two early Byzantine towers survive embedded in Hospitaller houses fifty metres west. Look at the change in the masonry. Between the Fourth Crusade and the Knights, a local magnate ruled from up here as Caesar Gabalas, Lord of Rhodes and the Cyclades, whose coins called him the emperor's servant while he swore fealty to Venice.",
+  "dnd": "The portal from the outer bailey into the keep district; a rogue baron's seat before the paladins arrived.",
+  "hours": "Public street, always",
+  "src": "https://www.openstreetmap.org/way/243713628"
+ },
+ {
+  "cat": "birthday",
+  "name": "Filerimos: monastery and the betrayed citadel (taxi, 23 minutes)",
+  "lat": 36.39881,
+  "lon": 28.14438,
+  "sub": "The better half-day than Lindos: EUR 24 by taxi, EUR 10 entry, open to 20:00, nobody bussed there in waves. Four civilisations in thirty paces.",
+  "blurb": "The acropolis of ancient Ialysos, 14 km south-west. In the monastery courtyard the cross-shaped font of a 5th-century basilica sits on the stylobate of the temple of Athena; beside it the Knights' church, whose south chapel held the icon of Our Lady of Philermos, the talisman of medieval Rhodes, until it was lashed to the mainmast of a captured carrack in January 1523; around it the Italian Franciscan cloister of 1931. On 11 November 1306 the Knights took the citadel here through the treason of a local Greek and killed its 300 Turkish mercenaries, then besieged the city from this rock for four years. A cypress-lined Way of the Cross leads to a concrete cross with the whole west coast below; hundreds of peacocks; and at the car-park kiosk the friars' seven-herb liqueur, Sette Erbe. Lindos, by contrast, is 65 minutes each way with timed EUR 20 tickets and the coaches from both ships.",
+  "dnd": "A hilltop keep of four phases, a garrison betrayed from within, a relic that escaped on a captured ship, and a potion-seller at the gate.",
+  "hours": "08:00 to 20:00 (official summer schedule); taxi about EUR 24 each way, waiting EUR 11.90 an hour",
+  "price": "EUR 10",
+  "src": "http://odysseus.culture.gr/h/3/eh355.jsp?obj_id=7942"
+ },
+ {
+  "cat": "lore",
+  "name": "St George Chostos, Filerimos (the underground chapel)",
+  "lat": 36.39926,
+  "lon": 28.14375,
+  "sub": "A crypt cut into the rock over a sealed spring, painted with kneeling knights, armoured skulls and Death prevailing over a knight.",
+  "blurb": "A Byzantine crypt whose sacred spring was sealed and whose cistern became a 15th-century burial chapel for a Frankish family close to Grand Master d'Aubusson. Frescoes: Hospitallers and their families kneeling with their patron saints, St Michael killing the dragon, skulls in armour with the Order's arms, and Death prevailing over a knight. Listed as open every day; carry a phone torch. Thirty metres below the plateau's south edge, down a stone stair, a 4th-century BC fountain house with six Doric columns and lion-head spouts, buried by a landslide until 1923, with water tunnels behind it that served as a hiding place in troubled times.",
+  "dnd": "A sealed spring beneath a crypt painted with armoured skulls, and a lion-mouthed fountain with tunnels behind it: the campaign's dungeon entrance.",
+  "hours": "Within the ticketed site, 08:00 to 20:00",
+  "price": "Included in EUR 10",
+  "src": "https://imrtreasures.gr/en/destinations/saint-georgios-hostos-filerimos/"
  }
 ]
