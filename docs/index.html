@@ -397,11 +397,11 @@ const LIVE = true;
 const CATS = {
   route:{label:'Route stops',cc:'--c-route'}, colossus:{label:'Colossus',cc:'--c-colossus'}, lore:{label:'Lore & D&D',cc:'--c-lore'},
   history:{label:'History & sieges',cc:'--c-history'}, food:{label:'Food',cc:'--c-food'}, coffee:{label:'Coffee',cc:'--c-coffee'},
-  drink:{label:'Drinks & wine',cc:'--c-drink'}, view:{label:'Views & walks',cc:'--c-view'}, birthday:{label:'Birthday',cc:'--c-birthday'}, practical:{label:'Practical',cc:'--c-practical'}
+  drink:{label:'Drinks & wine',cc:'--c-drink'}, view:{label:'Views',cc:'--c-view'}, walk:{label:'Walks',cc:'--c-view'}, birthday:{label:'Birthday',cc:'--c-birthday'}, practical:{label:'Practical',cc:'--c-practical'}
 };
-const GLYPH = {colossus:'C',lore:'L',history:'H',food:'F',coffee:'K',drink:'D',view:'V',birthday:'B',practical:'P'};
+const GLYPH = {colossus:'C',lore:'L',history:'H',food:'F',coffee:'K',drink:'D',view:'V',walk:'W',birthday:'B',practical:'P'};
 const css = getComputedStyle(document.documentElement);
-const col = c => css.getPropertyValue(CATS[c].cc).trim();
+const col = c => css.getPropertyValue((CATS[c]||CATS.practical).cc).trim();
 
 // day clock
 (function(){
@@ -444,7 +444,7 @@ function audioHtml(p){
 function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function gmaps(p){return `https://www.google.com/maps/search/?api=1&query=${p.lat.toFixed(5)}%2C${p.lon.toFixed(5)}`;}
 function popupHtml(p){
-  const tags=[p.cat].concat(p.also||[]).map(c=>`<span class="tag" style="background:${col(c)}">${CATS[c]?CATS[c].label:c}</span>`).join('');
+  const tags=[p.cat].concat(p.also||[]).filter(c=>CATS[c]).map(c=>`<span class="tag" style="background:${col(c)}">${CATS[c].label}</span>`).join('');
   return `<h4>${p.n?`<span class="mono" style="color:${col('route')};font-size:13px">${String(p.n).padStart(2,'0')}</span> `:''}${esc(p.name)}</h4>${tags}
   <p>${p.blurb}</p>${p.dnd?`<p><em>${p.dnd}</em></p>`:''}
   ${p.hours?`<p class="meta"><b>Wed 30 Sep:</b> ${esc(p.hours)}</p>`:''}${p.price?`<p class="meta"><b>Cost:</b> ${esc(p.price)}</p>`:''}
