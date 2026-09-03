@@ -34,6 +34,14 @@ tpl=tpl.replace('/*__TILES__*/',open('data/tiles.js').read())
 tpl=tpl.replace('/*__ROUTE__*/[]',json.dumps(route['coords'],separators=(',',':')))
 tpl=tpl.replace('/*__PINS__*/[]',json.dumps(pins,ensure_ascii=False,separators=(',',':')))
 tpl=tpl.replace('/*__DAY__*/[]',json.dumps(day,ensure_ascii=False,separators=(',',':')))
+import os as _os
+aud={}
+mp=_os.path.join(_os.environ.get('RHODES_REPO','/Users/robgruhl/Projects/rhodes'),'docs','audio','manifest.json')
+if _os.path.exists(mp):
+    aud=json.load(open(mp)).get('clips',{})
+tpl=tpl.replace('/*__AUDIO__*/{}',json.dumps(aud,separators=(',',':')))
+PAGES='https://robgruhl.github.io/rhodes-landfall/'
+tpl=tpl.replace("/*__AUDIO_BASE__*/''",json.dumps(PAGES)).replace('/*__LIVE__*/false','false')
 tpl=tpl.replace('<!--__CONTENT__-->',open('data/content.html').read())
 open('rhodes-landfall.html','w').write(tpl)
 # GitHub Pages variant: live OpenStreetMap tiles instead of the embedded bundle
@@ -41,6 +49,7 @@ live=tpl.replace(open('data/tiles.js').read(),'')
 live=live.replace("const Local=L.TileLayer.extend({getTileUrl:function(c){return (typeof TILES!=='undefined'&&TILES[c.z+'/'+c.x+'/'+c.y])||BLANK;}});\n  new Local('',{minZoom:15,maxZoom:19,minNativeZoom:15,maxNativeZoom:17,tileSize:256,attribution:'&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'}).addTo(map);",
  "L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{minZoom:13,maxZoom:19,attribution:'&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'}).addTo(map);")
 live=live.replace("minZoom:15,maxZoom:19,zoomSnap:.5","minZoom:13,maxZoom:19,zoomSnap:.5")
+live=live.replace('const AUDIO_BASE = '+json.dumps(PAGES)+';',"const AUDIO_BASE = '';").replace('const LIVE = false;','const LIVE = true;')
 live=live.replace("Tiles cached for offline viewing on 2 September 2026.","Map tiles load live from OpenStreetMap; the offline copy embeds them.")
 import os; os.makedirs('docs',exist_ok=True)
 open('docs/index.html','w').write(live)

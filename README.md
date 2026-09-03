@@ -15,6 +15,10 @@ A self-guided field guide and pin map for one day in Rhodes, Greece: Wednesday 3
 - `scripts/` the build: `router.py` (Dijkstra over OSM ways), `build.py` (assembles the page), `fetch_tiles.py`
 - `tiles/` cached OpenStreetMap tiles for the offline page
 
+## Narration
+
+`narration/stops-*.json` holds a short (about 35 seconds) and a long (two to four minutes) script for each of the 22 stops, written for text-to-speech. `scripts/narrate.py` renders them with ElevenLabs `eleven_v3` (voice: George) into `docs/audio/`, writes `docs/audio/manifest.json`, and the build links each clip from its pin. The script never spends without `--yes` and prints the character cost first; every clip is logged to `~/.local/state/agent-voice/audit.log`.
+
 ## Rebuild
 
 ```

@@ -66,6 +66,7 @@ h1,h2,h3,h4{font-family:Cardo,"Palatino Linotype",Palatino,Georgia,serif;font-we
 .leaflet-popup-content .meta{color:var(--muted);font-size:13px}
 .leaflet-popup-content .links{margin-top:6px;font-size:13px;display:flex;gap:12px;flex-wrap:wrap}
 .leaflet-popup-close-button{color:var(--muted)!important}
+.listen .aud{display:block;margin:4px 0}.listen .audlbl{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}.listen audio{display:block;width:100%;height:32px}
 .pin{width:24px;height:24px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;color:#fff;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;line-height:1}
 .pin.route{width:26px;height:26px;font-size:12px}
 .pin.active{transform:scale(1.35);z-index:1000!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 45%,transparent),0 2px 6px rgba(0,0,0,.5)}
@@ -165,6 +166,9 @@ td.t{font-family:"JetBrains Mono",monospace;font-size:13.5px;white-space:nowrap;
 const ROUTE = /*__ROUTE__*/[];
 const PINS = /*__PINS__*/[];
 const DAY = /*__DAY__*/[];
+const AUDIO = /*__AUDIO__*/{};
+const AUDIO_BASE = /*__AUDIO_BASE__*/'';
+const LIVE = /*__LIVE__*/false;
 const CATS = {
   route:{label:'Route stops',cc:'--c-route'}, colossus:{label:'Colossus',cc:'--c-colossus'}, lore:{label:'Lore & D&D',cc:'--c-lore'},
   history:{label:'History & sieges',cc:'--c-history'}, food:{label:'Food',cc:'--c-food'}, coffee:{label:'Coffee',cc:'--c-coffee'},
@@ -204,6 +208,15 @@ function init(){
   });
   buildChips(); buildRows();
 }
+function fmt(sec){if(sec==null)return '';const m=Math.floor(sec/60),s=Math.round(sec%60);return m+':'+String(s).padStart(2,'0');}
+function audioHtml(p){
+  const a=p.n&&AUDIO[p.n]; if(!a) return '';
+  const parts=['short','long'].filter(k=>a[k]).map(k=>{
+    const url=AUDIO_BASE+a[k].file, len=fmt(a[k].sec);
+    return LIVE?`<span class="aud"><span class="audlbl">${k}${len?' · '+len:''}</span><audio controls preload="none" src="${url}"></audio></span>`:`<a href="${url}" target="_blank" rel="noopener">${k}${len?' ('+len+')':''}</a>`;
+  });
+  return `<p class="meta listen"><b>Listen:</b> ${parts.join(LIVE?'':' · ')}</p>`;
+}
 function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function gmaps(p){return `https://www.google.com/maps/search/?api=1&query=${p.lat.toFixed(5)}%2C${p.lon.toFixed(5)}`;}
 function popupHtml(p){
@@ -211,6 +224,7 @@ function popupHtml(p){
   return `<h4>${p.n?`<span class="mono" style="color:${col('route')};font-size:13px">${String(p.n).padStart(2,'0')}</span> `:''}${esc(p.name)}</h4>${tags}
   <p>${p.blurb}</p>${p.dnd?`<p><em>${p.dnd}</em></p>`:''}
   ${p.hours?`<p class="meta"><b>Wed 30 Sep:</b> ${esc(p.hours)}</p>`:''}${p.price?`<p class="meta"><b>Cost:</b> ${esc(p.price)}</p>`:''}
+  ${audioHtml(p)}
   <p class="meta">${p.walk!=null?`${p.walk} min walk from the ship · `:''}<span class="mono">${p.lat.toFixed(5)}, ${p.lon.toFixed(5)}</span></p>
   <div class="links"><a href="${gmaps(p)}" target="_blank" rel="noopener">Open in Google Maps</a>${p.src?`<a href="${esc(p.src)}" target="_blank" rel="noopener">Source</a>`:''}</div>`;
 }
@@ -243,7 +257,7 @@ function buildRows(){
     if(k==='route') items.sort((a,b)=>a.p.n-b.p.n); else items.sort((a,b)=>(a.p.walk??99)-(b.p.walk??99));
     items.forEach(({p,i})=>{
       const r=document.createElement('button');r.type='button';r.className='row';r.id='row'+i;r.style.setProperty('--cc',col(k));
-      r.innerHTML=`<span class="badge">${k==='route'?p.n:GLYPH[k]||'•'}</span><span class="name">${esc(p.name)}</span><span class="walk">${p.walk!=null?p.walk+' min':''}</span><span class="sub">${p.sub||''}</span>`;
+      r.innerHTML=`<span class="badge">${k==='route'?p.n:GLYPH[k]||'•'}</span><span class="name">${esc(p.name)}</span><span class="walk">${p.walk!=null?p.walk+' min':''}${p.n&&AUDIO[p.n]?' · ♫':''}</span><span class="sub">${p.sub||''}</span>`;
       r.onclick=()=>setActive(i,true);
       g.appendChild(r);
     });

@@ -1,0 +1,15 @@
+{
+ "model": "eleven_v3",
+ "voice": "George - Warm, Captivating Storyteller",
+ "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+ "clips": {
+  "2": {
+   "title": "The Threshold",
+   "short": {
+    "file": "audio/02-threshold-short.mp3",
+    "sec": 34.586122,
+    "chars": 486
+   }
+  }
+ }
+}
