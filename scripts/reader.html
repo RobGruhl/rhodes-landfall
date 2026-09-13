@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Rhodes Landfall · Reader</title>
+<style>
+:root{--bg:#FAF8F3;--ink:#1F2429;--muted:#6B7078;--hair:#DDD8CE;--bar:#F2EFE7;--accent:#8B3A2F;--fs:19px}
+[data-theme="sepia"]{--bg:#F4ECD8;--ink:#3B2F22;--muted:#7A6A55;--hair:#DDD1B4;--bar:#EADFC4;--accent:#8B3A2F}
+[data-theme="dark"]{--bg:#121416;--ink:#E6E2DA;--muted:#9A9A94;--hair:#2A2E33;--bar:#1B1E22;--accent:#E0A48F}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#121416;--ink:#E6E2DA;--muted:#9A9A94;--hair:#2A2E33;--bar:#1B1E22;--accent:#E0A48F}}
+*{box-sizing:border-box}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Charter,Georgia,"Times New Roman",serif;font-size:var(--fs);line-height:1.55}
+.ui{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:6px;padding:8px 10px;padding-top:calc(8px + env(safe-area-inset-top));background:var(--bar);border-bottom:1px solid var(--hair);font-size:14px}
+.bar button,.foot button,.seg button{appearance:none;border:1px solid var(--hair);background:transparent;color:var(--ink);font:inherit;border-radius:8px;padding:7px 10px;cursor:pointer;min-height:36px}
+.seg{display:inline-flex;border:1px solid var(--hair);border-radius:8px;overflow:hidden}
+.seg button{border:0;border-radius:0;min-width:44px;padding:7px 9px}
+.seg button+button{border-left:1px solid var(--hair)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.bar .grow{flex:1}
+.bar .fs button{font-family:Georgia,serif;min-width:38px}
+.bar .fs button:first-child{font-size:12px}.bar .fs button:last-child{font-size:18px;font-weight:bold}
+main{max-width:38em;margin:0 auto;padding:22px 20px 40px}
+body.has-player main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+.eyebrow{font-size:.7em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:1.45em;line-height:1.2;margin:.25em 0 .2em;font-weight:700}
+.place{color:var(--muted);font-style:italic;font-size:.9em;margin:0 0 1em}
+p{margin:0 0 1em;hyphens:auto;-webkit-hyphens:auto}
+details{margin:0 0 1.4em;border-left:3px solid var(--hair);padding-left:12px}
+details summary{cursor:pointer;color:var(--muted);font-size:.75em;letter-spacing:.06em;text-transform:uppercase}
+.listenonly{margin:2em 0;color:var(--muted);font-size:.9em}
+.listenonly .big{font-size:1.15em;color:var(--ink);margin:.4em 0}
+.foot{display:flex;gap:10px;justify-content:space-between;align-items:center;margin:2em 0 0;padding-top:1em;border-top:1px solid var(--hair);font-size:14px}
+.foot button{flex:1;text-align:center;padding:12px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.foot button:disabled{opacity:.35}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--bar);border-top:1px solid var(--hair);padding:8px 12px;padding-bottom:calc(8px + env(safe-area-inset-bottom));font-size:13px;color:var(--muted)}
+.player[hidden]{display:none}
+.player .row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.player .row .t{flex:1;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player .row button{appearance:none;border:1px solid var(--hair);background:transparent;color:var(--ink);font:inherit;border-radius:8px;padding:4px 8px;min-height:30px}
+.player .row button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.player audio{display:block;width:100%;height:36px}
+.sheet{position:fixed;inset:0;background:var(--bg);z-index:10;overflow:auto;padding:12px 16px 40px;padding-top:calc(12px + env(safe-area-inset-top));font-size:15px}
+.sheet[hidden]{display:none}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.sheet .top button{appearance:none;border:1px solid var(--hair);background:transparent;color:var(--ink);font:inherit;border-radius:8px;padding:7px 12px}
+.sheet .lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.sheet .seg{display:flex}.sheet .seg button{flex:1}
+.sheet ol{list-style:none;margin:6px 0 0;padding:0}
+.sheet li{border-bottom:1px solid var(--hair)}
+.sheet li button{display:flex;gap:12px;width:100%;text-align:left;appearance:none;border:0;background:transparent;color:var(--ink);font:inherit;padding:12px 4px;cursor:pointer;align-items:baseline}
+.sheet li button .n{font-variant-numeric:tabular-nums;color:var(--muted);min-width:2ch}
+.sheet li button .t{flex:1}
+.sheet li button .d{color:var(--muted);font-size:13px}
+.sheet li[aria-current="true"] button .t{color:var(--accent);font-weight:600}
+.sheet .note{color:var(--muted);font-size:13px;margin:16px 0 0}
+.sheet a{color:var(--accent)}
+</style>
+</head>
+<body class="has-player">
+<div class="bar ui" role="toolbar" aria-label="Reader controls">
+  <button type="button" id="tocbtn" aria-label="Contents and settings">☰ <span id="whoname">Rob</span></button>
+  <span class="grow"></span>
+  <span class="seg" role="group" aria-label="Mode">
+    <button type="button" data-mode="read">Read</button><button type="button" data-mode="listen">Listen</button><button type="button" data-mode="both">Both</button>
+  </span>
+  <span class="fs seg" role="group" aria-label="Text size"><button type="button" id="fsdown" aria-label="Smaller text">A</button><button type="button" id="fsup" aria-label="Larger text">A</button></span>
+</div>
+<main id="main"></main>
+<div class="player ui" id="player" hidden>
+  <div class="row"><span class="t" id="nowplaying"></span><span class="seg" role="group" aria-label="Clip length"><button type="button" data-len="short">Short</button><button type="button" data-len="long">Long</button></span><button type="button" id="autonext" aria-pressed="true" title="Play the next stop when this one ends">Auto ›</button></div>
+  <audio id="audio" controls preload="none"></audio>
+</div>
+<div class="sheet ui" id="sheet" hidden>
+  <div class="top"><strong id="sheettitle">Contents</strong><button type="button" id="closesheet">Done</button></div>
+  <div class="lbl">Narrator</div>
+  <div class="seg" role="group" aria-label="Narrator"><button type="button" data-who="rob">Rob's track</button><button type="button" data-who="jamie">Jamie's track</button></div>
+  <div class="lbl">Theme</div>
+  <div class="seg" role="group" aria-label="Theme"><button type="button" data-theme="light">Light</button><button type="button" data-theme="sepia">Sepia</button><button type="button" data-theme="dark">Dark</button><button type="button" data-theme="">Auto</button></div>
+  <div class="lbl">Stops</div>
+  <ol id="toc"></ol>
+  <p class="note">Read shows the script; Listen plays the clip and moves on to the next stop by itself; Both does both. The text is stored in this page and works offline; audio streams from the web. Swipe or use the buttons to change stop. <a href="index.html">Back to the map</a>.</p>
+</div>
+<script>
+const STOPS = /*__STOPS__*/{};
+const AUDIO = /*__AUDIO__*/{};
+const PLACES = /*__PLACES__*/{};
+const AUDIO_BASE = /*__AUDIO_BASE__*/'';
+const NAMES = {rob:'Rob', jamie:'Jamie'};
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v==null?d:v}catch(e){return d}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const FS = [15,16,17,18,19,20,22,24,26,28];
+const audio = document.getElementById('audio');
+let who='rob', idx=0, mode='both', len='long', autonext=true, wantPlay=false;
+function fmt(sec){if(sec==null)return '';const m=Math.floor(sec/60),s=Math.round(sec%60);return m+':'+String(s).padStart(2,'0');}
+function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function pressed(sel,attr,val){document.querySelectorAll(sel).forEach(b=>b.setAttribute('aria-pressed',String((b.dataset[attr]||'')===val)));}
+function applyFont(){const fs=Number(store.get('readerFontSize',19));document.documentElement.style.setProperty('--fs',fs+'px');document.getElementById('fsdown').disabled=fs<=FS[0];document.getElementById('fsup').disabled=fs>=FS[FS.length-1];}
+function stepFont(d){const fs=Number(store.get('readerFontSize',19));let i=FS.indexOf(fs);if(i<0)i=4;i=Math.max(0,Math.min(FS.length-1,i+d));store.set('readerFontSize',FS[i]);applyFont();}
+function applyTheme(){const t=store.get('readerTheme','');if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');pressed('.sheet [data-theme]','theme',t);}
+function setMode(m){mode=m;store.set('readerMode',m);pressed('.bar [data-mode]','mode',m);const p=document.getElementById('player');p.hidden=(m==='read');document.body.classList.toggle('has-player',m!=='read');if(m==='read'){audio.pause();}render();}
+function setLen(l){len=l;store.set('readerLen',l);pressed('.player [data-len]','len',l);loadClip(false);}
+function parseHash(){const m=location.hash.match(/^#(rob|jamie)(?:\/([a-z0-9-]+))?/);if(m){who=m[1];const k=m[2]||'';const bySlug=STOPS[who].findIndex(s=>s.slug===k);idx=bySlug>=0?bySlug:(/^\d+$/.test(k)?Math.max(0,Math.min(STOPS[who].length-1,Number(k)-1)):0);return;}const q=new URLSearchParams(location.search).get('as');who=(q==='jamie'||q==='rob')?q:store.get('listenAs','rob');if(who!=='rob'&&who!=='jamie')who='rob';idx=Number(store.get('readerPos:'+who,0))||0;}
+function go(w,i,opts){opts=opts||{};who=w;idx=Math.max(0,Math.min(STOPS[w].length-1,i));store.set('readerPos:'+w,idx);const h='#'+w+'/'+(idx+1);if(opts.push===false)history.replaceState(null,'',h);else history.pushState(null,'',h);render();loadClip(!!opts.play);window.scrollTo(0,0);}
+function clip(){const a=(AUDIO[(STOPS[who][idx]||{}).slug]||{})[who];if(!a)return null;return a[len]||a.long||a.short||null;}
+function loadClip(play){const c=clip();const s=STOPS[who][idx];const np=document.getElementById('nowplaying');if(!c){audio.removeAttribute('src');audio.load();np.textContent=`No audio for stop ${s.n}`;return;}const u=AUDIO_BASE+c.file;np.textContent=`${String(s.n).padStart(2,'0')} ${s.title}${c.sec?' · '+fmt(c.sec):''}`;if(audio.getAttribute('src')!==u){audio.setAttribute('src',u);audio.load();}if(play&&mode!=='read'){const p=audio.play();if(p&&p.catch)p.catch(()=>{});}}
+audio.addEventListener('ended',()=>{if(autonext&&mode!=='read'&&idx<STOPS[who].length-1)go(who,idx+1,{play:true});});
+function render(){
+  const list=STOPS[who], s=list[idx];
+  document.getElementById('whoname').textContent=NAMES[who];
+  document.title=`${String(s.n).padStart(2,'0')} ${s.title} · ${NAMES[who]} · Rhodes Landfall`;
+  const head=`<div class="eyebrow">${NAMES[who]}'s track · stop ${s.n} of ${list.length}</div><h1>${esc(s.title)}</h1>${PLACES[s.slug]?`<p class="place">${esc(PLACES[s.slug])}</p>`:''}`;
+  let body='';
+  if(mode==='listen'){const c=clip();body=`<div class="listenonly ui"><div class="big">${c?'Press play below.':'No audio for this stop.'}</div>${c?'The next stop starts by itself when this one ends. Switch to Read or Both for the text.':''}</div>`;}
+  else{const paras=s.long.split(/\n+/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');body=`<details><summary>Short version</summary><p>${esc(s.short)}</p></details>${paras}`;}
+  const foot=`<div class="foot ui"><button type="button" id="prev" ${idx===0?'disabled':''}>‹ ${idx>0?esc(list[idx-1].title):'Start'}</button><button type="button" id="next" ${idx===list.length-1?'disabled':''}>${idx<list.length-1?esc(list[idx+1].title):'End'} ›</button></div>`;
+  document.getElementById('main').innerHTML=head+body+foot;
+  document.getElementById('prev').onclick=()=>go(who,idx-1);
+  document.getElementById('next').onclick=()=>go(who,idx+1);
+  pressed('.sheet [data-who]','who',who);
+  buildToc();
+}
+function buildToc(){const ol=document.getElementById('toc');ol.innerHTML='';document.getElementById('sheettitle').textContent=NAMES[who]+"'s track";STOPS[who].forEach((s,i)=>{const a=(AUDIO[s.slug]||{})[who];const li=document.createElement('li');li.setAttribute('aria-current',String(i===idx));li.innerHTML=`<button type="button"><span class="n">${String(s.n).padStart(2,'0')}</span><span class="t">${esc(s.title)}</span><span class="d">${a&&a.long&&a.long.sec?fmt(a.long.sec):''}</span></button>`;li.querySelector('button').onclick=()=>{closeSheet();go(who,i);};ol.appendChild(li);});}
+function openSheet(){buildToc();document.getElementById('sheet').hidden=false;}
+function closeSheet(){document.getElementById('sheet').hidden=true;}
+document.getElementById('tocbtn').onclick=openSheet;
+document.getElementById('closesheet').onclick=closeSheet;
+document.getElementById('fsdown').onclick=()=>stepFont(-1);
+document.getElementById('fsup').onclick=()=>stepFont(1);
+document.querySelectorAll('.bar [data-mode]').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+document.querySelectorAll('.player [data-len]').forEach(b=>b.onclick=()=>setLen(b.dataset.len));
+document.getElementById('autonext').onclick=e=>{autonext=!autonext;store.set('readerAutoNext',autonext?'1':'0');e.currentTarget.setAttribute('aria-pressed',String(autonext));};
+document.querySelectorAll('.sheet [data-who]').forEach(b=>b.onclick=()=>{const w=b.dataset.who;store.set('listenAs',w);closeSheet();go(w,Number(store.get('readerPos:'+w,0))||0);});
+document.querySelectorAll('.sheet [data-theme]').forEach(b=>b.onclick=()=>{store.set('readerTheme',b.dataset.theme||'');applyTheme();});
+window.addEventListener('popstate',()=>{parseHash();render();loadClip(false);});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(who,idx+1);if(e.key==='ArrowLeft')go(who,idx-1);});
+let tx=null,ty=null;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+document.addEventListener('touchend',e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=ty=null;if(!document.getElementById('sheet').hidden)return;if(Math.abs(dx)>90&&Math.abs(dy)<60){if(dx<0)go(who,idx+1);else go(who,idx-1);}},{passive:true});
+applyFont();applyTheme();
+len=store.get('readerLen','long');pressed('.player [data-len]','len',len);
+autonext=store.get('readerAutoNext','1')==='1';document.getElementById('autonext').setAttribute('aria-pressed',String(autonext));
+parseHash();
+setMode(store.get('readerMode','both'));
+go(who,idx,{push:false});
+</script>
+</body>
+</html>

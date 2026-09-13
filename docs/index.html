@@ -68,7 +68,7 @@ h1,h2,h3,h4{font-family:Cardo,"Palatino Linotype",Palatino,Georgia,serif;font-we
 .leaflet-popup-content .meta{color:var(--muted);font-size:13px}
 .leaflet-popup-content .links{margin-top:6px;font-size:13px;display:flex;gap:12px;flex-wrap:wrap}
 .leaflet-popup-close-button{color:var(--muted)!important}
-.listen .aud{display:block;margin:4px 0}.listen .audlbl{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}.listen audio{display:block;width:100%;height:32px}
+.listen .aud{display:block;margin:4px 0}.listen .audlbl{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}.listen audio{display:block;width:100%;height:32px}.listen .readlink{display:inline-block;margin:2px 0 6px;font-size:13px}
 .pin{width:24px;height:24px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;color:#fff;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;line-height:1}
 .pin.route{width:26px;height:26px;font-size:12px}
 .pin.active{transform:scale(1.35);z-index:1000!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 45%,transparent),0 2px 6px rgba(0,0,0,.5)}
@@ -151,7 +151,7 @@ td.t{font-family:"JetBrains Mono",monospace;font-size:13.5px;white-space:nowrap;
     </div>
     <aside class="ledger" id="ledger">
       <h2>The pin ledger</h2>
-      <p class="hint">Walk times are from the cruise quay on Akti Sachtouri at an easy 4.5 km/h. Toggle categories with the chips.</p>
+      <p class="hint">Walk times are from the cruise quay on Akti Sachtouri at an easy 4.5 km/h. Toggle categories with the chips. <a href="read.html">Open the reader</a> for the scripts and audio, one stop per page.</p>
       <div id="rows"></div>
     </aside>
   </div>
@@ -470,6 +470,7 @@ function audioHtml(p){
       const url=AUDIO_BASE+a[k].file, len=fmt(a[k].sec), lbl=st.charAt(0).toUpperCase()+st.slice(1)+' · '+k;
       return LIVE?`<span class="aud"><span class="audlbl">${lbl}${len?' · '+len:''}</span><audio controls preload="none" src="${url}"></audio></span>`:`<a href="${url}" target="_blank" rel="noopener">${lbl}${len?' ('+len+')':''}</a>`;
     });
+    parts.push(`<a class="readlink" href="read.html#${st}/${p.aud}">${st.charAt(0).toUpperCase()+st.slice(1)} · read</a>`);
     return parts.join(LIVE?'':' · ');
   });
   return `<p class="meta listen"><b>Listen:</b> ${blocks.join(LIVE?'':' | ')}</p>`;

@@ -58,6 +58,21 @@ live=live.replace("minZoom:15,maxZoom:19,zoomSnap:.5","minZoom:13,maxZoom:19,zoo
 live=live.replace('const AUDIO_BASE = '+json.dumps(PAGES)+';',"const AUDIO_BASE = '';").replace('const LIVE = false;','const LIVE = true;')
 live=live.replace("Tiles cached for offline viewing on 2 September 2026.","Map tiles load live from OpenStreetMap; the offline copy embeds them.")
 open(_os.path.join(DOCS,'index.html'),'w').write(live)
+# reader page: both narration sets, the merged audio map, pin names by slug
+import glob as _g2
+_stops={}
+for _set in ('rob','jamie'):
+    _l=[]
+    for _f in sorted(_g2.glob(_os.path.join(_repo,'narration',_set+'-*.json'))): _l+=json.load(open(_f))
+    _l.sort(key=lambda x:x['n']); _stops[_set]=[{k:x[k] for k in ('n','slug','title','short','long')} for x in _l]
+_places={p['aud']:p['name'] for p in pins if p.get('aud')}
+rd=open('reader.html').read()
+rd=rd.replace('/*__STOPS__*/{}',json.dumps(_stops,ensure_ascii=False,separators=(',',':')))
+rd=rd.replace('/*__AUDIO__*/{}',json.dumps(aud,separators=(',',':')))
+rd=rd.replace('/*__PLACES__*/{}',json.dumps(_places,ensure_ascii=False,separators=(',',':')))
+rd=rd.replace("/*__AUDIO_BASE__*/''","''")
+open(_os.path.join(DOCS,'read.html'),'w').write(rd)
+print('reader bytes',len(rd),'stops',{k:len(v) for k,v in _stops.items()})
 print('live variant bytes',len(live), 'tile layer replaced:', "tile.openstreetmap.org/{z}" in live)
 print('pins',len(pins),'html bytes',len(tpl))
 for p in pins: print(f"{p['cat']:9s} {p.get('n','') or '':>2} {p['walk']!s:>4} min  {p['name']}")

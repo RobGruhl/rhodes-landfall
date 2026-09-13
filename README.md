@@ -7,7 +7,7 @@ A self-guided field guide and pin map for one day in Rhodes, Greece: Wednesday 3
 
 ## What is in here
 
-- `docs/` the published pages (`index.html` live tiles, `offline.html` embedded tiles) and the long scripts as A5 PDFs, `scripts-rob.pdf` and `scripts-jamie.pdf` (built by `scripts/scripts_pdf.py` with typst)
+- `docs/` the published pages (`index.html` live tiles, `offline.html` embedded tiles, `read.html` the phone reader: one stop per page, Read / Listen / Both, text size, light/sepia/dark, narrator switch, auto-advance audio; built from `scripts/reader.html`) and the long scripts as A5 PDFs, `scripts-rob.pdf` and `scripts-jamie.pdf` (built by `scripts/scripts_pdf.py` with typst)
 - `data/pins.json` every pin: category, coordinates, blurb, hours that apply on the day, price, source URL
 - `data/route.json` the walking line, routed over the OpenStreetMap street network, with the ramparts leg on the real wall geometry
 - `data/content.html` the briefing text
