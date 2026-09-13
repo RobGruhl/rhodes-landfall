@@ -68,7 +68,7 @@ h1,h2,h3,h4{font-family:Cardo,"Palatino Linotype",Palatino,Georgia,serif;font-we
 .leaflet-popup-content .meta{color:var(--muted);font-size:13px}
 .leaflet-popup-content .links{margin-top:6px;font-size:13px;display:flex;gap:12px;flex-wrap:wrap}
 .leaflet-popup-close-button{color:var(--muted)!important}
-.listen .aud{display:block;margin:4px 0}.listen .audlbl{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}.listen audio{display:block;width:100%;height:32px}.listen .readlink{display:inline-block;margin:2px 0 6px;font-size:13px}
+.listen .aud{display:block;margin:4px 0}.listen .audlbl{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}.listen audio{display:block;width:100%;height:32px}.listen .readlink{display:inline-block;margin:4px 8px 4px 0;padding:6px 10px;border:1px solid var(--hair2);border-radius:999px;font-size:13px;text-decoration:none;background:var(--surface)}
 .pin{width:24px;height:24px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;color:#fff;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;line-height:1}
 .pin.route{width:26px;height:26px;font-size:12px}
 .pin.active{transform:scale(1.35);z-index:1000!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 45%,transparent),0 2px 6px rgba(0,0,0,.5)}
@@ -76,7 +76,6 @@ h1,h2,h3,h4{font-family:Cardo,"Palatino Linotype",Palatino,Georgia,serif;font-we
 .chip{appearance:none;border:1px solid var(--hair2);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 11px 5px 8px;font:inherit;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;line-height:1.1}
 .chip .dot{width:11px;height:11px;border-radius:50%;background:var(--cc);border:1.5px solid rgba(255,255,255,.7)}
 .chip[aria-pressed="false"]{opacity:.45}
-.listenas{display:flex;align-items:center;gap:6px;margin:10px 0 0;font-size:13.5px;color:var(--muted)}.listenas .seg{display:inline-flex;border:1px solid var(--hair2);border-radius:999px;overflow:hidden}.listenas button{appearance:none;border:0;background:var(--surface);color:var(--ink);font:inherit;font-size:13px;padding:5px 12px;cursor:pointer}.listenas button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
 .chip:focus-visible,.row:focus-visible,.leaflet-bar a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .ledger{display:flex;flex-direction:column}
 .ledger h2{font-size:22px;margin:16px 0 4px}
@@ -147,11 +146,10 @@ td.t{font-family:"JetBrains Mono",monospace;font-size:13.5px;white-space:nowrap;
     <div class="mapcol">
       <div id="map" role="application" aria-label="Map of Rhodes town with pins"></div>
       <div class="chips" id="chips"></div>
-      <div class="listenas" id="listenas">Listening as <span class="seg" role="group" aria-label="Whose narration to show"></span></div>
     </div>
     <aside class="ledger" id="ledger">
       <h2>The pin ledger</h2>
-      <p class="hint">Walk times are from the cruise quay on Akti Sachtouri at an easy 4.5 km/h. Toggle categories with the chips. <a href="read.html">Open the reader</a> for the scripts and audio, one stop per page.</p>
+      <p class="hint">Walk times are from the cruise quay on Akti Sachtouri at an easy 4.5 km/h. Toggle categories with the chips. Each stop links to the <a href="read.html">reader</a>, where you read or listen one stop at a time.</p>
       <div id="rows"></div>
     </aside>
   </div>
@@ -210,32 +208,16 @@ function init(){
     m.on('click',()=>setActive(i,false));
     markers[i]=m; p._i=i;
   });
-  buildChips(); buildListenAs(); buildRows();
+  buildChips(); buildRows();
+  const at=location.hash.match(/^#at\/([a-z0-9-]+)/); if(at){const i=PINS.findIndex(p=>p.aud===at[1]); if(i>=0) setTimeout(()=>setActive(i,true),300);}
 }
 function fmt(sec){if(sec==null)return '';const m=Math.floor(sec/60),s=Math.round(sec%60);return m+':'+String(s).padStart(2,'0');}
-const LISTENERS=['rob','jamie'];
-(function(){try{const q=new URLSearchParams(location.search).get('as');if(q&&(q==='both'||LISTENERS.includes(q))) localStorage.setItem('listenAs',q);}catch(e){}})();
-function listenAs(){try{return localStorage.getItem('listenAs')||'both';}catch(e){return 'both';}}
-function setListenAs(v){try{localStorage.setItem('listenAs',v);}catch(e){} buildListenAs(); document.getElementById('rows').innerHTML=''; buildRows(); if(typeof applyFilter==='function') applyFilter(); PINS.forEach((p,i)=>{if(markers[i]) markers[i].setPopupContent(popupHtml(p));});}
-function buildListenAs(){
-  const seg=document.querySelector('#listenas .seg'); if(!seg) return; seg.innerHTML='';
-  const cur=listenAs(); const opts=[['rob','Rob'],['jamie','Jamie'],['both','Both']];
-  opts.forEach(([v,l])=>{const b=document.createElement('button');b.type='button';b.textContent=l;b.setAttribute('aria-pressed',String(cur===v));b.onclick=()=>setListenAs(v);seg.appendChild(b);});
-}
-function audioSets(p){const sets=p.aud&&AUDIO[p.aud]; if(!sets) return null; const who=listenAs(); const keys=Object.keys(sets).filter(k=>who==='both'||k===who); return keys.length?Object.fromEntries(keys.map(k=>[k,sets[k]])):null;}
+function hasAudio(p){return !!(p.aud&&AUDIO[p.aud]);}
 function audioHtml(p){
-  const sets=audioSets(p); if(!sets) return '';
-  const order=['rob','jamie'].filter(k=>sets[k]).concat(Object.keys(sets).filter(k=>k!=='rob'&&k!=='jamie'));
-  const blocks=order.map(st=>{
-    const a=sets[st];
-    const parts=['short','long'].filter(k=>a[k]).map(k=>{
-      const url=AUDIO_BASE+a[k].file, len=fmt(a[k].sec), lbl=st.charAt(0).toUpperCase()+st.slice(1)+' · '+k;
-      return LIVE?`<span class="aud"><span class="audlbl">${lbl}${len?' · '+len:''}</span><audio controls preload="none" src="${url}"></audio></span>`:`<a href="${url}" target="_blank" rel="noopener">${lbl}${len?' ('+len+')':''}</a>`;
-    });
-    parts.push(`<a class="readlink" href="read.html#${st}/${p.aud}">${st.charAt(0).toUpperCase()+st.slice(1)} · read</a>`);
-    return parts.join(LIVE?'':' · ');
-  });
-  return `<p class="meta listen"><b>Listen:</b> ${blocks.join(LIVE?'':' | ')}</p>`;
+  if(!hasAudio(p)) return '';
+  const sets=AUDIO[p.aud];
+  const links=['rob','jamie'].filter(k=>sets[k]).map(k=>{const a=sets[k];const len=a.long&&a.long.sec?fmt(a.long.sec):'';return `<a class="readlink" href="read.html#${k}/${p.aud}">${k.charAt(0).toUpperCase()+k.slice(1)}'s track${len?' · '+len:''}</a>`;});
+  return `<p class="meta listen"><b>Read or listen:</b> ${links.join(' ')}</p>`;
 }
 function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function gmaps(p){return `https://www.google.com/maps/search/?api=1&query=${p.lat.toFixed(5)}%2C${p.lon.toFixed(5)}`;}
@@ -277,7 +259,7 @@ function buildRows(){
     if(k==='route') items.sort((a,b)=>a.p.n-b.p.n); else items.sort((a,b)=>(a.p.walk??99)-(b.p.walk??99));
     items.forEach(({p,i})=>{
       const r=document.createElement('button');r.type='button';r.className='row';r.id='row'+i;r.style.setProperty('--cc',col(k));
-      r.innerHTML=`<span class="badge">${k==='route'?p.n:GLYPH[k]||'•'}</span><span class="name">${esc(p.name)}</span><span class="walk">${p.walk!=null?p.walk+' min':''}${audioSets(p)?' · ♫':''}</span><span class="sub">${p.sub||''}</span>`;
+      r.innerHTML=`<span class="badge">${k==='route'?p.n:GLYPH[k]||'•'}</span><span class="name">${esc(p.name)}</span><span class="walk">${p.walk!=null?p.walk+' min':''}${hasAudio(p)?' · ♫':''}</span><span class="sub">${p.sub||''}</span>`;
       r.onclick=()=>setActive(i,true);
       g.appendChild(r);
     });

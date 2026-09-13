@@ -15,13 +15,13 @@
 html{background:var(--bg);-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Charter,Georgia,"Times New Roman",serif;font-size:var(--fs);line-height:1.55}
 .ui{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:6px;padding:8px 10px;padding-top:calc(8px + env(safe-area-inset-top));background:var(--bar);border-bottom:1px solid var(--hair);font-size:14px}
+.bar{position:sticky;top:0;z-index:5;padding:8px 10px;padding-top:calc(8px + env(safe-area-inset-top));background:var(--bar);border-bottom:1px solid var(--hair);font-size:14px}
 .bar button,.foot button,.seg button{appearance:none;border:1px solid var(--hair);background:transparent;color:var(--ink);font:inherit;border-radius:8px;padding:7px 10px;cursor:pointer;min-height:36px}
 .seg{display:inline-flex;border:1px solid var(--hair);border-radius:8px;overflow:hidden}
 .seg button{border:0;border-radius:0;min-width:44px;padding:7px 9px}
 .seg button+button{border-left:1px solid var(--hair)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.bar .grow{flex:1}
+.bar .row1,.bar .row2{display:flex;align-items:center;gap:6px}.bar .row2{margin-top:6px}.bar .grow{flex:1}.bar .mapbtn{display:inline-flex;align-items:center;border:1px solid var(--hair);border-radius:8px;padding:7px 12px;min-height:36px;color:var(--ink);text-decoration:none}
 .bar .fs button{font-family:Georgia,serif;min-width:38px}
 .bar .fs button:first-child{font-size:12px}.bar .fs button:last-child{font-size:18px;font-weight:bold}
 main{max-width:38em;margin:0 auto;padding:22px 20px 40px}
@@ -63,16 +63,21 @@ details summary{cursor:pointer;color:var(--muted);font-size:.75em;letter-spacing
 </head>
 <body class="has-player">
 <div class="bar ui" role="toolbar" aria-label="Reader controls">
-  <button type="button" id="tocbtn" aria-label="Contents and settings">☰ <span id="whoname">Rob</span></button>
-  <span class="grow"></span>
-  <span class="seg" role="group" aria-label="Mode">
-    <button type="button" data-mode="read">Read</button><button type="button" data-mode="listen">Listen</button><button type="button" data-mode="both">Both</button>
-  </span>
-  <span class="fs seg" role="group" aria-label="Text size"><button type="button" id="fsdown" aria-label="Smaller text">A</button><button type="button" id="fsup" aria-label="Larger text">A</button></span>
+  <div class="row1">
+    <button type="button" id="tocbtn" aria-label="Contents and settings">☰ <span id="whoname">Rob</span></button>
+    <a class="mapbtn" id="mapbtn" href="index.html">Map</a>
+    <span class="grow"></span>
+    <span class="fs seg" role="group" aria-label="Text size"><button type="button" id="fsdown" aria-label="Smaller text">A</button><button type="button" id="fsup" aria-label="Larger text">A</button></span>
+  </div>
+  <div class="row2">
+    <span class="seg" role="group" aria-label="Mode"><button type="button" data-mode="read">Read</button><button type="button" data-mode="listen">Listen</button><button type="button" data-mode="both">Both</button></span>
+    <span class="grow"></span>
+    <span class="seg" role="group" aria-label="Version"><button type="button" data-len="short">Short</button><button type="button" data-len="long">Long</button></span>
+  </div>
 </div>
 <main id="main"></main>
 <div class="player ui" id="player" hidden>
-  <div class="row"><span class="t" id="nowplaying"></span><span class="seg" role="group" aria-label="Clip length"><button type="button" data-len="short">Short</button><button type="button" data-len="long">Long</button></span><button type="button" id="autonext" aria-pressed="true" title="Play the next stop when this one ends">Auto ›</button></div>
+  <div class="row"><span class="t" id="nowplaying"></span><button type="button" id="autonext" aria-pressed="true" title="Play the next stop when this one ends">Auto ›</button></div>
   <audio id="audio" controls preload="none"></audio>
 </div>
 <div class="sheet ui" id="sheet" hidden>
@@ -83,7 +88,7 @@ details summary{cursor:pointer;color:var(--muted);font-size:.75em;letter-spacing
   <div class="seg" role="group" aria-label="Theme"><button type="button" data-theme="light">Light</button><button type="button" data-theme="sepia">Sepia</button><button type="button" data-theme="dark">Dark</button><button type="button" data-theme="">Auto</button></div>
   <div class="lbl">Stops</div>
   <ol id="toc"></ol>
-  <p class="note">Read shows the script; Listen plays the clip and moves on to the next stop by itself; Both does both. The text is stored in this page and works offline; audio streams from the web. Swipe or use the buttons to change stop. <a href="index.html">Back to the map</a>.</p>
+  <p class="note">Read shows the script; Listen plays the clip and moves on to the next stop by itself; Both does both. Short and Long switch both the text and the clip. The Map button returns to this stop on the map. The text is stored in this page and works offline; audio streams from the web. Swipe or use the buttons to change stop. </p>
 </div>
 <script>
 const STOPS = /*__STOPS__*/{};
@@ -102,7 +107,7 @@ function applyFont(){const fs=Number(store.get('readerFontSize',19));document.do
 function stepFont(d){const fs=Number(store.get('readerFontSize',19));let i=FS.indexOf(fs);if(i<0)i=4;i=Math.max(0,Math.min(FS.length-1,i+d));store.set('readerFontSize',FS[i]);applyFont();}
 function applyTheme(){const t=store.get('readerTheme','');if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');pressed('.sheet [data-theme]','theme',t);}
 function setMode(m){mode=m;store.set('readerMode',m);pressed('.bar [data-mode]','mode',m);const p=document.getElementById('player');p.hidden=(m==='read');document.body.classList.toggle('has-player',m!=='read');if(m==='read'){audio.pause();}render();}
-function setLen(l){len=l;store.set('readerLen',l);pressed('.player [data-len]','len',l);loadClip(false);}
+function setLen(l){len=l;store.set('readerLen',l);pressed('.bar [data-len]','len',l);render();loadClip(false);}
 function parseHash(){const m=location.hash.match(/^#(rob|jamie)(?:\/([a-z0-9-]+))?/);if(m){who=m[1];const k=m[2]||'';const bySlug=STOPS[who].findIndex(s=>s.slug===k);idx=bySlug>=0?bySlug:(/^\d+$/.test(k)?Math.max(0,Math.min(STOPS[who].length-1,Number(k)-1)):0);return;}const q=new URLSearchParams(location.search).get('as');who=(q==='jamie'||q==='rob')?q:store.get('listenAs','rob');if(who!=='rob'&&who!=='jamie')who='rob';idx=Number(store.get('readerPos:'+who,0))||0;}
 function go(w,i,opts){opts=opts||{};who=w;idx=Math.max(0,Math.min(STOPS[w].length-1,i));store.set('readerPos:'+w,idx);const h='#'+w+'/'+(idx+1);if(opts.push===false)history.replaceState(null,'',h);else history.pushState(null,'',h);render();loadClip(!!opts.play);window.scrollTo(0,0);}
 function clip(){const a=(AUDIO[(STOPS[who][idx]||{}).slug]||{})[who];if(!a)return null;return a[len]||a.long||a.short||null;}
@@ -110,12 +115,12 @@ function loadClip(play){const c=clip();const s=STOPS[who][idx];const np=document
 audio.addEventListener('ended',()=>{if(autonext&&mode!=='read'&&idx<STOPS[who].length-1)go(who,idx+1,{play:true});});
 function render(){
   const list=STOPS[who], s=list[idx];
-  document.getElementById('whoname').textContent=NAMES[who];
+  document.getElementById('whoname').textContent=NAMES[who];document.getElementById('mapbtn').href='index.html#at/'+s.slug;
   document.title=`${String(s.n).padStart(2,'0')} ${s.title} · ${NAMES[who]} · Rhodes Landfall`;
-  const head=`<div class="eyebrow">${NAMES[who]}'s track · stop ${s.n} of ${list.length}</div><h1>${esc(s.title)}</h1>${PLACES[s.slug]?`<p class="place">${esc(PLACES[s.slug])}</p>`:''}`;
+  const head=`<div class="eyebrow">${NAMES[who]}'s track · stop ${s.n} of ${list.length} · ${len==='short'?'short version':'long version'}</div><h1>${esc(s.title)}</h1>${PLACES[s.slug]?`<p class="place">${esc(PLACES[s.slug])}</p>`:''}`;
   let body='';
   if(mode==='listen'){const c=clip();body=`<div class="listenonly ui"><div class="big">${c?'Press play below.':'No audio for this stop.'}</div>${c?'The next stop starts by itself when this one ends. Switch to Read or Both for the text.':''}</div>`;}
-  else{const paras=s.long.split(/\n+/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');body=`<details><summary>Short version</summary><p>${esc(s.short)}</p></details>${paras}`;}
+  else{body=(len==='short'?s.short:s.long).split(/\n+/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');}
   const foot=`<div class="foot ui"><button type="button" id="prev" ${idx===0?'disabled':''}>‹ ${idx>0?esc(list[idx-1].title):'Start'}</button><button type="button" id="next" ${idx===list.length-1?'disabled':''}>${idx<list.length-1?esc(list[idx+1].title):'End'} ›</button></div>`;
   document.getElementById('main').innerHTML=head+body+foot;
   document.getElementById('prev').onclick=()=>go(who,idx-1);
@@ -131,7 +136,7 @@ document.getElementById('closesheet').onclick=closeSheet;
 document.getElementById('fsdown').onclick=()=>stepFont(-1);
 document.getElementById('fsup').onclick=()=>stepFont(1);
 document.querySelectorAll('.bar [data-mode]').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
-document.querySelectorAll('.player [data-len]').forEach(b=>b.onclick=()=>setLen(b.dataset.len));
+document.querySelectorAll('.bar [data-len]').forEach(b=>b.onclick=()=>setLen(b.dataset.len));
 document.getElementById('autonext').onclick=e=>{autonext=!autonext;store.set('readerAutoNext',autonext?'1':'0');e.currentTarget.setAttribute('aria-pressed',String(autonext));};
 document.querySelectorAll('.sheet [data-who]').forEach(b=>b.onclick=()=>{const w=b.dataset.who;store.set('listenAs',w);closeSheet();go(w,Number(store.get('readerPos:'+w,0))||0);});
 document.querySelectorAll('.sheet [data-theme]').forEach(b=>b.onclick=()=>{store.set('readerTheme',b.dataset.theme||'');applyTheme();});
@@ -140,7 +145,7 @@ document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(who,idx+1);if
 let tx=null,ty=null;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
 document.addEventListener('touchend',e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=ty=null;if(!document.getElementById('sheet').hidden)return;if(Math.abs(dx)>90&&Math.abs(dy)<60){if(dx<0)go(who,idx+1);else go(who,idx-1);}},{passive:true});
 applyFont();applyTheme();
-len=store.get('readerLen','long');pressed('.player [data-len]','len',len);
+len=store.get('readerLen','long');pressed('.bar [data-len]','len',len);
 autonext=store.get('readerAutoNext','1')==='1';document.getElementById('autonext').setAttribute('aria-pressed',String(autonext));
 parseHash();
 setMode(store.get('readerMode','both'));
