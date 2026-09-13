@@ -9,8 +9,13 @@ Keychain item whose service is ELEVENLABS_API_KEY, then ~/.config/toolbelt/eleve
 Each rendered clip appends one audit line to ~/.local/state/agent-voice/audit.log, the same
 trail the Toolbelt tool writes.
 
+Two narration sets share the 22 stops: `rob` (narration/rob-*.json, docs/audio/rob/) and
+`jamie` (narration/jamie-*.json, docs/audio/jamie/). Each set has its own manifest, keyed by
+stop slug; data/pins.json links a pin to a slug through its `aud` field.
+
 Usage:
-  python3 scripts/narrate.py                 # plan only
+  python3 scripts/narrate.py                 # plan only (set rob)
+  python3 scripts/narrate.py --set jamie     # plan Jamie's set
   python3 scripts/narrate.py --yes           # render everything not yet rendered
   python3 scripts/narrate.py --only short    # short versions only
   python3 scripts/narrate.py --stops 1-5,16  # a subset
@@ -23,7 +28,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 NARR = ROOT / "narration"
-OUT = ROOT / "docs" / "audio"
+AUDIO = ROOT / "docs" / "audio"
+SETS = ("rob", "jamie")
 MODEL = "eleven_v3"
 MAX_RUN_CHARS = 120_000          # per-run ceiling; raising it is a diff, not a flag
 MAX_CLIP_CHARS = 5_000           # v3 accepts up to 5,000 characters per request
@@ -73,9 +79,9 @@ def pick_voice(key: str, want: str | None):
     sys.exit("None of the preferred voices are on this account; pass --voice NAME. Available: " + ", ".join(sorted(names)))
 
 
-def load_stops():
+def load_stops(narr_set: str):
     stops = []
-    for f in sorted(glob.glob(str(NARR / "stops-*.json"))):
+    for f in sorted(glob.glob(str(NARR / f"{narr_set}-*.json"))):
         stops.extend(json.load(open(f)))
     stops.sort(key=lambda s: s["n"])
     return stops
@@ -125,9 +131,13 @@ def main():
     ap.add_argument("--stops", help="e.g. 1-5,16")
     ap.add_argument("--voice", help="voice name on the account")
     ap.add_argument("--force", action="store_true", help="re-render clips that already exist")
+    ap.add_argument("--set", choices=SETS, default="rob", help="which narration set (default rob)")
     a = ap.parse_args()
 
-    stops = load_stops()
+    OUT = AUDIO / a.set
+    stops = load_stops(a.set)
+    if not stops:
+        sys.exit(f"No scripts found for set {a.set!r} (narration/{a.set}-*.json)")
     want = parse_stops(a.stops)
     jobs = []
     for s in stops:
@@ -142,14 +152,14 @@ def main():
                 continue
             jobs.append((s, length, text, fn))
     total = sum(len(j[2]) for j in jobs)
-    print(f"model {MODEL} | {len(jobs)} clips to render | {total:,} characters")
+    print(f"set {a.set} | model {MODEL} | {len(jobs)} clips to render | {total:,} characters")
     for s, length, text, fn in jobs:
         print(f"  {fn.name:38s} {len(text):5d} chars")
     if total > MAX_RUN_CHARS:
         sys.exit(f"Total {total:,} exceeds the per-run ceiling of {MAX_RUN_CHARS:,} characters; narrow with --stops or --only")
     if not jobs:
         print("Nothing to render (all clips exist; use --force to re-render)")
-        return write_manifest(stops)
+        return write_manifest(a.set, stops)
     key = api_key()
     voice = pick_voice(key, a.voice)
     print(f"voice {voice['name']} ({voice['voice_id']})")
@@ -175,19 +185,24 @@ def main():
         audit(f"[agent-voice audit] {datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00','Z')} "
               f"verb=narrate clip={fn.name} voice={voice['voice_id']} model={MODEL} chars={len(text)} bytes={len(audio)} secs={time.time()-t0:.1f}")
         time.sleep(0.5)
-    write_manifest(stops, voice)
+    write_manifest(a.set, stops, voice)
 
 
-def write_manifest(stops, voice=None):
-    man = {"model": MODEL, "voice": (voice or {}).get("name"), "voice_id": (voice or {}).get("voice_id"), "clips": {}}
+def write_manifest(narr_set, stops, voice=None):
+    OUT = AUDIO / narr_set
+    old = {}
+    if (OUT / "manifest.json").exists():
+        old = json.load(open(OUT / "manifest.json"))
+    man = {"set": narr_set, "model": MODEL, "voice": (voice or {}).get("name") or old.get("voice"),
+           "voice_id": (voice or {}).get("voice_id") or old.get("voice_id"), "clips": {}}
     for s in stops:
         entry = {}
         for length in ("short", "long"):
             fn = OUT / f"{s['n']:02d}-{s['slug']}-{length}.mp3"
             if fn.exists():
-                entry[length] = {"file": f"audio/{fn.name}", "sec": duration_seconds(fn), "chars": len(s[length])}
+                entry[length] = {"file": f"audio/{narr_set}/{fn.name}", "sec": duration_seconds(fn), "chars": len(s[length])}
         if entry:
-            man["clips"][str(s["n"])] = {"title": s["title"], **entry}
+            man["clips"][s["slug"]] = {"title": s["title"], **entry}
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "manifest.json").write_text(json.dumps(man, indent=1))
     print(f"manifest: {len(man['clips'])} stops with audio -> {OUT/'manifest.json'}")

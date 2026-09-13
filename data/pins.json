@@ -12,7 +12,8 @@
   "blurb": "Scarlet Lady's likely berth on the quay east of the walls. The published schedules put her here 09:00 to 18:00 alongside Celestyal Discovery (07:00 to 18:00); the port fund's own list of late August also names Costa Fortuna and Gemini that morning, so expect three or four ships and a busy Palace from mid-morning. Face the walls: this whole waterfront is the ancient Great Harbour that Demetrius attacked with ship-mounted siege towers in 305 BC. If the ship is berthed at Akandia instead, walk north along the water; the Gate of the Virgin is about ten minutes.",
   "dnd": "The party disembarks in a harbour once closed by a floating boom of spiked logs and fire-ships packed with pitch.",
   "hours": "Ship alongside 09:00 to 18:00; all-aboard about 17:30",
-  "src": "https://www.cruisetimetables.com/visitingrhodesgreece-30sep2026.html"
+  "src": "https://www.cruisetimetables.com/visitingrhodesgreece-30sep2026.html",
+  "aud": "landfall"
  },
  {
   "n": 2,
@@ -23,7 +24,8 @@
   "sub": "The threshold. Look back at the ship, then walk through.",
   "blurb": "The nearest opening in the sea wall to the cruise quay, cut in 1955 on an Italian plan. Stop before the arch and turn around: ship, harbour, medieval stone all in one frame. Then walk through. The Italian tongue's stretch of wall ran south from here to the harbour corner.",
   "hours": "Open passage, always",
-  "src": "https://en.wikipedia.org/wiki/Fortifications_of_Rhodes"
+  "src": "https://en.wikipedia.org/wiki/Fortifications_of_Rhodes",
+  "aud": "threshold"
  },
  {
   "n": 3,
@@ -38,7 +40,8 @@
   "blurb": "The roofless 14th-century Gothic church of Our Lady of the Burgh, three apses open to the sky, just inside the gate that carries its name. Christian, then Ottoman, then bombed, now a garden of arches. The audio trick: ten seconds of choir and stone reverb, then cut to the real wind.",
   "dnd": "A ruined chapel at the edge of the outer ward: the classic place to find the first clue.",
   "hours": "Open ruin, always",
-  "src": "https://www.romeartlover.it/Rodi3.html"
+  "src": "https://www.romeartlover.it/Rodi3.html",
+  "aud": "roofless"
  },
  {
   "n": 4,
@@ -68,7 +71,8 @@
   "blurb": "Twin round towers built by Grand Master d'Aubusson in 1478, wrecked by Allied bombs and restored in 1951; look for the saints in relief above the arch. From this quay the Knights sailed away on 1 January 1523. This is the place for the Rhodian Sea Law, the ancient rule on jettison that still lives in every marine insurance policy, and the emperor Antoninus' reply to a shipwrecked merchant: I am Lord of the World, but the Law is Lord of the sea.",
   "dnd": "The exodus gate: fifty ships, drums beating, a new banner of the Pieta. A merchant-navy guild whose code even emperors bow to.",
   "hours": "Open passage, always",
-  "src": "http://www.admiraltylawguide.com/documents/digestxiv.html"
+  "src": "http://www.admiraltylawguide.com/documents/digestxiv.html",
+  "aud": "sea-law"
  },
  {
   "n": 6,
@@ -85,7 +89,8 @@
   "dnd": "A lawful-good order's healing hall, now a reliquary holding a sun-god's severed marble head.",
   "hours": "Wed 30 Sep: 08:00 to 20:00 (official summer schedule to 31 Oct). The Prehistoric exhibition is open Wed 09:00 to 17:00; the Epigraphical exhibition and Villaragut Mansion are closed on Wednesdays.",
   "price": "EUR 10",
-  "src": "https://archaeologicalmuseums.gr/en/museum/5df34af3deca5e2d79e8c136/archaeological-museum-of-rhodes"
+  "src": "https://archaeologicalmuseums.gr/en/museum/5df34af3deca5e2d79e8c136/archaeological-museum-of-rhodes",
+  "aud": "hospital"
  },
  {
   "n": 7,
@@ -101,7 +106,8 @@
   "blurb": "Right-hand side going up: Inn of Italy (1519, Grand Master Carretto's shield), Inn of France (the richest facade: corner turret, crocodile gargoyles for the dragon legend, d'Aubusson's cardinal's hat, three plaques of l'Isle-Adam), the tiny Holy Trinity chapel (1365 to 1374, papal arms framed by the lions of England), the chaplain's house with ten shields on its lintel. Left: the Inn of Spain, and the Inn of Provence joined to it by the arch overhead. The Italians stripped the Ottoman balconies in 1916; the stone and heraldry are original.",
   "dnd": "Guild street of a warrior order. Each inn is a faction chapter-house: France gave the Hospitaller, Italy the Admiral, Auvergne the Marshal, England the Turcopolier, Aragon the standard-bearer, Castile the Chancellor, Germany the Grand Bailiff, Provence the Grand Commander. Four of the last five Grand Masters were Frenchmen, two of them from the Inn of France.",
   "hours": "Public street, always",
-  "src": "https://viagallica.com/grece/lang_en/rue_chevaliers.htm"
+  "src": "https://viagallica.com/grece/lang_en/rue_chevaliers.htm",
+  "aud": "seven-tongues"
  },
  {
   "n": 8,
@@ -117,7 +123,8 @@
   "blurb": "Where the neoclassical school and the clock tower now stand was the Knights' conventual church, begun about 1310: tombs of at least six Grand Masters including the dragon-slayer Gozon, and the treasury of relics, among them the right hand of John the Baptist (one tradition has it here from 1413, another says Sultan Bayezid II sent it in 1484 to sweeten the deal that kept his rival brother a prisoner of the Knights). After 1522 it became the main mosque. On 6 November 1856 lightning struck the gunpowder stored in the cellars under its bell tower; the blast levelled the church, gutted the Palace and killed at least 200 people. Only scraps of foundation show beside the school; Gozon's plain tomb slab went to Paris in 1877, and the Italians rebuilt the church from engravings at Mandraki.",
   "dnd": "A reliquary chapel over a forgotten powder magazine: a dungeon trap with a 334-year fuse. The dragon-slayer's tomb is now in the Musee de Cluny.",
   "hours": "Open square, always",
-  "src": "https://en.wikipedia.org/wiki/Church_of_St_John_of_the_Collachium"
+  "src": "https://en.wikipedia.org/wiki/Church_of_St_John_of_the_Collachium",
+  "aud": "the-vault"
  },
  {
   "n": 9,
@@ -134,7 +141,8 @@
   "dnd": "A crusader citadel on a buried sun-temple, later a dictator's summer palace paved with looted mosaics. Grain silos under the courtyard for sieges.",
   "hours": "Wed 30 Sep: 08:00 to 20:00, last admission 20 minutes before closing (official page). Inside, exactly one of the two big exhibitions is open on a Wednesday, 09:00 to 17:00, and the Ministry's two pages disagree on which (the newer one says Ancient Rhodes); the Knights-to-Malta room and the gardens are daily 09:00 to 17:00. Phone +30 22413 65270 to check. Leaving and re-entering for the walls walk means paying again, so go in about 11:00.",
   "price": "EUR 20, which the Ministry page says is also valid for the Archaeological Museum, Decorative Arts and Our Lady of the Castle; walls walk EUR 5 to 6 extra",
-  "src": "https://archaeologicalmuseums.gr/en/museum/5df34af3deca5e2d79e8c140/palace-of-the-grand-master-of-knights"
+  "src": "https://archaeologicalmuseums.gr/en/museum/5df34af3deca5e2d79e8c140/palace-of-the-grand-master-of-knights",
+  "aud": "keep"
  },
  {
   "n": 10,
@@ -149,7 +157,8 @@
   "blurb": "Emery d'Amboise's gate of 1512, the grandest in the circuit: a marble angel with the arms of the Order, drawbridge slots in the twin round towers, three dog-legged gates behind (the Ottomans called it the Crooked Gate). Local tradition says the head of the dragon slain by Dieudonne de Gozon hung over this gate until workmen threw it out around 1837 to 1839. Everyone who saw it described a crocodile. Stand under the arch and look up.",
   "dnd": "Trophy over the gate. On a Nature check it is a Nile crocodile. Quest hook: whose crocodile was it?",
   "hours": "Open passage, always",
-  "src": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/78E0C09EBDC36B707F193F689615B83B/S0068245400009400a.pdf/dieudonne-de-gozon-and-the-dragon-of-rhodes.pdf"
+  "src": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/78E0C09EBDC36B707F193F689615B83B/S0068245400009400a.pdf/dieudonne-de-gozon-and-the-dragon-of-rhodes.pdf",
+  "aud": "draconis"
  },
  {
   "n": 11,
@@ -167,7 +176,8 @@
   "dnd": "The wall is a faction map you walk across, over the moat where forty Ottoman mines met Tadini's counter-mines.",
   "hours": "Mon to Fri 12:00 to 15:00, closed weekends (consistent 2025 and 2026 visitor reports; not on the official page). Confirm at the ticket desk.",
   "price": "EUR 5 (2025) or 6 (2026 guide)",
-  "src": "https://www.tripadvisor.com/Attraction_Review-g635613-d12966344-Reviews-Fortifications_of_Rhodes-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html"
+  "src": "https://www.tripadvisor.com/Attraction_Review-g635613-d12966344-Reviews-Fortifications_of_Rhodes-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html",
+  "aud": "faction-map"
  },
  {
   "n": 12,
@@ -197,7 +207,8 @@
   "dnd": "The one sanctuary that survived the bombardment, keeping the memory-books of a vanished community. Leave silence at the end of this track.",
   "hours": "Sun to Fri 10:00 to 15:00, closed Saturdays and state holidays (1 Apr to 31 Oct). 30 Sep is an intermediate day of Sukkot; no closure is listed, but confirm by email jcrhodes@otenet.gr.",
   "price": "EUR 6",
-  "src": "https://rhodesjewishmuseum.org/faq/"
+  "src": "https://rhodesjewishmuseum.org/faq/",
+  "aud": "juderia"
  },
  {
   "n": 14,
@@ -228,7 +239,8 @@
   "dnd": "The tavern behind the bazaar where the noise stops; one family has kept it for a generation.",
   "hours": "Daily from 12:00",
   "price": "Mid-range for seafood",
-  "src": "https://www.tripadvisor.com/Restaurant_Review-g635613-d1103071-Reviews-Nireas-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html"
+  "src": "https://www.tripadvisor.com/Restaurant_Review-g635613-d1103071-Reviews-Nireas-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html",
+  "aud": "lunch"
  },
  {
   "n": 16,
@@ -246,7 +258,8 @@
   "dnd": "The conqueror's temple raised on the defeated faction's shrine, with the town's arcane library across the lane, kept by a custodian who literally holds the door code.",
   "hours": "Roloi: hours not officially published; listed 09:00 to 21:00 in season. Mosque interior closed since 2014 and only irregularly open. Library hours are posted on its door only.",
   "price": "Roloi EUR 5 including one drink",
-  "src": "https://www.tripadvisor.com/Attraction_Review-g635613-d4795481-Reviews-Roloi_Clock_Tower_Of_Rhodes-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html"
+  "src": "https://www.tripadvisor.com/Attraction_Review-g635613-d4795481-Reviews-Roloi_Clock_Tower_Of_Rhodes-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html",
+  "aud": "minaret"
  },
  {
   "n": 17,
@@ -262,7 +275,8 @@
   "blurb": "A fenced tumble of column drums and a podium just inside Liberty Gate: the only Hellenistic temple you can touch in the walled town. This is the spot for the Telchines, the island's first inhabitants in myth: sorcerer-smiths who forged the sickle of Cronus, summoned rain and hail, changed shape, poisoned crops with Styx water and sulphur, and had the evil eye. Diodorus says the sons of the Telchine Halia drove Aphrodite from this shore and she cursed them with madness.",
   "dnd": "A vanished guild of artificer-warlocks, a goddess's curse, and a divine flood as the world's first cataclysm. Legendary artifact: the Sickle of Cronus.",
   "hours": "Open-air, always",
-  "src": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/5D*.html"
+  "src": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/5D*.html",
+  "aud": "sorcerer-smiths"
  },
  {
   "n": 18,
@@ -277,7 +291,8 @@
   "blurb": "Cut through the walls by the Italians in 1924, who named it for themselves as liberators from Ottoman rule. Step through and the Foro Italico begins: the Nea Agora (closed for restoration in 2026), the Bank of Greece, the Governor's Palace done as a Doge's Palace, the Evangelismos church rebuilt from engravings of the Knights' church that exploded in 1856.",
   "dnd": "A gate that is not on the old dungeon map because the new rulers cut it themselves.",
   "hours": "Open passage, always",
-  "src": "https://en.wikipedia.org/wiki/Fortifications_of_Rhodes"
+  "src": "https://en.wikipedia.org/wiki/Fortifications_of_Rhodes",
+  "aud": "city-taker"
  },
  {
   "n": 19,
@@ -292,7 +307,8 @@
   "blurb": "Two limestone columns raised in 1939 under the Italian administration, topped by Renato Brozzi's bronze stag Elafos and doe Elafina, 62 m apart, marking the spot tradition gives the statue's feet. Read the pedestal epigram aloud here. Then look across the water to the windmill mole and the fort: in 1394 a visiting notary was told the statue had one foot on each. That is about 400 m. No bronze figure can stride it, and Pliny saw the wreck lying on ground you could walk around.",
   "dnd": "Twin guardian-beast pillars at a harbour gate; a Fascist-era monument that survived by being mistaken for ancient.",
   "hours": "Public quay, always",
-  "src": "https://www.dimokratiki.gr/21-04-2026/mythos-istoria-ke-politiki-piso-apo-to-emvlimatiko-elafi-tis-rodou/"
+  "src": "https://www.dimokratiki.gr/21-04-2026/mythos-istoria-ke-politiki-piso-apo-to-emvlimatiko-elafi-tis-rodou/",
+  "aud": "colossus"
  },
  {
   "n": 20,
@@ -309,7 +325,8 @@
   "blurb": "Built 1464 to 1467 by Grand Master Zacosta over a chapel of St Nicholas, ringed with a bastion by d'Aubusson after 1480, a lighthouse on top since the 1600s. Mesih Pasha's first target in 1480: bombarded from the shore by the Murad Reis mosque, stormed on 9 June, and on the night of 18 June an English sailor swam out and cut the anchor of the Ottoman pontoon bridge. Wolfram Hoepfner (2003) argued the Colossus stood right here; a ring of sandstone blocks under the floor is the clue. Interior closed for restoration; walk the mole and turn around.",
   "dnd": "A lighthouse-keep on a causeway, a pontoon bridge creeping across black water, one swimmer with a knife. Under the floor, maybe, the footprint of a bronze god.",
   "hours": "Mole open always; interior treat as closed",
-  "src": "https://el.wikipedia.org/wiki/Φρούριο_Αγίου_Νικολάου"
+  "src": "https://el.wikipedia.org/wiki/Φρούριο_Αγίου_Νικολάου",
+  "aud": "fort"
  },
  {
   "n": 21,
@@ -326,7 +343,8 @@
   "dnd": "The ship-tavern that never sails, anchored where legend puts the Colossus's feet.",
   "hours": "Daily 10:00 to 01:00",
   "price": "Top-end; cocktails not published",
-  "src": "https://swanbykontiki.com/"
+  "src": "https://swanbykontiki.com/",
+  "aud": "birthday"
  },
  {
   "n": 22,
@@ -342,7 +360,8 @@
   "blurb": "On the mole east of St Paul's Gate is the base of the square Tower of Naillac (1396 to 1421), 46 m high, lighthouse, watchtower and anchor of the great chain that closed the commercial harbour at night, stretched across to the Tower of the Windmills on the far mole; in 1522 the Order's fleet sheltered behind it and Suleiman came down to admire it. The earthquake of 22 April 1863 split the tower and the Ottoman administration pulled the rest down: the last of the fortifications to die, and not to an army. Pilgrims felt the harbour's wariness: Felix Fabri, arriving by moonlight weeks after the 1480 siege, was fired on by a cannon, made to anchor outside, and rowed in next morning through the bodies of dead Turks cast up by the sea. From here it is a level 12-minute walk along the quay to the ship.",
   "dnd": "A fallen watchtower and a broken chain, killed by the ground itself.",
   "hours": "Public mole, always",
-  "src": "https://en.wikipedia.org/wiki/Fortifications_of_Rhodes"
+  "src": "https://en.wikipedia.org/wiki/Fortifications_of_Rhodes",
+  "aud": "return"
  },
  {
   "cat": "colossus",
@@ -364,7 +383,8 @@
   "blurb": "The limestone shelf at the top of the acropolis held the Temple of Athena Polias and Zeus Polieus, where the city kept its treaties. Robert Kebric argues the Colossus stood here as a light-tower for the harbours. This is also the place for Posidonius, the Stoic under whom Rhodes eclipsed Athens: Pompey, conqueror of East and West, lowered his fasces at his door; he lectured from his sickbed that pain is no evil; Cicero saw his orrery, a bronze sphere that showed the sun, moon and five planets moving; he measured the Earth from the star Canopus grazing this horizon; and the Antikythera mechanism, which uses Hipparchus' lunar theory and was found on a wreck carrying Rhodian pottery, may have been built in his circle. Between the summit and the Apollo terrace are four rock-cut nymphaea, cave sanctuaries with cisterns and niches. The ridge is named for Admiral Sidney Smith, posted here in the early 1800s to watch for Napoleon's fleet.",
   "dnd": "The archmage's tower: a general kneels at the door, a clockwork cosmos ticks inside, and the artifact in the Athens museum may have been forged here. Cave-shrines beneath.",
   "hours": "Open park, free",
-  "src": "https://www.athensjournals.gr/history/2019-5-2-1-Kebric.pdf"
+  "src": "https://www.athensjournals.gr/history/2019-5-2-1-Kebric.pdf",
+  "aud": "monte-smith"
  },
  {
   "cat": "colossus",
@@ -865,7 +885,8 @@
   "blurb": "The Knights' dry moat, never filled with water, about 30 m wide under walls up to 12 m thick, now a landscaped park with sandy paths, an open-air theatre and stone shot lying where it fell. Walk clockwise under the d'Amboise Gate, past the St George bastion, the Tower of Spain and the English curtain to the del Carretto bastion and the Akandia Gate beside the port: 60 to 90 minutes, and the view an attacking army had. Stairways also drop in at the gates of St Anthony and St Athanasios.",
   "dnd": "The killing ground. After hearing about the walls from inside, descend into what the besiegers had to cross.",
   "hours": "Always; lit after dark",
-  "src": "https://rhodesoldtown.gr/en/exploring-the-medieval-moat-of-rhodes/"
+  "src": "https://rhodesoldtown.gr/en/exploring-the-medieval-moat-of-rhodes/",
+  "aud": "moat"
  },
  {
   "cat": "walk",
@@ -897,7 +918,8 @@
   "dnd": "An abandoned temple of a healing god at the water's edge: mosaic wards underfoot, a dry sacred spring, a shrine to Eros, and a wartime prison layer for the haunted second act.",
   "hours": "08:00 to 20:00 (1 May to 31 Oct)",
   "price": "EUR 5; sunbed pair about EUR 25 to 30",
-  "src": "https://kallitheasprings.com/"
+  "src": "https://kallitheasprings.com/",
+  "aud": "kallithea"
  },
  {
   "cat": "birthday",

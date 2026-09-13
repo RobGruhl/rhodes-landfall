@@ -1,0 +1,294 @@
+{
+ "set": "jamie",
+ "model": "eleven_v3",
+ "voice": "George - Warm, Captivating Storyteller",
+ "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+ "clips": {
+  "landfall": {
+   "title": "Who Counted",
+   "short": {
+    "file": "audio/jamie/01-landfall-short.mp3",
+    "sec": 46.680816,
+    "chars": 697
+   },
+   "long": {
+    "file": "audio/jamie/01-landfall-long.mp3",
+    "sec": 306.834286,
+    "chars": 4313
+   }
+  },
+  "threshold": {
+   "title": "Who Sleeps Inside",
+   "short": {
+    "file": "audio/jamie/02-threshold-short.mp3",
+    "sec": 43.885714,
+    "chars": 626
+   },
+   "long": {
+    "file": "audio/jamie/02-threshold-long.mp3",
+    "sec": 236.199184,
+    "chars": 3585
+   }
+  },
+  "roofless": {
+   "title": "The Parish and the Lane",
+   "short": {
+    "file": "audio/jamie/03-roofless-short.mp3",
+    "sec": 53.890612,
+    "chars": 749
+   },
+   "long": {
+    "file": "audio/jamie/03-roofless-long.mp3",
+    "sec": 297.16898,
+    "chars": 4465
+   }
+  },
+  "sea-law": {
+   "title": "The Bell and the Light",
+   "short": {
+    "file": "audio/jamie/04-sea-law-short.mp3",
+    "sec": 49.554286,
+    "chars": 687
+   },
+   "long": {
+    "file": "audio/jamie/04-sea-law-long.mp3",
+    "sec": 292.205714,
+    "chars": 4269
+   }
+  },
+  "hospital": {
+   "title": "Our Lords the Sick, and the Price of a God",
+   "short": {
+    "file": "audio/jamie/05-hospital-short.mp3",
+    "sec": 41.482449,
+    "chars": 593
+   },
+   "long": {
+    "file": "audio/jamie/05-hospital-long.mp3",
+    "sec": 304.352653,
+    "chars": 4309
+   }
+  },
+  "seven-tongues": {
+   "title": "A Household Without Heirs",
+   "short": {
+    "file": "audio/jamie/06-seven-tongues-short.mp3",
+    "sec": 46.994286,
+    "chars": 668
+   },
+   "long": {
+    "file": "audio/jamie/06-seven-tongues-long.mp3",
+    "sec": 295.079184,
+    "chars": 4295
+   }
+  },
+  "the-vault": {
+   "title": "One Coffin, Two Burials",
+   "short": {
+    "file": "audio/jamie/07-the-vault-short.mp3",
+    "sec": 48.195918,
+    "chars": 693
+   },
+   "long": {
+    "file": "audio/jamie/07-the-vault-long.mp3",
+    "sec": 289.07102,
+    "chars": 4137
+   }
+  },
+  "keep": {
+   "title": "The Priest Who Named the Year",
+   "short": {
+    "file": "audio/jamie/08-keep-short.mp3",
+    "sec": 45.557551,
+    "chars": 696
+   },
+   "long": {
+    "file": "audio/jamie/08-keep-long.mp3",
+    "sec": 292.91102,
+    "chars": 4174
+   }
+  },
+  "draconis": {
+   "title": "Receipts on the Wall",
+   "short": {
+    "file": "audio/jamie/09-draconis-short.mp3",
+    "sec": 51.565714,
+    "chars": 692
+   },
+   "long": {
+    "file": "audio/jamie/09-draconis-long.mp3",
+    "sec": 297.482449,
+    "chars": 4248
+   }
+  },
+  "faction-map": {
+   "title": "The Earthquake Ledger",
+   "short": {
+    "file": "audio/jamie/10-faction-map-short.mp3",
+    "sec": 45.165714,
+    "chars": 689
+   },
+   "long": {
+    "file": "audio/jamie/10-faction-map-long.mp3",
+    "sec": 273.084082,
+    "chars": 3955
+   }
+  },
+  "juderia": {
+   "title": "The Small Jerusalem",
+   "short": {
+    "file": "audio/jamie/11-juderia-short.mp3",
+    "sec": 46.28898,
+    "chars": 686
+   },
+   "long": {
+    "file": "audio/jamie/11-juderia-long.mp3",
+    "sec": 296.280816,
+    "chars": 4296
+   }
+  },
+  "lunch": {
+   "title": "Who Feeds Whom",
+   "short": {
+    "file": "audio/jamie/12-lunch-short.mp3",
+    "sec": 49.397551,
+    "chars": 700
+   },
+   "long": {
+    "file": "audio/jamie/12-lunch-long.mp3",
+    "sec": 272.039184,
+    "chars": 3900
+   }
+  },
+  "minaret": {
+   "title": "The Endowment and the Clock",
+   "short": {
+    "file": "audio/jamie/13-minaret-short.mp3",
+    "sec": 47.647347,
+    "chars": 698
+   },
+   "long": {
+    "file": "audio/jamie/13-minaret-long.mp3",
+    "sec": 287.320816,
+    "chars": 4296
+   }
+  },
+  "sorcerer-smiths": {
+   "title": "A Second City of Clubs",
+   "short": {
+    "file": "audio/jamie/14-sorcerer-smiths-short.mp3",
+    "sec": 44.747755,
+    "chars": 681
+   },
+   "long": {
+    "file": "audio/jamie/14-sorcerer-smiths-long.mp3",
+    "sec": 263.392653,
+    "chars": 3810
+   }
+  },
+  "city-taker": {
+   "title": "The Small Citizenship",
+   "short": {
+    "file": "audio/jamie/15-city-taker-short.mp3",
+    "sec": 47.882449,
+    "chars": 696
+   },
+   "long": {
+    "file": "audio/jamie/15-city-taker-long.mp3",
+    "sec": 296.202449,
+    "chars": 4305
+   }
+  },
+  "colossus": {
+   "title": "Measuring the God",
+   "short": {
+    "file": "audio/jamie/16-colossus-short.mp3",
+    "sec": 47.386122,
+    "chars": 655
+   },
+   "long": {
+    "file": "audio/jamie/16-colossus-long.mp3",
+    "sec": 305.71102,
+    "chars": 4411
+   }
+  },
+  "fort": {
+   "title": "Where You Put a God",
+   "short": {
+    "file": "audio/jamie/17-fort-short.mp3",
+    "sec": 39.235918,
+    "chars": 594
+   },
+   "long": {
+    "file": "audio/jamie/17-fort-long.mp3",
+    "sec": 304.509388,
+    "chars": 4292
+   }
+  },
+  "birthday": {
+   "title": "Chronia Polla",
+   "short": {
+    "file": "audio/jamie/18-birthday-short.mp3",
+    "sec": 46.445714,
+    "chars": 669
+   },
+   "long": {
+    "file": "audio/jamie/18-birthday-long.mp3",
+    "sec": 225.802449,
+    "chars": 3294
+   }
+  },
+  "return": {
+   "title": "Who Ran the Island When",
+   "short": {
+    "file": "audio/jamie/19-return-short.mp3",
+    "sec": 44.59102,
+    "chars": 667
+   },
+   "long": {
+    "file": "audio/jamie/19-return-long.mp3",
+    "sec": 276.192653,
+    "chars": 3980
+   }
+  },
+  "moat": {
+   "title": "B-side: When the Island Breaks",
+   "short": {
+    "file": "audio/jamie/20-moat-short.mp3",
+    "sec": 47.229388,
+    "chars": 675
+   },
+   "long": {
+    "file": "audio/jamie/20-moat-long.mp3",
+    "sec": 293.485714,
+    "chars": 4295
+   }
+  },
+  "kallithea": {
+   "title": "B-side: The Business of Strangers",
+   "short": {
+    "file": "audio/jamie/21-kallithea-short.mp3",
+    "sec": 47.307755,
+    "chars": 694
+   },
+   "long": {
+    "file": "audio/jamie/21-kallithea-long.mp3",
+    "sec": 298.44898,
+    "chars": 4308
+   }
+  },
+  "monte-smith": {
+   "title": "B-side: Three Cities, One Contract",
+   "short": {
+    "file": "audio/jamie/22-monte-smith-short.mp3",
+    "sec": 45.322449,
+    "chars": 694
+   },
+   "long": {
+    "file": "audio/jamie/22-monte-smith-long.mp3",
+    "sec": 292.362449,
+    "chars": 4179
+   }
+  }
+ }
+}
