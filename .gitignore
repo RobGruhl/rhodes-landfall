@@ -3,3 +3,4 @@ data/tiles.js
 scripts/data
 scripts/tiles
 album/
+.playwright-mcp/
