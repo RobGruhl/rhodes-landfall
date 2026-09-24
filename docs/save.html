@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Rhodes">
+<script>if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('sw.js').catch(function(){});</script>
+<title>Rhodes Landfall · Save offline</title>
+<style>
+:root{--bg:#FAF8F3;--ink:#1F2429;--muted:#6B7078;--hair:#DDD8CE;--bar:#F2EFE7;--accent:#8B3A2F;--ok:#2F6B3A;--warn:#8B5A00}
+@media (prefers-color-scheme:dark){:root{--bg:#121416;--ink:#E6E2DA;--muted:#9A9A94;--hair:#2A2E33;--bar:#1B1E22;--accent:#E0A48F;--ok:#8FCB98;--warn:#E6C07A}}
+*{box-sizing:border-box}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.5}
+.bar{position:sticky;top:0;z-index:5;display:flex;gap:6px;align-items:center;padding:8px 10px;padding-top:calc(8px + env(safe-area-inset-top));background:var(--bar);border-bottom:1px solid var(--hair);font-size:14px}
+.bar a{display:inline-flex;align-items:center;border:1px solid var(--hair);border-radius:8px;padding:7px 12px;min-height:36px;color:var(--ink);text-decoration:none}
+.bar strong{flex:1;text-align:right;font-weight:600;color:var(--muted)}
+main{max-width:34em;margin:0 auto;padding:20px 16px 60px}
+h1{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.6em;line-height:1.2;margin:.2em 0 .4em}
+h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:26px 0 8px;font-weight:600}
+p{margin:0 0 .9em}
+.callout{border:1px solid var(--hair);border-left:4px solid var(--warn);border-radius:8px;padding:12px 14px;margin:0 0 1em;background:var(--bar)}
+.callout.ok{border-left-color:var(--ok)}
+.callout[hidden]{display:none}
+.callout ol{margin:.4em 0 0;padding-left:1.3em}
+.choices{display:flex;flex-direction:column;gap:8px}
+.choice{display:flex;align-items:center;gap:12px;border:1px solid var(--hair);border-radius:10px;padding:12px 14px;cursor:pointer}
+.choice input{width:22px;height:22px;accent-color:var(--accent);margin:0}
+.choice .t{flex:1}
+.choice .d{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+button{appearance:none;font:inherit;border-radius:10px;cursor:pointer;min-height:44px}
+.primary{width:100%;margin-top:14px;border:0;background:var(--accent);color:var(--bg);font-weight:600;font-size:17px;padding:12px}
+.primary:disabled{opacity:.5}
+.quiet{border:1px solid var(--hair);background:transparent;color:var(--ink);padding:8px 14px;font-size:14px}
+.progress{margin-top:14px}
+.progress[hidden]{display:none}
+.track{height:10px;border-radius:5px;background:var(--hair);overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .2s}
+.progress .d{color:var(--muted);font-size:14px;margin-top:6px;font-variant-numeric:tabular-nums}
+ul.checks{list-style:none;margin:0;padding:0}
+ul.checks li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--hair);font-size:15px}
+ul.checks li .m{width:1.3em;text-align:center;font-weight:700}
+ul.checks li.y .m{color:var(--ok)}
+ul.checks li.n .m{color:var(--muted)}
+ul.checks li .t{flex:1}
+ul.checks li .d{color:var(--muted);font-variant-numeric:tabular-nums}
+.small{color:var(--muted);font-size:14px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="bar"><a href="read.html">Reader</a><a href="index.html">Map</a><strong>Save offline</strong></div>
+<main>
+<h1>Save the tour to this phone</h1>
+<p>Do this at home on Wi-Fi. Once it's saved, the reader, the map and the audio all work in airplane mode, and the walk on the day uses none of your roaming data.</p>
+
+<div class="callout" id="nosw" hidden><strong>This browser can't save the tour.</strong> Open this page in Safari on the iPhone over https.</div>
+<div class="callout" id="homescreen" hidden>
+  <strong>First add this to your Home Screen.</strong> On iPhone, the Home Screen app keeps its own storage, separate from Safari, and Safari may clear saved files after a week without a visit. Save the tour from inside the Home Screen app.
+  <ol><li>Tap the Share button, then <b>Add to Home Screen</b>.</li><li>Open <b>Rhodes</b> from the Home Screen.</li><li>If it opens on the reader, tap ☰, then <b>Save for offline</b> to come back here.</li></ol>
+</div>
+<div class="callout ok" id="done" hidden><strong>Saved.</strong> Test it now: turn on airplane mode, close and reopen the app, and play a clip in the reader and open the map.</div>
+
+<h2>Audio to save</h2>
+<div class="choices" id="choices"></div>
+<button type="button" class="primary" id="go">Save for offline</button>
+<div class="progress" id="progress" hidden><div class="track"><div class="fill" id="fill"></div></div><div class="d" id="pd"></div></div>
+
+<h2>On this phone</h2>
+<ul class="checks" id="checks"></ul>
+<p class="small" id="storage"></p>
+
+<h2>Tidy up</h2>
+<p class="small">Removing a narrator's audio frees the space; the pages and map stay saved.</p>
+<p id="removes"></p>
+</main>
+<script>
+const FILES = {"rob":[{"file":"audio/rob/01-landfall-short.mp3","bytes":769088},{"file":"audio/rob/01-landfall-long.mp3","bytes":2395786},{"file":"audio/rob/02-threshold-short.mp3","bytes":553839},{"file":"audio/rob/02-threshold-long.mp3","bytes":2035087},{"file":"audio/rob/03-roofless-short.mp3","bytes":713918},{"file":"audio/rob/03-roofless-long.mp3","bytes":2134979},{"file":"audio/rob/04-sea-law-short.mp3","bytes":619459},{"file":"audio/rob/04-sea-law-long.mp3","bytes":2882290},{"file":"audio/rob/05-hospital-short.mp3","bytes":792076},{"file":"audio/rob/05-hospital-long.mp3","bytes":3255946},{"file":"audio/rob/06-seven-tongues-short.mp3","bytes":678391},{"file":"audio/rob/06-seven-tongues-long.mp3","bytes":3564399},{"file":"audio/rob/07-the-vault-short.mp3","bytes":666688},{"file":"audio/rob/07-the-vault-long.mp3","bytes":3030666},{"file":"audio/rob/08-keep-short.mp3","bytes":687168},{"file":"audio/rob/08-keep-long.mp3","bytes":3456984},{"file":"audio/rob/09-draconis-short.mp3","bytes":634506},{"file":"audio/rob/09-draconis-long.mp3","bytes":3713193},{"file":"audio/rob/10-faction-map-short.mp3","bytes":747355},{"file":"audio/rob/10-faction-map-long.mp3","bytes":4689546},{"file":"audio/rob/11-juderia-short.mp3","bytes":672958},{"file":"audio/rob/11-juderia-long.mp3","bytes":3458238},{"file":"audio/rob/12-lunch-short.mp3","bytes":747355},{"file":"audio/rob/12-lunch-long.mp3","bytes":3024396},{"file":"audio/rob/13-minaret-short.mp3","bytes":730636},{"file":"audio/rob/13-minaret-long.mp3","bytes":3650499},{"file":"audio/rob/14-sorcerer-smiths-short.mp3","bytes":671704},{"file":"audio/rob/14-sorcerer-smiths-long.mp3","bytes":3542666},{"file":"audio/rob/15-city-taker-short.mp3","bytes":798346},{"file":"audio/rob/15-city-taker-long.mp3","bytes":3905036},{"file":"audio/rob/16-colossus-short.mp3","bytes":776612},{"file":"audio/rob/16-colossus-long.mp3","bytes":5151808},{"file":"audio/rob/17-fort-short.mp3","bytes":669196},{"file":"audio/rob/17-fort-long.mp3","bytes":3647991},{"file":"audio/rob/18-birthday-short.mp3","bytes":381222},{"file":"audio/rob/18-birthday-long.mp3","bytes":1236367},{"file":"audio/rob/19-return-short.mp3","bytes":712664},{"file":"audio/rob/19-return-long.mp3","bytes":3505885},{"file":"audio/rob/20-moat-short.mp3","bytes":701379},{"file":"audio/rob/20-moat-long.mp3","bytes":3176951},{"file":"audio/rob/21-kallithea-short.mp3","bytes":672958},{"file":"audio/rob/21-kallithea-long.mp3","bytes":2699224},{"file":"audio/rob/22-monte-smith-short.mp3","bytes":733144},{"file":"audio/rob/22-monte-smith-long.mp3","bytes":4251942}],"jamie":[{"file":"audio/jamie/01-landfall-short.mp3","bytes":747355},{"file":"audio/jamie/01-landfall-long.mp3","bytes":4909810},{"file":"audio/jamie/02-threshold-short.mp3","bytes":702633},{"file":"audio/jamie/02-threshold-long.mp3","bytes":3779648},{"file":"audio/jamie/03-roofless-short.mp3","bytes":862711},{"file":"audio/jamie/03-roofless-long.mp3","bytes":4755165},{"file":"audio/jamie/04-sea-law-short.mp3","bytes":793330},{"file":"audio/jamie/04-sea-law-long.mp3","bytes":4675753},{"file":"audio/jamie/05-hospital-short.mp3","bytes":664181},{"file":"audio/jamie/05-hospital-long.mp3","bytes":4870104},{"file":"audio/jamie/06-seven-tongues-short.mp3","bytes":752370},{"file":"audio/jamie/06-seven-tongues-long.mp3","bytes":4721728},{"file":"audio/jamie/07-the-vault-short.mp3","bytes":771596},{"file":"audio/jamie/07-the-vault-long.mp3","bytes":4625598},{"file":"audio/jamie/08-keep-short.mp3","bytes":729382},{"file":"audio/jamie/08-keep-long.mp3","bytes":4687038},{"file":"audio/jamie/09-draconis-short.mp3","bytes":825513},{"file":"audio/jamie/09-draconis-long.mp3","bytes":4760181},{"file":"audio/jamie/10-faction-map-short.mp3","bytes":723113},{"file":"audio/jamie/10-faction-map-long.mp3","bytes":4369807},{"file":"audio/jamie/11-juderia-short.mp3","bytes":741085},{"file":"audio/jamie/11-juderia-long.mp3","bytes":4740955},{"file":"audio/jamie/12-lunch-short.mp3","bytes":790822},{"file":"audio/jamie/12-lunch-long.mp3","bytes":4353088},{"file":"audio/jamie/13-minaret-short.mp3","bytes":762819},{"file":"audio/jamie/13-minaret-long.mp3","bytes":4597595},{"file":"audio/jamie/14-sorcerer-smiths-short.mp3","bytes":716426},{"file":"audio/jamie/14-sorcerer-smiths-long.mp3","bytes":4214744},{"file":"audio/jamie/15-city-taker-short.mp3","bytes":766581},{"file":"audio/jamie/15-city-taker-long.mp3","bytes":4739701},{"file":"audio/jamie/16-colossus-short.mp3","bytes":758639},{"file":"audio/jamie/16-colossus-long.mp3","bytes":4891838},{"file":"audio/jamie/17-fort-short.mp3","bytes":628236},{"file":"audio/jamie/17-fort-long.mp3","bytes":4872612},{"file":"audio/jamie/18-birthday-short.mp3","bytes":743593},{"file":"audio/jamie/18-birthday-long.mp3","bytes":3613301},{"file":"audio/jamie/19-return-short.mp3","bytes":713918},{"file":"audio/jamie/19-return-long.mp3","bytes":4419544},{"file":"audio/jamie/20-moat-short.mp3","bytes":756132},{"file":"audio/jamie/20-moat-long.mp3","bytes":4696233},{"file":"audio/jamie/21-kallithea-short.mp3","bytes":757386},{"file":"audio/jamie/21-kallithea-long.mp3","bytes":4775645},{"file":"audio/jamie/22-monte-smith-short.mp3","bytes":725621},{"file":"audio/jamie/22-monte-smith-long.mp3","bytes":4678261}]};
+const NAMES = {rob:"Rob's track", jamie:"Jamie's track"};
+const AUDIO_CACHE = 'rhodes-audio', FONT_CACHE = 'rhodes-fonts';
+const FONT_CSS = 'https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap';
+const $ = id => document.getElementById(id);
+const mb = b => (b/1048576).toFixed(b < 10485760 ? 1 : 0) + ' MB';
+const abs = f => new URL(f, location.href).href;
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v==null?d:v}catch(e){return d}}};
+const sum = set => FILES[set].reduce((a,f)=>a+f.bytes,0);
+const hasSW = 'serviceWorker' in navigator && 'caches' in window;
+const iOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+const standalone = navigator.standalone === true || matchMedia('(display-mode: standalone)').matches;
+let busy = false;
+
+if (!hasSW) { $('nosw').hidden = false; $('go').disabled = true; }
+if (iOS && !standalone) $('homescreen').hidden = false;
+
+// default ticks follow the "Listening as" choice made on the map
+const as = store.get('listenAs', 'rob');
+Object.keys(FILES).forEach(set => {
+  const l = document.createElement('label'); l.className = 'choice';
+  l.innerHTML = `<input type="checkbox" value="${set}" ${as===set||as==='both'?'checked':''}><span class="t">${NAMES[set]||set}</span><span class="d">${FILES[set].length} clips · ${mb(sum(set))}</span>`;
+  $('choices').appendChild(l);
+});
+const chosen = () => [...document.querySelectorAll('#choices input:checked')].map(i => i.value);
+function syncButton(){ const c = chosen(); $('go').disabled = busy || !hasSW || !c.length; $('go').textContent = c.length ? `Save for offline · ${mb(c.reduce((a,s)=>a+sum(s),0))}` : 'Pick a track to save'; }
+document.querySelectorAll('#choices input').forEach(i => i.onchange = syncButton);
+syncButton();
+
+async function ready(){ await navigator.serviceWorker.register('sw.js'); return navigator.serviceWorker.ready; }
+
+async function saveFonts(){
+  const c = await caches.open(FONT_CACHE);
+  const res = await fetch(FONT_CSS, {mode:'cors'});
+  if (!res.ok) throw new Error('fonts ' + res.status);
+  const css = await res.clone().text();
+  await c.put(FONT_CSS, res);
+  const urls = [...css.matchAll(/url\((https:[^)]+)\)/g)].map(m => m[1]);
+  for (const u of urls) if (!(await c.match(u))) { const r = await fetch(u, {mode:'cors'}); if (r.ok) await c.put(u, r); }
+}
+
+async function run(){
+  const sets = chosen(); if (!sets.length) return;
+  busy = true; syncButton(); $('done').hidden = true; $('progress').hidden = false;
+  try { navigator.storage && navigator.storage.persist && await navigator.storage.persist(); } catch(e) {}
+  const pd = $('pd'), fill = $('fill');
+  try {
+    pd.textContent = 'Saving the pages and map…';
+    await ready();
+    try { await saveFonts(); } catch(e) { console.warn('fonts', e); }  // system fonts stand in if this fails
+    const cache = await caches.open(AUDIO_CACHE);
+    const todo = sets.flatMap(s => FILES[s]);
+    const total = todo.reduce((a,f)=>a+f.bytes,0);
+    let got = 0, n = 0, failed = [];
+    const tick = () => { fill.style.width = (100*got/total).toFixed(1)+'%'; pd.textContent = `${n} of ${todo.length} clips · ${mb(got)} of ${mb(total)}`; };
+    tick();
+    const queue = todo.slice();
+    async function worker(){
+      while (queue.length) {
+        const f = queue.shift(), u = abs(f.file);
+        try {
+          if (!(await cache.match(u))) {
+            const r = await fetch(u, {cache:'no-store'});
+            if (!r.ok) throw new Error(r.status);
+            await cache.put(u, r);
+          }
+        } catch(e) { failed.push(f.file); }
+        got += f.bytes; n++; tick();
+      }
+    }
+    await Promise.all([worker(), worker(), worker()]);
+    if (failed.length) pd.textContent = `${failed.length} clip${failed.length>1?'s':''} didn't save. Tap Save again to retry just those.`;
+    else { pd.textContent = `All ${todo.length} clips saved · ${mb(total)}`; $('done').hidden = false; }
+  } catch(e) {
+    pd.textContent = 'Something went wrong: ' + e.message + '. Check the Wi-Fi and tap Save again.';
+  }
+  busy = false; syncButton(); refresh();
+}
+$('go').onclick = run;
+
+async function refresh(){
+  if (!hasSW) return;
+  const rows = [];
+  const names = await caches.keys();
+  const shell = names.filter(k => k.startsWith('rhodes-shell-'));
+  let pages = false;
+  for (const k of shell) { const c = await caches.open(k); if (await c.match(abs('offline.html')) && await c.match(abs('read.html'))) pages = true; }
+  rows.push([pages, 'Reader and map pages', pages ? 'saved' : 'not yet']);
+  const fc = names.includes(FONT_CACHE) ? (await (await caches.open(FONT_CACHE)).keys()).length : 0;
+  rows.push([fc > 1, 'Fonts', fc > 1 ? 'saved' : 'not yet (system fonts will stand in)']);
+  const ac = names.includes(AUDIO_CACHE) ? await caches.open(AUDIO_CACHE) : null;
+  const rm = [];
+  for (const set of Object.keys(FILES)) {
+    let have = 0, bytes = 0;
+    if (ac) for (const f of FILES[set]) if (await ac.match(abs(f.file))) { have++; bytes += f.bytes; }
+    const all = have === FILES[set].length;
+    rows.push([all, NAMES[set] || set, `${have} of ${FILES[set].length} clips${have ? ' · '+mb(bytes) : ''}`]);
+    if (have) rm.push(set);
+  }
+  $('checks').innerHTML = rows.map(([y,t,d]) => `<li class="${y?'y':'n'}"><span class="m">${y?'✓':'–'}</span><span class="t">${t}</span><span class="d">${d}</span></li>`).join('');
+  $('removes').innerHTML = rm.length ? rm.map(s => `<button type="button" class="quiet" data-rm="${s}">Remove ${NAMES[s]||s}</button>`).join(' ') : '<span class="small">Nothing saved yet.</span>';
+  document.querySelectorAll('[data-rm]').forEach(b => b.onclick = async () => {
+    if (b.dataset.armed !== '1') { b.dataset.armed = '1'; b.textContent = 'Tap again to remove'; return; }
+    const c = await caches.open(AUDIO_CACHE);
+    for (const f of FILES[b.dataset.rm]) await c.delete(abs(f.file));
+    refresh();
+  });
+  if (navigator.storage && navigator.storage.estimate) {
+    try { const e = await navigator.storage.estimate(); $('storage').textContent = `This app is using ${mb(e.usage||0)} of phone storage.`; } catch(e) {}
+  }
+}
+if (hasSW) ready().then(refresh, e => { $('pd').textContent = 'Could not start offline support: ' + e.message; $('progress').hidden = false; });
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rhodes Landfall</title>
+<!--__PWA_HEAD__-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
 /*__LEAFLET_CSS__*/
@@ -149,7 +150,7 @@ td.t{font-family:"JetBrains Mono",monospace;font-size:13.5px;white-space:nowrap;
     </div>
     <aside class="ledger" id="ledger">
       <h2>The pin ledger</h2>
-      <p class="hint">Walk times are from the cruise quay on Akti Sachtouri at an easy 4.5 km/h. Toggle categories with the chips. Each stop links to the <a href="read.html">reader</a>, where you read or listen one stop at a time.</p>
+      <p class="hint">Walk times are from the cruise quay on Akti Sachtouri at an easy 4.5 km/h. Toggle categories with the chips. Each stop links to the <a href="read.html">reader</a>, where you read or listen one stop at a time. Before the trip, <a href="save.html">save the tour to your phone</a> so it works without signal.</p>
       <div id="rows"></div>
     </aside>
   </div>
@@ -162,7 +163,7 @@ td.t{font-family:"JetBrains Mono",monospace;font-size:13.5px;white-space:nowrap;
   </footer>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>/*__LEAFLET_JS__*/</script>
 <script>
 /*__TILES__*/
 const ROUTE = /*__ROUTE__*/[];

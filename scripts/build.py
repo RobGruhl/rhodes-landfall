@@ -49,6 +49,16 @@ tpl=tpl.replace("/*__AUDIO_BASE__*/''",json.dumps(PAGES)).replace('/*__LIVE__*/f
 tpl=tpl.replace('<!--__CONTENT__-->',open('data/content.html').read())
 ROOT=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 DOCS=_os.path.join(ROOT,'docs'); _os.makedirs(DOCS,exist_ok=True)
+# phone app: manifest, icon, service worker (see scripts/sw.js and save.html)
+PWA_HEAD='''<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Rhodes">
+<script>if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('sw.js').catch(function(){});</script>'''
+tpl=tpl.replace('<!--__PWA_HEAD__-->',PWA_HEAD)
+# Leaflet inline, so the map draws with no network at all
+tpl=tpl.replace('/*__LEAFLET_JS__*/',open('data/leaflet.min.js').read().replace('//# sourceMappingURL=leaflet.js.map',''))
 open(_os.path.join(DOCS,'offline.html'),'w').write(tpl)
 # GitHub Pages variant: live OpenStreetMap tiles instead of the embedded bundle
 live=tpl.replace(open('data/tiles.js').read(),'')
@@ -71,7 +81,25 @@ rd=rd.replace('/*__STOPS__*/{}',json.dumps(_stops,ensure_ascii=False,separators=
 rd=rd.replace('/*__AUDIO__*/{}',json.dumps(aud,separators=(',',':')))
 rd=rd.replace('/*__PLACES__*/{}',json.dumps(_places,ensure_ascii=False,separators=(',',':')))
 rd=rd.replace("/*__AUDIO_BASE__*/''","''")
+rd=rd.replace('<!--__PWA_HEAD__-->',PWA_HEAD)
 open(_os.path.join(DOCS,'read.html'),'w').write(rd)
+# save page: every clip with its size, per narrator
+_files={}
+for _set in ('rob','jamie'):
+    _m=json.load(open(_os.path.join(DOCS,'audio',_set,'manifest.json')))
+    _files[_set]=[{'file':c[k]['file'],'bytes':_os.path.getsize(_os.path.join(DOCS,c[k]['file']))} for c in _m['clips'].values() for k in ('short','long') if k in c]
+sv=open('save.html').read().replace('<!--__PWA_HEAD__-->',PWA_HEAD).replace('/*__FILES__*/{}',json.dumps(_files,separators=(',',':')))
+open(_os.path.join(DOCS,'save.html'),'w').write(sv)
+open(_os.path.join(DOCS,'manifest.webmanifest'),'w').write(json.dumps({
+    'name':'Rhodes Landfall','short_name':'Rhodes','display':'standalone','scope':'./',
+    'background_color':'#FAF8F3','theme_color':'#8B3A2F',
+    'icons':[{'src':'icon-180.png','sizes':'180x180','type':'image/png'},{'src':'icon-512.png','sizes':'512x512','type':'image/png'}]},indent=1))
+# the worker's cache name changes whenever any page or manifest does, so phones pick up rebuilds
+import hashlib as _h
+_v=_h.sha256()
+for _f in ('index.html','offline.html','read.html','save.html','manifest.webmanifest','audio/rob/manifest.json','audio/jamie/manifest.json'):
+    _v.update(open(_os.path.join(DOCS,_f),'rb').read())
+open(_os.path.join(DOCS,'sw.js'),'w').write(open('sw.js').read().replace('__VERSION__',_v.hexdigest()[:12]))
 print('reader bytes',len(rd),'stops',{k:len(v) for k,v in _stops.items()})
 print('live variant bytes',len(live), 'tile layer replaced:', "tile.openstreetmap.org/{z}" in live)
 print('pins',len(pins),'html bytes',len(tpl))

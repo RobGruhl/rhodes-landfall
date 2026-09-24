@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="apple-mobile-web-app-capable" content="yes">
 <title>Rhodes Landfall · Reader</title>
+<!--__PWA_HEAD__-->
 <style>
 :root{--bg:#FAF8F3;--ink:#1F2429;--muted:#6B7078;--hair:#DDD8CE;--bar:#F2EFE7;--accent:#8B3A2F;--fs:19px}
 [data-theme="sepia"]{--bg:#F4ECD8;--ink:#3B2F22;--muted:#7A6A55;--hair:#DDD1B4;--bar:#EADFC4;--accent:#8B3A2F}
@@ -59,6 +59,7 @@ details summary{cursor:pointer;color:var(--muted);font-size:.75em;letter-spacing
 .sheet li[aria-current="true"] button .t{color:var(--accent);font-weight:600}
 .sheet .note{color:var(--muted);font-size:13px;margin:16px 0 0}
 .sheet a{color:var(--accent)}
+.sheet .savebtn{display:block;text-align:center;border:1px solid var(--hair);border-radius:8px;padding:9px 12px;color:var(--ink);text-decoration:none}
 </style>
 </head>
 <body class="has-player">
@@ -86,9 +87,11 @@ details summary{cursor:pointer;color:var(--muted);font-size:.75em;letter-spacing
   <div class="seg" role="group" aria-label="Narrator"><button type="button" data-who="rob">Rob's track</button><button type="button" data-who="jamie">Jamie's track</button></div>
   <div class="lbl">Theme</div>
   <div class="seg" role="group" aria-label="Theme"><button type="button" data-theme="light">Light</button><button type="button" data-theme="sepia">Sepia</button><button type="button" data-theme="dark">Dark</button><button type="button" data-theme="">Auto</button></div>
+  <div class="lbl">Offline</div>
+  <a class="savebtn" href="save.html">Save for offline</a>
   <div class="lbl">Stops</div>
   <ol id="toc"></ol>
-  <p class="note">Read shows the script; Listen plays the clip and moves on to the next stop by itself; Both does both. Short and Long switch both the text and the clip. The Map button returns to this stop on the map. The text is stored in this page and works offline; audio streams from the web. Swipe or use the buttons to change stop. </p>
+  <p class="note">Read shows the script; Listen plays the clip and moves on to the next stop by itself; Both does both. Short and Long switch both the text and the clip. The Map button returns to this stop on the map. The text is stored in this page; audio streams from the web unless you have saved it to the phone. Swipe or use the buttons to change stop. </p>
 </div>
 <script>
 const STOPS = /*__STOPS__*/{};

@@ -1,0 +1,27 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Reader" [ref=e3] [cursor=pointer]:
+      - /url: read.html
+    - link "Map" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+    - strong [ref=e5]: Save offline
+  - main [ref=e6]:
+    - heading "Save the tour to this phone" [level=1] [ref=e7]
+    - paragraph [ref=e8]: Do this at home on Wi-Fi. Once it's saved, the reader, the map and the audio all work in airplane mode, and the walk on the day uses none of your roaming data.
+    - heading "Audio to save" [level=2] [ref=e9]
+    - generic [ref=e10]:
+      - generic [ref=e11] [cursor=pointer]:
+        - checkbox "Rob's track 44 clips · 83 MB" [checked] [ref=e12]
+        - generic [ref=e13]: Rob's track
+        - generic [ref=e14]: 44 clips · 83 MB
+      - generic [ref=e15] [cursor=pointer]:
+        - checkbox "Jamie's track 44 clips · 112 MB" [ref=e16]
+        - generic [ref=e17]: Jamie's track
+        - generic [ref=e18]: 44 clips · 112 MB
+    - button "Save for offline · 83 MB" [ref=e19] [cursor=pointer]
+    - heading "On this phone" [level=2] [ref=e20]
+    - list
+    - paragraph
+    - heading "Tidy up" [level=2] [ref=e21]
+    - paragraph [ref=e22]: Removing a narrator's audio frees the space; the pages and map stay saved.
+    - paragraph
