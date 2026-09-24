@@ -76,9 +76,20 @@ for _set in ('rob','jamie'):
     for _f in sorted(_g2.glob(_os.path.join(_repo,'narration',_set+'-*.json'))): _l+=json.load(open(_f))
     _l.sort(key=lambda x:x['n']); _stops[_set]=[{k:x[k] for k in ('n','slug','title','short','long')} for x in _l]
 _places={p['aud']:p['name'] for p in pins if p.get('aud')}
+# the Colossus long-form extra: chapters + a text-only sources page, audio in several voices
+import re as _re
+_col=json.load(open(_os.path.join(_repo,'narration','colossus.json')))
+_stops['colossus']=[{'n':c['n'],'slug':c['slug'],'title':c['title'],'short':c['text'],'long':c['text'],
+    **({'html':_re.sub(r'<sup>.*?</sup>','',c['html']).replace('<table','<div class="tw"><table').replace('</table>','</table></div>')} if c.get('html') else {})} for c in _col['chapters']]
+_stops['colossus'].append({'n':len(_col['chapters']),'slug':'sources','title':'Chronology, evidence and sources','short':'','long':'',
+    'html':_col['appendix'].replace('<table','<div class="tw"><table').replace('</table>','</table></div>')})
+_xm=_os.path.join(DOCS,'audio','colossus','manifest.json')
+_extra=json.load(open(_xm)) if _os.path.exists(_xm) else {'voices':{}}
+_extra={'voices':{k:{'name':v['name'],'blurb':v.get('blurb',''),'clips':v['clips']} for k,v in _extra['voices'].items()}}
 rd=open('reader.html').read()
 rd=rd.replace('/*__STOPS__*/{}',json.dumps(_stops,ensure_ascii=False,separators=(',',':')))
 rd=rd.replace('/*__AUDIO__*/{}',json.dumps(aud,separators=(',',':')))
+rd=rd.replace('/*__EXTRA__*/{voices:{}}',json.dumps(_extra,ensure_ascii=False,separators=(',',':')))
 rd=rd.replace('/*__PLACES__*/{}',json.dumps(_places,ensure_ascii=False,separators=(',',':')))
 rd=rd.replace("/*__AUDIO_BASE__*/''","''")
 rd=rd.replace('<!--__PWA_HEAD__-->',PWA_HEAD)
@@ -88,7 +99,10 @@ _files={}
 for _set in ('rob','jamie'):
     _m=json.load(open(_os.path.join(DOCS,'audio',_set,'manifest.json')))
     _files[_set]=[{'file':c[k]['file'],'bytes':_os.path.getsize(_os.path.join(DOCS,c[k]['file']))} for c in _m['clips'].values() for k in ('short','long') if k in c]
-sv=open('save.html').read().replace('<!--__PWA_HEAD__-->',PWA_HEAD).replace('/*__FILES__*/{}',json.dumps(_files,separators=(',',':')))
+for _k,_v in _extra['voices'].items():
+    _files['colossus-'+_k]=[{'file':c['file'],'bytes':_os.path.getsize(_os.path.join(DOCS,c['file']))} for c in _v['clips'].values()]
+_labels={'rob':"Rob's track",'jamie':"Jamie's track",**{k:'Colossus · '+v['name'] for k,v in ((('colossus-'+k),v) for k,v in _extra['voices'].items())}}
+sv=open('save.html').read().replace('<!--__PWA_HEAD__-->',PWA_HEAD).replace('/*__FILES__*/{}',json.dumps(_files,separators=(',',':'))).replace('/*__LABELS__*/{}',json.dumps(_labels,ensure_ascii=False))
 open(_os.path.join(DOCS,'save.html'),'w').write(sv)
 open(_os.path.join(DOCS,'manifest.webmanifest'),'w').write(json.dumps({
     'name':'Rhodes Landfall','short_name':'Rhodes','display':'standalone','scope':'./',

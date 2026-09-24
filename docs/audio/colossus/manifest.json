@@ -1,0 +1,275 @@
+{
+ "set": "colossus",
+ "model": "eleven_multilingual_v2",
+ "title": "The Colossus of Rhodes",
+ "voices": {
+  "river": {
+   "name": "River",
+   "blurb": "calm and even",
+   "voice_id": "SAz9YHcvj6GT2YYXdXww",
+   "clips": {
+    "introduction": {
+     "file": "audio/colossus/river/00-introduction.mp3",
+     "sec": 118.83102
+    },
+    "begin-with-the-broken-thumb": {
+     "file": "audio/colossus/river/01-begin-with-the-broken-thumb.mp3",
+     "sec": 150.360816
+    },
+    "an-island-becomes-a-shared-community": {
+     "file": "audio/colossus/river/02-an-island-becomes-a-shared-community.mp3",
+     "sec": 172.329796
+    },
+    "living-with-helios": {
+     "file": "audio/colossus/river/03-living-with-helios.mp3",
+     "sec": 184.346122
+    },
+    "the-year-rhodes-had-to-survive": {
+     "file": "audio/colossus/river/04-the-year-rhodes-had-to-survive.mp3",
+     "sec": 281.887347
+    },
+    "who-was-included-in-the-freedom": {
+     "file": "audio/colossus/river/05-who-was-included-in-the-freedom.mp3",
+     "sec": 259.500408
+    },
+    "the-city-beneath-the-monument": {
+     "file": "audio/colossus/river/06-the-city-beneath-the-monument.mp3",
+     "sec": 196.205714
+    },
+    "making-a-god-in-bronze": {
+     "file": "audio/colossus/river/07-making-a-god-in-bronze.mp3",
+     "sec": 199.131429
+    },
+    "the-construction-account-under-examinati": {
+     "file": "audio/colossus/river/08-the-construction-account-under-examinati.mp3",
+     "sec": 176.875102
+    },
+    "the-statue-we-cannot-yet-draw": {
+     "file": "audio/colossus/river/09-the-statue-we-cannot-yet-draw.mp3",
+     "sec": 146.729796
+    },
+    "the-earthquake-and-the-politics-of-gener": {
+     "file": "audio/colossus/river/10-the-earthquake-and-the-politics-of-gener.mp3",
+     "sec": 215.196735
+    },
+    "how-a-ruin-became-a-wonder": {
+     "file": "audio/colossus/river/11-how-a-ruin-became-a-wonder.mp3",
+     "sec": 163.317551
+    },
+    "nine-hundred-camels-and-the-missing-bron": {
+     "file": "audio/colossus/river/12-nine-hundred-camels-and-the-missing-bron.mp3",
+     "sec": 170.24
+    },
+    "the-imagined-giant-inherits-the-world": {
+     "file": "audio/colossus/river/13-the-imagined-giant-inherits-the-world.mp3",
+     "sec": 192.574694
+    },
+    "what-remains-to-be-discovered": {
+     "file": "audio/colossus/river/14-what-remains-to-be-discovered.mp3",
+     "sec": 133.511837
+    }
+   }
+  },
+  "jeanette": {
+   "name": "Jeanette",
+   "blurb": "gentle British audiobook",
+   "voice_id": "RILOU7YmBhvwJGDGjNmP",
+   "clips": {
+    "introduction": {
+     "file": "audio/colossus/jeanette/00-introduction.mp3",
+     "sec": 127.555918
+    },
+    "begin-with-the-broken-thumb": {
+     "file": "audio/colossus/jeanette/01-begin-with-the-broken-thumb.mp3",
+     "sec": 169.769796
+    },
+    "an-island-becomes-a-shared-community": {
+     "file": "audio/colossus/jeanette/02-an-island-becomes-a-shared-community.mp3",
+     "sec": 188.029388
+    },
+    "living-with-helios": {
+     "file": "audio/colossus/jeanette/03-living-with-helios.mp3",
+     "sec": 213.524898
+    },
+    "the-year-rhodes-had-to-survive": {
+     "file": "audio/colossus/jeanette/04-the-year-rhodes-had-to-survive.mp3",
+     "sec": 315.219592
+    },
+    "who-was-included-in-the-freedom": {
+     "file": "audio/colossus/jeanette/05-who-was-included-in-the-freedom.mp3",
+     "sec": 296.594286
+    },
+    "the-city-beneath-the-monument": {
+     "file": "audio/colossus/jeanette/06-the-city-beneath-the-monument.mp3",
+     "sec": 224.574694
+    },
+    "making-a-god-in-bronze": {
+     "file": "audio/colossus/jeanette/07-making-a-god-in-bronze.mp3",
+     "sec": 229.590204
+    },
+    "the-construction-account-under-examinati": {
+     "file": "audio/colossus/jeanette/08-the-construction-account-under-examinati.mp3",
+     "sec": 209.057959
+    },
+    "the-statue-we-cannot-yet-draw": {
+     "file": "audio/colossus/jeanette/09-the-statue-we-cannot-yet-draw.mp3",
+     "sec": 164.937143
+    },
+    "the-earthquake-and-the-politics-of-gener": {
+     "file": "audio/colossus/jeanette/10-the-earthquake-and-the-politics-of-gener.mp3",
+     "sec": 235.284898
+    },
+    "how-a-ruin-became-a-wonder": {
+     "file": "audio/colossus/jeanette/11-how-a-ruin-became-a-wonder.mp3",
+     "sec": 189.178776
+    },
+    "nine-hundred-camels-and-the-missing-bron": {
+     "file": "audio/colossus/jeanette/12-nine-hundred-camels-and-the-missing-bron.mp3",
+     "sec": 191.451429
+    },
+    "the-imagined-giant-inherits-the-world": {
+     "file": "audio/colossus/jeanette/13-the-imagined-giant-inherits-the-world.mp3",
+     "sec": 219.820408
+    },
+    "what-remains-to-be-discovered": {
+     "file": "audio/colossus/jeanette/14-what-remains-to-be-discovered.mp3",
+     "sec": 160.992653
+    }
+   }
+  },
+  "lily": {
+   "name": "Lily",
+   "blurb": "velvety British",
+   "voice_id": "pFZP5JQG7iQjIQuC4Bku",
+   "clips": {
+    "introduction": {
+     "file": "audio/colossus/lily/00-introduction.mp3",
+     "sec": 121.103673
+    },
+    "begin-with-the-broken-thumb": {
+     "file": "audio/colossus/lily/01-begin-with-the-broken-thumb.mp3",
+     "sec": 159.869388
+    },
+    "an-island-becomes-a-shared-community": {
+     "file": "audio/colossus/lily/02-an-island-becomes-a-shared-community.mp3",
+     "sec": 183.510204
+    },
+    "living-with-helios": {
+     "file": "audio/colossus/lily/03-living-with-helios.mp3",
+     "sec": 216.711837
+    },
+    "the-year-rhodes-had-to-survive": {
+     "file": "audio/colossus/lily/04-the-year-rhodes-had-to-survive.mp3",
+     "sec": 307.147755
+    },
+    "who-was-included-in-the-freedom": {
+     "file": "audio/colossus/lily/05-who-was-included-in-the-freedom.mp3",
+     "sec": 285.910204
+    },
+    "the-city-beneath-the-monument": {
+     "file": "audio/colossus/lily/06-the-city-beneath-the-monument.mp3",
+     "sec": 217.364898
+    },
+    "making-a-god-in-bronze": {
+     "file": "audio/colossus/lily/07-making-a-god-in-bronze.mp3",
+     "sec": 217.887347
+    },
+    "the-construction-account-under-examinati": {
+     "file": "audio/colossus/lily/08-the-construction-account-under-examinati.mp3",
+     "sec": 198.556735
+    },
+    "the-statue-we-cannot-yet-draw": {
+     "file": "audio/colossus/lily/09-the-statue-we-cannot-yet-draw.mp3",
+     "sec": 156.107755
+    },
+    "the-earthquake-and-the-politics-of-gener": {
+     "file": "audio/colossus/lily/10-the-earthquake-and-the-politics-of-gener.mp3",
+     "sec": 229.302857
+    },
+    "how-a-ruin-became-a-wonder": {
+     "file": "audio/colossus/lily/11-how-a-ruin-became-a-wonder.mp3",
+     "sec": 182.491429
+    },
+    "nine-hundred-camels-and-the-missing-bron": {
+     "file": "audio/colossus/lily/12-nine-hundred-camels-and-the-missing-bron.mp3",
+     "sec": 195.082449
+    },
+    "the-imagined-giant-inherits-the-world": {
+     "file": "audio/colossus/lily/13-the-imagined-giant-inherits-the-world.mp3",
+     "sec": 216.711837
+    },
+    "what-remains-to-be-discovered": {
+     "file": "audio/colossus/lily/14-what-remains-to-be-discovered.mp3",
+     "sec": 161.044898
+    }
+   }
+  },
+  "george": {
+   "name": "George",
+   "blurb": "the tour narrator",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "clips": {
+    "introduction": {
+     "file": "audio/colossus/george/00-introduction.mp3",
+     "sec": 110.367347
+    },
+    "begin-with-the-broken-thumb": {
+     "file": "audio/colossus/george/01-begin-with-the-broken-thumb.mp3",
+     "sec": 146.677551
+    },
+    "an-island-becomes-a-shared-community": {
+     "file": "audio/colossus/george/02-an-island-becomes-a-shared-community.mp3",
+     "sec": 164.884898
+    },
+    "living-with-helios": {
+     "file": "audio/colossus/george/03-living-with-helios.mp3",
+     "sec": 188.891429
+    },
+    "the-year-rhodes-had-to-survive": {
+     "file": "audio/colossus/george/04-the-year-rhodes-had-to-survive.mp3",
+     "sec": 276.767347
+    },
+    "who-was-included-in-the-freedom": {
+     "file": "audio/colossus/george/05-who-was-included-in-the-freedom.mp3",
+     "sec": 262.974694
+    },
+    "the-city-beneath-the-monument": {
+     "file": "audio/colossus/george/06-the-city-beneath-the-monument.mp3",
+     "sec": 193.462857
+    },
+    "making-a-god-in-bronze": {
+     "file": "audio/colossus/george/07-making-a-god-in-bronze.mp3",
+     "sec": 199.862857
+    },
+    "the-construction-account-under-examinati": {
+     "file": "audio/colossus/george/08-the-construction-account-under-examinati.mp3",
+     "sec": 184.293878
+    },
+    "the-statue-we-cannot-yet-draw": {
+     "file": "audio/colossus/george/09-the-statue-we-cannot-yet-draw.mp3",
+     "sec": 148.27102
+    },
+    "the-earthquake-and-the-politics-of-gener": {
+     "file": "audio/colossus/george/10-the-earthquake-and-the-politics-of-gener.mp3",
+     "sec": 211.983673
+    },
+    "how-a-ruin-became-a-wonder": {
+     "file": "audio/colossus/george/11-how-a-ruin-became-a-wonder.mp3",
+     "sec": 163.918367
+    },
+    "nine-hundred-camels-and-the-missing-bron": {
+     "file": "audio/colossus/george/12-nine-hundred-camels-and-the-missing-bron.mp3",
+     "sec": 169.06449
+    },
+    "the-imagined-giant-inherits-the-world": {
+     "file": "audio/colossus/george/13-the-imagined-giant-inherits-the-world.mp3",
+     "sec": 196.336327
+    },
+    "what-remains-to-be-discovered": {
+     "file": "audio/colossus/george/14-what-remains-to-be-discovered.mp3",
+     "sec": 139.493878
+    }
+   }
+  }
+ }
+}

@@ -76,7 +76,7 @@ a{color:var(--accent)}
 </main>
 <script>
 const FILES = /*__FILES__*/{};
-const NAMES = {rob:"Rob's track", jamie:"Jamie's track"};
+const NAMES = /*__LABELS__*/{};
 const AUDIO_CACHE = 'rhodes-audio', FONT_CACHE = 'rhodes-fonts';
 const FONT_CSS = 'https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap';
 const $ = id => document.getElementById(id);
@@ -95,6 +95,7 @@ if (iOS && !standalone) $('homescreen').hidden = false;
 // default ticks follow the "Listening as" choice made on the map
 const as = store.get('listenAs', 'rob');
 Object.keys(FILES).forEach(set => {
+  if (set.startsWith('colossus-') && !document.getElementById('xhead')) { const h = document.createElement('div'); h.id = 'xhead'; h.className = 'small'; h.style.margin = '10px 2px 0'; h.textContent = 'Extra: the Colossus long-form history, about 45 minutes. One voice is plenty.'; $('choices').appendChild(h); }
   const l = document.createElement('label'); l.className = 'choice';
   l.innerHTML = `<input type="checkbox" value="${set}" ${as===set||as==='both'?'checked':''}><span class="t">${NAMES[set]||set}</span><span class="d">${FILES[set].length} clips · ${mb(sum(set))}</span>`;
   $('choices').appendChild(l);

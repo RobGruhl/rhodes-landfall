@@ -218,6 +218,7 @@ function audioHtml(p){
   if(!hasAudio(p)) return '';
   const sets=AUDIO[p.aud];
   const links=['rob','jamie'].filter(k=>sets[k]).map(k=>{const a=sets[k];const len=a.long&&a.long.sec?fmt(a.long.sec):'';return `<a class="readlink" href="read.html#${k}/${p.aud}">${k.charAt(0).toUpperCase()+k.slice(1)}'s track${len?' · '+len:''}</a>`;});
+  if(p.aud==='colossus')links.push('<a class="readlink" href="read.html#colossus/introduction">The long history · extra</a>');
   return `<p class="meta listen"><b>Read or listen:</b> ${links.join(' ')}</p>`;
 }
 function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
