@@ -88,7 +88,7 @@ Kleio was nearly blind now. She sat in the doorway with her face turned toward t
 
 "When I was a girl," she said, "your grandfather's grandfather died on the wall, and the city promised to pay for my wedding. It paid for two rooms and a loom and a stove. It did not pay for your great-grandfather. I chose him myself, and he was worth far more than the city ever gave." She felt for the girl's hand. "A city takes what it's given and spends it on what it needs. The god doesn't mind. He's done his work. Let him rest."
 
-Nikarete did not think that was a real answer. But years later, when she climbed with other children into the broken end of one bronze leg, she understood a little better. It was dark in there, and cool, and full of the great rough blocks of stone Chares had set as the god's bones. She put her palm flat on a block that her great-great-grandfather might have lifted. She could feel, in the quiet, that the god was not dead, only lying down.
+Nikarete did not think that was a real answer. But years later, when she climbed with other children into the broken end of one bronze leg, she understood a little better. It was dark in there, and cool, and full of the great rough blocks of stone Chares had set as the god's bones. She put her palm flat on a block that her great-grandfather might have lifted. She could feel, in the quiet, that the god was not dead, only lying down.
 
 ## IV. The thumb (the 70s AD)
 
