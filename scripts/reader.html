@@ -26,7 +26,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Iowan Old Style
 .bar .fs button{font-family:Georgia,serif;min-width:38px}
 .bar .fs button:first-child{font-size:12px}.bar .fs button:last-child{font-size:18px;font-weight:bold}
 main{max-width:38em;margin:0 auto;padding:22px 20px 40px}
-body.has-player main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+body.has-player main{padding-bottom:calc(150px + env(safe-area-inset-bottom))}
 .eyebrow{font-size:.7em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 h1{font-size:1.45em;line-height:1.2;margin:.25em 0 .2em;font-weight:700}
 .place{color:var(--muted);font-style:italic;font-size:.9em;margin:0 0 1em}
@@ -44,7 +44,16 @@ details summary{cursor:pointer;color:var(--muted);font-size:.75em;letter-spacing
 .player .row .t{flex:1;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .player .row button{appearance:none;border:1px solid var(--hair);background:transparent;color:var(--ink);font:inherit;border-radius:8px;padding:4px 8px;min-height:30px}
 .player .row button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.player audio{display:block;width:100%;height:36px}
+.player audio{display:none}
+.player .ctl{display:flex;align-items:center;gap:10px;margin-top:4px}
+.player .ctl button{appearance:none;border:1px solid var(--hair);background:transparent;color:var(--ink);border-radius:999px;width:44px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;position:relative;flex:none;cursor:pointer}
+.player .ctl button svg{width:22px;height:22px;fill:currentColor}
+.player .ctl button span{position:absolute;font-size:8px;font-weight:700;top:17px;left:0;right:0;text-align:center}
+.player .ctl .pp{width:56px;height:56px;background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.player .ctl .pp svg{width:30px;height:30px}
+.player .scrub{flex:1;min-width:0}
+.player .scrub input{width:100%;margin:0;accent-color:var(--accent);height:28px}
+.player .times{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums;font-size:12px}
 .sheet{position:fixed;inset:0;background:var(--bg);z-index:10;overflow:auto;padding:12px 16px 40px;padding-top:calc(12px + env(safe-area-inset-top));font-size:15px}
 .sheet[hidden]{display:none}
 .sheet .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
@@ -81,7 +90,13 @@ details summary{cursor:pointer;color:var(--muted);font-size:.75em;letter-spacing
 <main id="main"></main>
 <div class="player ui" id="player" hidden>
   <div class="row"><span class="t" id="nowplaying"></span><button type="button" id="autonext" aria-pressed="true" title="Play the next stop when this one ends">Auto ›</button></div>
-  <audio id="audio" controls preload="none"></audio>
+  <div class="ctl">
+    <button type="button" id="back15" aria-label="Back 15 seconds"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V2L7 6l5 4V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/></svg><span>15</span></button>
+    <button type="button" id="pp" class="pp" aria-label="Play"><svg id="ppicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+    <button type="button" id="fwd15" aria-label="Forward 15 seconds"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V2l5 4-5 4V7a6 6 0 1 0 6 6h2a8 8 0 1 1-8-8z"/></svg><span>15</span></button>
+    <div class="scrub"><input type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Position in clip"><div class="times"><span id="tcur">0:00</span><span id="tdur"></span></div></div>
+  </div>
+  <audio id="audio" preload="none" playsinline></audio>
 </div>
 <div class="sheet ui" id="sheet" hidden>
   <div class="top"><strong id="sheettitle">Contents</strong><button type="button" id="closesheet">Done</button></div>
@@ -121,7 +136,21 @@ function setLen(l){len=l;store.set('readerLen',l);pressed('.bar [data-len]','len
 function parseHash(){const m=location.hash.match(/^#(rob|jamie|colossus)(?:\/([a-z0-9-]+))?/);if(m){who=m[1];const k=m[2]||'';const bySlug=STOPS[who].findIndex(s=>s.slug===k);idx=bySlug>=0?bySlug:(/^\d+$/.test(k)?Math.max(0,Math.min(STOPS[who].length-1,Number(k)-1)):0);return;}const q=new URLSearchParams(location.search).get('as');who=(q==='jamie'||q==='rob')?q:store.get('listenAs','rob');if(who!=='rob'&&who!=='jamie')who='rob';idx=Number(store.get('readerPos:'+who,0))||0;}
 function go(w,i,opts){opts=opts||{};who=w;idx=Math.max(0,Math.min(STOPS[w].length-1,i));store.set('readerPos:'+w,idx);const h='#'+w+'/'+(idx+1);if(opts.push===false)history.replaceState(null,'',h);else history.pushState(null,'',h);render();loadClip(!!opts.play);window.scrollTo(0,0);}
 function clip(){if(who==='colossus'){const v=EXTRA.voices[voice];return v&&v.clips[(STOPS.colossus[idx]||{}).slug]||null;}const a=(AUDIO[(STOPS[who][idx]||{}).slug]||{})[who];if(!a)return null;return a[len]||a.long||a.short||null;}
-function loadClip(play){const c=clip();const s=STOPS[who][idx];const np=document.getElementById('nowplaying');if(!c){audio.removeAttribute('src');audio.load();np.textContent=who==='colossus'?'Text only: no reading for this page':`No audio for stop ${s.n}`;return;}const u=AUDIO_BASE+c.file;np.textContent=`${String(s.n).padStart(2,'0')} ${s.title}${who==='colossus'&&EXTRA.voices[voice]?' · '+EXTRA.voices[voice].name:''}${c.sec?' · '+fmt(c.sec):''}`;if(audio.getAttribute('src')!==u){audio.setAttribute('src',u);audio.load();}if(play&&mode!=='read'){const p=audio.play();if(p&&p.catch)p.catch(()=>{});}}
+function loadClip(play){const c=clip();const s=STOPS[who][idx];const np=document.getElementById('nowplaying');if(!c){audio.removeAttribute('src');audio.load();np.textContent=who==='colossus'?'Text only: no reading for this page':`No audio for stop ${s.n}`;return;}const u=AUDIO_BASE+c.file;np.textContent=`${String(s.n).padStart(2,'0')} ${s.title}${who==='colossus'&&EXTRA.voices[voice]?' · '+EXTRA.voices[voice].name:''}${c.sec?' · '+fmt(c.sec):''}`;if(audio.getAttribute('src')!==u){audio.setAttribute('src',u);audio.load();}mediaInfo();syncPP();syncTime();if(play&&mode!=='read'){const p=audio.play();if(p&&p.catch)p.catch(()=>{});}}
+const PLAY='<path d="M8 5v14l11-7z"/>',PAUSE='<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>';
+function syncPP(){const on=!audio.paused;document.getElementById('ppicon').innerHTML=on?PAUSE:PLAY;document.getElementById('pp').setAttribute('aria-label',on?'Pause':'Play');}
+function syncTime(){const d=audio.duration&&isFinite(audio.duration)?audio.duration:((clip()||{}).sec||0);document.getElementById('tcur').textContent=fmt(audio.currentTime||0);document.getElementById('tdur').textContent=d?'-'+fmt(Math.max(0,d-(audio.currentTime||0))):'';if(!seeking)document.getElementById('seek').value=d?Math.round(1000*(audio.currentTime||0)/d):0;}
+let seeking=false;
+document.getElementById('pp').onclick=()=>{if(!audio.getAttribute('src'))return;if(audio.paused){const p=audio.play();if(p&&p.catch)p.catch(()=>{});}else audio.pause();};
+document.getElementById('back15').onclick=()=>{audio.currentTime=Math.max(0,(audio.currentTime||0)-15);syncTime();};
+document.getElementById('fwd15').onclick=()=>{const d=audio.duration||0;audio.currentTime=Math.min(d?d-0.5:1e9,(audio.currentTime||0)+15);syncTime();};
+const seekEl=document.getElementById('seek');
+seekEl.addEventListener('input',()=>{seeking=true;const d=audio.duration||(clip()||{}).sec||0;document.getElementById('tcur').textContent=fmt(d*seekEl.value/1000);});
+seekEl.addEventListener('change',()=>{const d=audio.duration||(clip()||{}).sec||0;if(d)audio.currentTime=d*seekEl.value/1000;seeking=false;syncTime();});
+['play','pause','ended'].forEach(ev=>audio.addEventListener(ev,syncPP));
+['timeupdate','loadedmetadata','durationchange','emptied'].forEach(ev=>audio.addEventListener(ev,syncTime));
+function mediaInfo(){if(!('mediaSession' in navigator)||typeof MediaMetadata==='undefined')return;const s=STOPS[who][idx];if(!s)return;try{navigator.mediaSession.metadata=new MediaMetadata({title:s.title,artist:who==='colossus'?'The Colossus of Rhodes'+(EXTRA.voices[voice]?' · '+EXTRA.voices[voice].name:''):NAMES[who]+"'s track",album:'Rhodes Landfall',artwork:[{src:'icon-512.png',sizes:'512x512',type:'image/png'}]});}catch(e){}}
+if('mediaSession' in navigator){try{navigator.mediaSession.setActionHandler('nexttrack',()=>{if(idx<STOPS[who].length-1)go(who,idx+1,{play:true});});navigator.mediaSession.setActionHandler('previoustrack',()=>{if(idx>0)go(who,idx-1,{play:true});});navigator.mediaSession.setActionHandler('seekbackward',()=>document.getElementById('back15').click());navigator.mediaSession.setActionHandler('seekforward',()=>document.getElementById('fwd15').click());}catch(e){}}
 audio.addEventListener('error',()=>{if(!audio.getAttribute('src'))return;document.getElementById('nowplaying').textContent=navigator.onLine?'This clip would not load. Try again in a moment.':'Not saved on this phone. Pick a saved voice, or save it from ☰ › Save for offline.';});
 audio.addEventListener('ended',()=>{if(autonext&&mode!=='read'&&idx<STOPS[who].length-1)go(who,idx+1,{play:true});});
 function render(){
@@ -130,7 +159,7 @@ function render(){
   document.title=`${String(s.n).padStart(2,'0')} ${s.title} · ${NAMES[who]} · Rhodes Landfall`;
   const head=(who==='colossus'?`<div class="eyebrow">The Colossus of Rhodes · ${s.n===0?'introduction':s.slug==='sources'?'text only':'chapter '+s.n+' of '+(list.length-2)}</div>`:`<div class="eyebrow">${NAMES[who]}'s track · stop ${s.n} of ${list.length} · ${len==='short'?'short version':'long version'}</div>`)+`<h1>${esc(s.title)}</h1>${PLACES[s.slug]?`<p class="place">${esc(PLACES[s.slug])}</p>`:''}`;
   let body='';
-  if(mode==='listen'){const c=clip();body=`<div class="listenonly ui"><div class="big">${c?'Press play below.':'No audio for this '+(who==='colossus'?'page':'stop')+'.'}</div>${c?'The next stop starts by itself when this one ends. Switch to Read or Both for the text.':''}</div>`;}
+  if(mode==='listen'){const c=clip();body=`<div class="listenonly ui"><div class="big">${c?'Tap the play button below.':'No audio for this '+(who==='colossus'?'page':'stop')+'.'}</div>${c?'The next stop starts by itself when this one ends. Switch to Read or Both for the text.':''}</div>`;}
   else if(s.html){body=`<div class="rich">${s.html}</div>`;}
   else{body=(len==='short'?s.short:s.long).split(/\n+/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');}
   const foot=`<div class="foot ui"><button type="button" id="prev" ${idx===0?'disabled':''}>‹ ${idx>0?esc(list[idx-1].title):'Start'}</button><button type="button" id="next" ${idx===list.length-1?'disabled':''}>${idx<list.length-1?esc(list[idx+1].title):'End'} ›</button></div>`;
