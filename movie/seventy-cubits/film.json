@@ -1,0 +1,371 @@
+{
+ "title": "Seventy Cubits",
+ "logline": "The morning after the earthquake of 226 BC, an old man walks up to the fallen Colossus and remembers the siege that orphaned him, the twelve years he spent building the god, and the day he first touched its face.",
+ "style": "cinematic film still, Hellenistic Greek city of Rhodes in the 3rd century BC, historically accurate, natural light, 35mm, warm muted palette, no text, no modern objects, no medieval buildings",
+ "characters": {
+  "timon": "portrait of a lean Greek man of about 25, short dark curly hair, short dark beard, sun-browned skin, a thin pale scar across his left forearm, plain undyed wool tunic fastened on one shoulder, standing in a stone courtyard, neutral daylight",
+  "boy": "portrait of a skinny Greek boy of about 10, short dark curly hair, large dark eyes, bare feet, plain undyed short tunic, standing in a stone courtyard, neutral daylight",
+  "old": "portrait of a very old Greek man of about 89, white curly hair and short white beard, deeply lined sun-browned face, dark eyes, a thin pale scar across his left forearm, plain undyed wool cloak, olive-wood walking stick, standing in a stone courtyard, neutral daylight",
+  "helios": "colossal bronze head of the Greek sun god Helios, youthful clean-shaven face, thick wavy hair, a crown of sharp bronze rays, classical Hellenistic sculpture in the style of the facing Helios on Rhodian coins, warm bronze with a golden sheen, plain sky behind"
+ },
+ "voice": {
+  "model": "eleven_v3",
+  "preset": null,
+  "stability": 0.5,
+  "speed": 0.92
+ },
+ "scenes": [
+  {
+   "id": "01-fall",
+   "title": "The fall, 226 BC",
+   "text": "They say the god fell in the night. The ground shook, the walls came down along the harbour, and in the morning my granddaughter came running to tell me that Helios was lying in the grass.\n\nI am eighty-nine years old. I went down to see him anyway.\n\nHe broke at the knees. That is where we joined him, you see. I know. I was there.",
+   "shots": [
+    {
+     "still": "wide dawn view of a colossal fallen bronze statue lying broken in long dry grass on a hill above an ancient Greek harbour city, the huge legs snapped at the knees, rough stone rubble spilling from the hollow broken limbs, dust hanging in the air, collapsed stretches of city wall below",
+     "motion": "slow aerial drift over the fallen statue as dust settles in the morning light"
+    },
+    {
+     "refs": [
+      "old"
+     ],
+     "still": "@old walks slowly with his stick up a dusty hill path at dawn toward something enormous and dark lying in the grass, seen from behind",
+     "motion": "the old man walks slowly away from camera up the path"
+    },
+    {
+     "still": "close shot of a wrinkled old hand with a thin scar on the forearm resting on the green-brown bronze of a giant broken knee, jagged torn bronze edge, iron bars and rubble inside",
+     "motion": "the hand slides slowly across the bronze surface"
+    },
+    {
+     "refs": [
+      "old"
+     ],
+     "still": "close-up of @old looking up at something vast, eyes wet, soft dawn light on his face",
+     "motion": "slow push-in on the old man's face as he looks up"
+    }
+   ],
+   "ambience": "harbour"
+  },
+  {
+   "id": "02-siege",
+   "title": "The siege, 305 BC",
+   "text": "I was ten years old when Demetrius came. Two hundred warships, and behind them nearly a thousand little boats of traders, following like gulls behind a fishing fleet, waiting to pick over whatever was left of us.\n\nMy father rowed. Every man rowed, or carried stones, or stood on the wall. The slaves were promised their freedom if they fought, and they fought.\n\nThen Demetrius built the City-Taker: a tower nine storeys high, clad in iron, pushed by more men than lived on our whole street.",
+   "shots": [
+    {
+     "still": "a vast ancient fleet of oared war galleys and small merchant boats filling the sea outside a walled Greek harbour city, hazy morning, seen from the city wall",
+     "motion": "the fleet rows slowly toward the city, oars rising and falling"
+    },
+    {
+     "refs": [
+      "boy"
+     ],
+     "still": "@boy stands on a stone city wall between Greek citizen soldiers in bronze helmets holding spears, staring out to sea",
+     "motion": "wind tugs at the boy's tunic, the soldiers shift their spears"
+    },
+    {
+     "still": "inside the hull of an ancient Greek warship, rows of bearded citizen oarsmen pulling together, sunlight through the oar ports, one strong bearded man in the foreground",
+     "motion": "the oarsmen pull in rhythm"
+    },
+    {
+     "still": "slaves and citizens side by side hauling stone blocks up to a city wall on wooden sledges, dust and sweat",
+     "motion": "the men strain and haul the blocks forward"
+    },
+    {
+     "still": "a colossal nine-storey wooden siege tower clad in iron plates on huge solid wheels, rows of shuttered firing ports, being pushed across a dusty plain toward a stone city wall by hundreds of men",
+     "motion": "the tower creeps forward, dust rising from its wheels"
+    }
+   ],
+   "ambience": "siege"
+  },
+  {
+   "id": "03-fire",
+   "title": "The night of fire",
+   "text": "One night the whole city threw fire at it. I carried pitch in a bucket until my arms stopped working. By morning the iron plates had fallen away like fish scales, and the tower crawled back out of range.\n\nMy father did not come home from the harbour that night.\n\nA year after it began, Demetrius made peace and sailed away. He left his engines on the plain.",
+   "shots": [
+    {
+     "still": "night, hundreds of fire arrows and flaming missiles arcing from a city wall toward a giant iron-clad wooden siege tower, sparks and smoke",
+     "motion": "flaming missiles streak across the night sky and strike the tower"
+    },
+    {
+     "refs": [
+      "boy"
+     ],
+     "still": "@boy carries a heavy wooden bucket of pitch along a torch-lit rampart at night, face smeared with soot",
+     "motion": "the boy hurries along the rampart, torches flickering"
+    },
+    {
+     "still": "close shot at night of iron plates falling away from a burning timber siege tower, glowing timbers and embers",
+     "motion": "iron plates peel off and fall, flames spread along the timber"
+    },
+    {
+     "still": "grey dawn over a quiet ancient harbour, smoke drifting over the water, a single empty wooden rowing boat drifting",
+     "motion": "the empty boat drifts slowly through the smoke"
+    },
+    {
+     "still": "an abandoned giant scorched siege tower and catapults standing on a plain outside a Greek city wall in morning light, a fleet sailing away on the horizon",
+     "motion": "slow push toward the abandoned engines as the fleet recedes"
+    }
+   ],
+   "ambience": "fire"
+  },
+  {
+   "id": "04-promise",
+   "title": "The city's promise",
+   "text": "Rhodes buried my father at public cost. The city fed my mother, and paid my sister's dowry, and when I turned eighteen they called me into the theatre at the festival of Dionysus and gave me a suit of armour, in front of everyone, because I was the son of a man who had died for them.\n\nI did not want to fight. I wanted to make something.",
+   "shots": [
+    {
+     "still": "a public funeral procession in an ancient Greek city, citizens carrying shrouded biers, women mourning in dark cloaks, a small boy walking beside a mother",
+     "motion": "the procession moves slowly past"
+    },
+    {
+     "still": "an ancient open-air Greek theatre packed with citizens at a spring festival, ivy garlands, a herald standing on the stage",
+     "motion": "the crowd stirs and murmurs, garlands move in the wind"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "@timon, younger, about eighteen, stands on the stage of an ancient Greek theatre as an official hands him a bronze helmet and a round shield, the crowd watching",
+     "motion": "the official places the helmet in his hands"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "@timon alone at dusk holding a bronze helmet, looking down at it thoughtfully",
+     "motion": "slow push-in as he turns the helmet in his hands"
+    }
+   ],
+   "ambience": null
+  },
+  {
+   "id": "05-foundry",
+   "title": "The foundry",
+   "text": "They sold Demetrius's engines for three hundred talents, and with the money the people vowed a statue to the Sun. Chares of Lindos would make it: seventy cubits of bronze, taller than anything any of us had ever seen.\n\nI went to the casting pits the first week. I was nobody. I carried charcoal.\n\nBeside me worked Mys, a Carian, who could not vote, and a slave called Doros, who could not leave. We were paid the same: a drachma a day, and the same burns.",
+   "shots": [
+    {
+     "still": "a sprawling open-air ancient Greek bronze foundry on a hillside: casting pits, glowing clay furnaces, charcoal smoke, stacks of bronze ingots and iron bars, many workers",
+     "motion": "smoke billows as workers move between the furnaces"
+    },
+    {
+     "still": "a grey-bearded master sculptor turning a small wax model of a standing sun god with a crown of rays in his hands, papyrus drawings on a table",
+     "motion": "he turns the wax model slowly in the lamplight"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "@timon carries a heavy basket of charcoal on his shoulder through the foundry smoke",
+     "motion": "he walks through the smoke toward camera"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "three soot-covered workers pumping leather bellows at a glowing furnace: @timon, a Carian man with a red headband, and a slave with a cropped head",
+     "motion": "they pump the bellows and the fire flares"
+    },
+    {
+     "still": "molten bronze pouring from a clay crucible into a huge clay mould shaped like a giant bare foot, sparks flying",
+     "motion": "glowing bronze flows into the mould, sparks fly"
+    }
+   ],
+   "ambience": "forge"
+  },
+  {
+   "id": "06-mound",
+   "title": "The mound",
+   "text": "We cast him in rings, from the feet up. When one ring cooled, we heaped earth around it and built the next one on top, so the work was always on the ground, and the ground kept rising.\n\nFor twelve years I climbed a hill that we were making. Every year it was higher. Every year I could see a little further out to sea.",
+   "shots": [
+    {
+     "still": "a huge man-made earthen mound on a hill above an ancient Greek city, the tops of two colossal bronze legs rising from its summit, workers carrying baskets of earth up wooden ramps",
+     "motion": "slow crane up the side of the mound"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "@timon climbs a wooden ramp on a steep earth mound with a basket of earth on his back, the sea far below behind him",
+     "motion": "he climbs steadily up the ramp"
+    },
+    {
+     "still": "sunset, an enormous earth mound reaching halfway up a colossal bronze figure, workers tiny on its slopes, the city and harbour below",
+     "motion": "shadows lengthen as the workers move on the slopes"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "@timon sits on the top of the earth mound at dusk eating bread and olives, looking out over the city to the sea",
+     "motion": "wind moves his hair, sails move on the distant sea"
+    }
+   ],
+   "ambience": "hill"
+  },
+  {
+   "id": "07-philis",
+   "title": "Philis",
+   "text": "In the eighth year I married Philis, a shipwright's daughter, who laughed at the soot in my beard. The city had paid my sister's dowry. I paid Philis's father myself, out of bronze-worker's wages, and I was prouder of that than of the armour.",
+   "shots": [
+    {
+     "still": "a young Greek woman with dark braided hair in a plain madder-red dress laughing in a shipyard among half-built wooden ship hulls",
+     "motion": "she laughs and turns toward camera"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "@timon and a young dark-haired woman at a simple Greek wedding feast in a courtyard at night, garlands, torches, family",
+     "motion": "torches flicker, the guests clap"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "close shot: @timon counts silver coins stamped with a rose into an older man's open palm",
+     "motion": "the coins drop one by one into the palm"
+    }
+   ],
+   "ambience": null
+  },
+  {
+   "id": "08-face",
+   "title": "The face",
+   "text": "The last summer, we cast his head. I was on top of the mound when the mould was broken open, and there he was: a face as tall as a house, crowned with rays, looking out over the sea toward Egypt, where our grain came from.\n\nI put my hand on his cheek. It was still warm.",
+   "shots": [
+    {
+     "refs": [
+      "helios"
+     ],
+     "still": "workers with mallets breaking open a huge clay mould on top of an earth mound, revealing the colossal bronze face of @helios",
+     "motion": "chunks of clay fall away to reveal the bronze face"
+    },
+    {
+     "refs": [
+      "timon",
+      "helios"
+     ],
+     "still": "@timon stands on the top of an earth mound beside the colossal bronze face of @helios, the man tiny beside it",
+     "motion": "slow pull back revealing the scale of the face"
+    },
+    {
+     "still": "close shot: a man's soot-stained hand pressed against a giant smooth bronze cheek, heat shimmer in the air",
+     "motion": "the hand presses gently against the bronze"
+    },
+    {
+     "still": "view from a great height over an ancient Greek city with a grid of streets and harbours to the open sea, dazzling sun on the water",
+     "motion": "slow pan across the city toward the open sea"
+    }
+   ],
+   "ambience": "hill"
+  },
+  {
+   "id": "09-festival",
+   "title": "The festival of the Sun",
+   "text": "Then we took the hill away, basket by basket, and he came up out of the earth like a man standing up from a bath.\n\nAt the festival of the Sun we raced, and sang, and drove a chariot and four horses into the sea for him. My son sat on my shoulders and asked if the god could see us.\n\nI said yes. I said: I made his left foot.",
+   "shots": [
+    {
+     "refs": [
+      "helios"
+     ],
+     "still": "hundreds of workers carrying away an earth mound in baskets, uncovering a colossal standing bronze statue of the sun god @helios with a crown of rays, draped in a bronze cloak, dust in the air",
+     "motion": "workers stream away down the slopes, dust drifts"
+    },
+    {
+     "refs": [
+      "helios"
+     ],
+     "still": "a finished colossal bronze statue of the sun god @helios with a crown of rays and a draped bronze cloak standing on a tall white marble pedestal on a hill above an ancient Greek city",
+     "motion": "slow push toward the statue, sunlight flaring off the bronze"
+    },
+    {
+     "still": "a midsummer festival procession in an ancient Greek city, young athletes wearing white wreaths, musicians playing lyres and double pipes",
+     "motion": "the procession moves past, musicians play"
+    },
+    {
+     "still": "a four-horse chariot being driven into the sea from a beach during a Greek festival, a crowd cheering on the shore",
+     "motion": "the horses plunge into the surf"
+    },
+    {
+     "refs": [
+      "timon"
+     ],
+     "still": "@timon, now about thirty-five, with a small boy on his shoulders, pointing up at a colossal bronze statue in a festival crowd",
+     "motion": "the father points up, the boy looks up in wonder"
+    }
+   ],
+   "ambience": "festival"
+  },
+  {
+   "id": "10-thumb",
+   "title": "The thumb",
+   "text": "Now he lies in the grass with his knees broken, and the kings of the world are sending us gifts. Ptolemy of Egypt offers three thousand talents to raise him up again.\n\nBut the oracle said no. Leave him where he lies.\n\nI think the oracle is right. Let the ships come in, and the strangers walk up from the harbour and stand beside him, and try to put their arms around his thumb.\n\nThey won't manage it. I tried, this morning.",
+   "shots": [
+    {
+     "refs": [
+      "old",
+      "helios"
+     ],
+     "still": "@old sits on a stone beside the colossal fallen bronze head of @helios lying on its side in long grass",
+     "motion": "wind moves the grass, the old man sits very still"
+    },
+    {
+     "still": "an ancient Egyptian merchant ship with a large square sail arriving in a Greek harbour, amphorae of grain being unloaded onto the quay",
+     "motion": "the ship glides into the harbour"
+    },
+    {
+     "refs": [
+      "old"
+     ],
+     "still": "@old stretches his arms around a giant fallen bronze thumb lying in long grass, unable to make his hands meet, a gentle smile",
+     "motion": "he stretches his arms around the thumb and smiles"
+    },
+    {
+     "still": "wide sunset view of a colossal fallen bronze statue lying in the grass on a hill, sheep grazing past it, the ancient city and sea beyond",
+     "motion": "slow pull back as sheep graze and the sun sets"
+    }
+   ],
+   "ambience": "harbour"
+  }
+ ],
+ "sound": {
+  "bed": {
+   "prompt": "slow gentle solo melody on an ancient Greek lyre, plucked gut strings, warm and melancholy, sparse notes with space between them",
+   "volume": 0.22
+  },
+  "harbour": {
+   "prompt": "quiet morning on a Mediterranean hillside above a harbour: soft wind in long dry grass, distant gulls, faint waves",
+   "volume": 0.35
+  },
+  "siege": {
+   "prompt": "distant ancient battle: slow war drums, shouting men far away, creaking timber, wind on stone walls",
+   "volume": 0.3
+  },
+  "fire": {
+   "prompt": "night battle: crackling fire, whooshing flaming arrows, embers, distant shouts",
+   "volume": 0.3
+  },
+  "forge": {
+   "prompt": "ancient open-air bronze foundry: roaring charcoal furnace, leather bellows, hammering on metal, crackling",
+   "volume": 0.28
+  },
+  "hill": {
+   "prompt": "windy hilltop above the sea: steady wind, distant hammering, far-off voices of workers, gulls",
+   "volume": 0.3
+  },
+  "festival": {
+   "prompt": "ancient Greek festival on a beach: cheering crowd, double pipes and frame drums, horses splashing into surf",
+   "volume": 0.3
+  }
+ },
+ "audition": {
+  "line": "They say the god fell in the night. I am eighty-nine years old. I went down to see him anyway.",
+  "voices": [
+   "Bernard",
+   "Frank",
+   "Malachi",
+   "Vincent",
+   "Martin",
+   "Elias"
+  ]
+ }
+}
