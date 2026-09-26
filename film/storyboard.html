@@ -1,0 +1,320 @@
+<title>In the Priesthood of the Sun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--ground:#ebe6dc;--panel:#f6f2ea;--ink:#1a2230;--soft:#5b6270;--rule:#cfc6b6;--bronze:#9a6b25;--sea:#2f5d78;
+  --disp:"Marcellus",Georgia,serif;--body:"Alegreya Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#121821;--panel:#1a222e;--ink:#e6e0d3;--soft:#9aa3b1;--rule:#2d3847;--bronze:#d3a55a;--sea:#7fb0cc;color-scheme:dark}}
+:root[data-theme="dark"]{--ground:#121821;--panel:#1a222e;--ink:#e6e0d3;--soft:#9aa3b1;--rule:#2d3847;--bronze:#d3a55a;--sea:#7fb0cc;color-scheme:dark}
+body{background:var(--ground);color:var(--ink);font:17px/1.55 var(--body);padding-inline:clamp(16px,4vw,56px);padding-block:40px 80px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:56px}
+header{display:grid;gap:14px;max-width:62ch}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--bronze)}
+h1{font:400 clamp(38px,6vw,68px)/1.02 var(--disp);letter-spacing:.02em;margin:0;text-wrap:balance}
+.logline{font-size:21px;margin:0}
+.rule{margin:0;padding-left:14px;border-left:2px solid var(--bronze);color:var(--soft);font-style:italic}
+h2{font:400 28px/1.1 var(--disp);margin:0 0 18px;letter-spacing:.03em}
+.strip{display:flex;height:46px;border-radius:3px;overflow:hidden;gap:1px;background:var(--rule)}
+.strip i{display:block;min-width:1px}
+.stripcap{display:flex;justify-content:space-between;font:12px var(--mono);color:var(--soft);margin-top:6px}
+.concepts{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.concept{margin:0;display:grid;gap:8px}
+.concept img,.pending{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:2px;display:block}
+.pending{display:grid;place-items:center;background:var(--panel);border:1px dashed var(--rule);color:var(--soft);font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+figcaption{font-size:14px;color:var(--soft)}
+figcaption b{display:block;color:var(--ink);font:400 17px var(--disp);margin-bottom:2px}
+.cast{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px 28px}
+.person h4{font:400 20px var(--disp);margin:0 0 4px}
+.person small{font:12px var(--mono);color:var(--soft);margin-left:6px}
+.person p{margin:0;font-size:15px}
+.person img{width:100%;border-radius:2px;margin-bottom:8px}
+.voice{color:var(--sea);margin-top:6px!important}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,500px),1fr));gap:36px 32px}
+.scene{grid-column:1/-1;margin:18px 0 -8px;font:400 26px var(--disp);display:flex;gap:14px;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:8px}
+.scene span{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--bronze)}
+.shot{display:grid;gap:10px;align-content:start}
+.frame{aspect-ratio:16/9;max-width:100%;border-radius:2px;overflow:hidden;background:#000}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.light{box-sizing:border-box;height:100%;background:linear-gradient(var(--a),var(--b) 62%,var(--c));display:flex;align-items:flex-end;padding:10px 12px}
+.light span{font:12px var(--mono);letter-spacing:.08em;color:#f3ecdf;text-shadow:0 1px 3px #0008;text-transform:uppercase}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;font:13px var(--mono);color:var(--soft);font-variant-numeric:tabular-nums}
+.meta .id{color:var(--bronze);font-weight:500}
+.desc{margin:0}
+.move,.sfx{margin:0;font-size:15px;color:var(--soft)}
+.move b,.sfx b{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-right:6px}
+.script{font-family:var(--mono);font-size:14px;display:grid;gap:10px;padding:14px 16px;background:var(--panel);border-radius:2px}
+.line{display:grid;gap:1px;justify-items:center;text-align:center}
+.who{letter-spacing:.1em}
+.paren{color:var(--soft);font-style:italic}
+.said{max-width:36ch}
+.card-title{grid-column:1/-1;background:#0f0d0b;color:#e8dcc4;border-radius:2px;padding:44px 24px;text-align:center;display:grid;gap:8px;position:relative}
+.card-title .tc{position:absolute;top:12px;left:14px;font:12px var(--mono);color:#8c7f6a}
+.ct{font:400 clamp(22px,3vw,32px)/1.2 var(--disp);margin:0;text-wrap:balance}
+.cs{margin:0;color:#b0a084;font-style:italic}
+.notes{display:grid;gap:10px;max-width:70ch}
+.notes ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.notes p{margin:0}
+</style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Storyboard · historical short · about 3:48 · 33 shots</div>
+  <h1>In the Priesthood of the Sun</h1>
+  <p class="logline">Rhodes, 255 BC. One ordinary day in the life of a nineteen-year-old jar-maker, lived under a bronze god he never quite looks at.</p>
+  <p class="rule">The Colossus is context, never subject. We see its light, its shadow, its face on stamps and coins, its toes at night. Never the whole statue. Never a hero shot.</p>
+</header>
+<section>
+  <h2>Colour script</h2>
+  <div class="strip"><i style="flex:5;background:linear-gradient(#1d2a3d,#3d5670,#c9954a)" title="s01"></i><i style="flex:5;background:linear-gradient(#1d2a3d,#3d5670,#c9954a)" title="s02"></i><i style="flex:5;background:linear-gradient(#1d2a3d,#3d5670,#c9954a)" title="s03"></i><i style="flex:5;background:linear-gradient(#1d2a3d,#3d5670,#c9954a)" title="s04"></i><i style="flex:9;background:linear-gradient(#1d2a3d,#3d5670,#c9954a)" title="s05"></i><i style="flex:5;background:linear-gradient(#1d2a3d,#3d5670,#c9954a)" title="s06"></i><i style="flex:5;background:linear-gradient(#1d2a3d,#3d5670,#c9954a)" title="s07"></i><i style="flex:5;background:var(--ink)" title="Title card"></i><i style="flex:5;background:linear-gradient(#6b5a45,#a58458,#d8b98a)" title="s08"></i><i style="flex:5;background:linear-gradient(#6b5a45,#a58458,#d8b98a)" title="s09"></i><i style="flex:9;background:linear-gradient(#6b5a45,#a58458,#d8b98a)" title="s10"></i><i style="flex:9;background:linear-gradient(#6b5a45,#a58458,#d8b98a)" title="s11"></i><i style="flex:4;background:linear-gradient(#6b5a45,#a58458,#d8b98a)" title="s12"></i><i style="flex:8;background:linear-gradient(#9fb6c4,#d9d2bf,#b98a55)" title="s13"></i><i style="flex:5;background:linear-gradient(#9fb6c4,#d9d2bf,#b98a55)" title="s14"></i><i style="flex:9;background:linear-gradient(#9fb6c4,#d9d2bf,#b98a55)" title="s15"></i><i style="flex:4;background:linear-gradient(#9fb6c4,#d9d2bf,#b98a55)" title="s16"></i><i style="flex:4;background:linear-gradient(#9fb6c4,#d9d2bf,#b98a55)" title="s17"></i><i style="flex:10;background:linear-gradient(#9fb6c4,#d9d2bf,#b98a55)" title="s18"></i><i style="flex:5;background:linear-gradient(#c98f3e,#e3bb74,#8a5a2e)" title="s19"></i><i style="flex:9;background:linear-gradient(#c98f3e,#e3bb74,#8a5a2e)" title="s20"></i><i style="flex:9;background:linear-gradient(#c98f3e,#e3bb74,#8a5a2e)" title="s21"></i><i style="flex:5;background:linear-gradient(#c98f3e,#e3bb74,#8a5a2e)" title="s22"></i><i style="flex:5;background:linear-gradient(#1a120c,#6b3d1d,#d08a3c)" title="s23"></i><i style="flex:5;background:linear-gradient(#1a120c,#6b3d1d,#d08a3c)" title="s24"></i><i style="flex:10;background:linear-gradient(#1a120c,#6b3d1d,#d08a3c)" title="s25"></i><i style="flex:5;background:linear-gradient(#1a120c,#6b3d1d,#d08a3c)" title="s26"></i><i style="flex:5;background:linear-gradient(#0c1220,#24334d,#8e9bb3)" title="s27"></i><i style="flex:9;background:linear-gradient(#0c1220,#24334d,#8e9bb3)" title="s28"></i><i style="flex:9;background:linear-gradient(#0c1220,#24334d,#8e9bb3)" title="s29"></i><i style="flex:5;background:linear-gradient(#0c1220,#24334d,#8e9bb3)" title="s30"></i><i style="flex:5;background:linear-gradient(#0c1220,#24334d,#8e9bb3)" title="s31"></i><i style="flex:9;background:linear-gradient(#1d2a3d,#34506b,#b98646)" title="s32"></i><i style="flex:6;background:var(--ink)" title="Title card"></i><i style="flex:5;background:linear-gradient(#8f8a80,#c8c2b4,#a0714a)" title="s33"></i><i style="flex:6;background:var(--ink)" title="Title card"></i></div>
+  <div class="stripcap"><span>0:00 dawn</span><span>kilns</span><span>harbour</span><span>gymnasium</span><span>club</span><span>night</span><span>3:48</span></div>
+</section>
+<section>
+  <h2>Concept art</h2>
+  <div class="concepts"><figure class="concept"><div class="pending">Awaiting render</div><figcaption><b>Key art: first light</b>Key art for a historical drama. A nineteen-year-old Greek jar-maker and his old bearded father sit on a doorstep in a narrow ancient street at dawn, seen from behind and slightly to the side; the street and roofs still in cold blue shadow; a single shaft of warm gold light falls on them from something enormous and unseen above frame; long shadow of a colossal figure lies across the far rooftops. Quiet, intimate, epic by implication.</figcaption></figure><figure class="concept"><div class="pending">Awaiting render</div><figcaption><b>The grid city</b>Painterly wide landscape: the Hellenistic city of Rhodes seen from its hillside acropolis in late afternoon, a perfect orthogonal grid of plastered houses with terracotta roofs running down to two harbours full of ships, city walls along the coast, dark blue sea, blue mountains of Asia Minor across the strait, a stadium in the foreground; far in the haze a tall bronze figure is only a small glint among the roofs.</figcaption></figure><figure class="concept"><div class="pending">Awaiting render</div><figcaption><b>The kilns</b>Morning outside the city walls: an amphora workshop, domed brick kilns breathing smoke, hundreds of tall unfired wine jars drying in rows, a bare-chested old workman and a young man carrying jars, dust and gold light, documentary realism.</figcaption></figure><figure class="concept"><div class="pending">Awaiting render</div><figcaption><b>The great harbour</b>Midday in a teeming ancient Greek commercial harbour: broad Egyptian grain ships moored three deep along stone moles, square sails, porters with sacks, tax-farmers with a bronze balance, stacked amphorae, glittering chaff in hard light, a thin warship with a bronze ram gliding in the background.</figcaption></figure><figure class="concept"><div class="pending">Awaiting render</div><figcaption><b>The club at night</b>Night interior, warm lamplight: a dining club of a dozen men of different origins reclining on couches in a modest Greek house, a large painted mixing bowl, fish on a clay brazier, faces half in shadow, laughter, painterly chiaroscuro like a Caravaggio lit only by oil lamps.</figcaption></figure><figure class="concept"><div class="pending">Awaiting render</div><figcaption><b>The pedestal</b>Night, moonlight: a small young man stands with one palm on a towering white marble pedestal carved with a Greek inscription; the top of the frame shows only the edge of colossal bronze toes disappearing into a sky full of stars; awe, solitude, intimacy.</figcaption></figure><figure class="concept"><div class="pending">Awaiting render</div><figcaption><b>Somebody always reads them</b>Present day macro photograph: blue-gloved archaeologist&#x27;s fingers holding a broken terracotta amphora handle just lifted from dry soil; its small stamped sun-face impression is slightly crooked; soft daylight, shallow depth of field.</figcaption></figure></div>
+</section>
+<section>
+  <h2>Cast</h2>
+  <div class="cast"><div class="person"><h4>Timokles <small>19</small></h4><p>Greek young man, 19, lean rower&#x27;s shoulders, sun-browned skin, short dark curly hair, clean-shaven, clay under his fingernails, undyed off-white wool chiton belted at the waist, a small scar on one eyebrow, curious warm dark eyes.</p><p class="voice">Voice: Liam, young, warm, easy, understated; never theatrical</p></div><div class="person"><h4>Damagoras <small>67</small></h4><p>Greek man, 67, grey beard trimmed short, deep sun lines, heavy hands of a potter, faded blue-grey himation over a chiton, sits very straight, eyes that water at the dawn light.</p><p class="voice">Voice: Bill, old, slow, gravelly, tender, a man repeating a thing he loves</p></div><div class="person"><h4>Manes <small>60</small></h4><p>Phrygian man, 60, enslaved workshop hand, shaved head, grey stubble, wiry and strong, bare-chested with a leather apron, old burn scars on forearms, sardonic calm face.</p><p class="voice">Voice: George, dry, low, amused, unhurried; the wisest man in the film and he knows it</p></div><div class="person"><h4>Lysistratos <small>19</small></h4><p>Greek young man, 19, tall and thin as an oar, long jaw, messy light-brown hair, big grin, patched short chiton, rope calluses on his palms.</p><p class="voice">Voice: Charlie, quick, cheeky, affectionate, laughs inside his lines</p></div><div class="person"><h4>The Merchant <small>45</small></h4><p>Rhodian sea merchant, 45, heavy, salt-stained fine wool himation, gold ring, sunburnt bald head, furious and funny.</p><p class="voice">Voice: Daniel, exasperated, fast, grumbling; righteous about a law he hates</p></div><div class="person"><h4>Philon the freedman <small>55</small></h4><p>Syrian-born freedman, 55, dark oiled beard, rich saffron-bordered himation, a little too many rings, generous smile.</p><p class="voice">Voice: Brian, expansive, ceremonious, pleased with himself</p></div><div class="person"><h4>Kleino <small>16</small></h4><p>Greek girl, 16, sister of Timokles, dark hair bound up, ochre peplos, at an upright warp-weighted loom, concentrating.</p></div><div class="person"><h4>Archaeologist</h4><p>only gloved hands of a modern archaeologist, blue nitrile gloves, soft brush, trowel.</p></div></div>
+</section>
+<section>
+  <h2>Shots</h2>
+  <div class="board"><h3 class="scene"><span>Scene 1</span>Before dawn</h3><article class="shot" id="s01">
+  <div class="frame"><div class="light" style="--a:#1d2a3d;--b:#3d5670;--c:#c9954a"><span>ECU, locked off</span></div></div>
+  <div class="meta"><span class="id">S01</span><span>0:00</span><span>5 s</span><span>ECU, locked off</span></div>
+  <p class="desc">Extreme close-up in blue pre-dawn darkness: a rough hemp rope running over the worn, rope-grooved stone lip of a courtyard cistern; a wooden bucket just disappearing into black water below.</p>
+  <p class="move"><b>Camera and motion</b> The rope slides slowly over the stone lip, the bucket drops out of frame, a ripple of dark water. Static camera.</p>
+  
+  <p class="sfx"><b>Sound</b> rope creaking on stone, a wooden bucket slapping into deep water, a distant rooster, pre-dawn hush</p>
+</article><article class="shot" id="s02">
+  <div class="frame"><div class="light" style="--a:#1d2a3d;--b:#3d5670;--c:#c9954a"><span>CU, overhead</span></div></div>
+  <div class="meta"><span class="id">S02</span><span>0:05</span><span>5 s</span><span>CU, overhead</span></div>
+  <p class="desc">Close-up from above of Timokles lying on a straw pallet under a wool blanket in a dim plastered room, eyes open, listening; faint blue light from a high small window.</p>
+  <p class="move"><b>Camera and motion</b> He blinks, turns his head toward the wall as if listening. Very slow push in.</p>
+  
+  <p class="sfx"><b>Sound</b> the dull rhythmic knock of a wooden loom through the wall, a donkey braying next door</p>
+</article><article class="shot" id="s03">
+  <div class="frame"><div class="light" style="--a:#1d2a3d;--b:#3d5670;--c:#c9954a"><span>MS, handheld</span></div></div>
+  <div class="meta"><span class="id">S03</span><span>0:10</span><span>5 s</span><span>MS, handheld</span></div>
+  <p class="desc">Medium shot in a small stone-paved courtyard at grey dawn: old Manes, bare-chested in a leather apron, hauling a dripping bucket from a round cistern mouth; Timokles in his chiton reaching to take the rope from him.</p>
+  <p class="move"><b>Camera and motion</b> Timokles takes the rope from Manes without a word and hauls the bucket up himself; Manes steps back, rubbing his shoulder. Gentle handheld.</p>
+  
+  <p class="sfx"><b>Sound</b> water sloshing, bare feet on stone, a breath of effort</p>
+</article><article class="shot" id="s04">
+  <div class="frame"><div class="light" style="--a:#1d2a3d;--b:#3d5670;--c:#c9954a"><span>MS from behind, static</span></div></div>
+  <div class="meta"><span class="id">S04</span><span>0:15</span><span>5 s</span><span>MS from behind, static</span></div>
+  <p class="desc">From behind: old Damagoras seated on a stool in the open street doorway of a plastered house, facing east down a straight grid street of tile-roofed houses; grey sky; Timokles sitting down on the threshold beside him with a piece of bread.</p>
+  <p class="move"><b>Camera and motion</b> Timokles sits; the old man lifts one hand slightly, asking him to wait. Static.</p>
+  <div class="script"><div class="line"><span class="who">DAMAGORAS</span><span class="said">Wait.</span></div></div>
+  <p class="sfx"><b>Sound</b> distant dogs, a cart far off</p>
+</article><article class="shot" id="s05">
+  <div class="frame"><div class="light" style="--a:#1d2a3d;--b:#3d5670;--c:#c9954a"><span>CU two-shot, faces, static</span></div></div>
+  <div class="meta"><span class="id">S05</span><span>0:20</span><span>9 s</span><span>CU two-shot, faces, static</span></div>
+  <p class="desc">Close two-shot of the old man and the young man in profile, faces still in cool grey shadow, both looking up and slightly left at something above frame; the first warm golden light is just touching the old man&#x27;s forehead.</p>
+  <p class="move"><b>Camera and motion</b> Warm gold light slides slowly down across both faces as if reflected from something enormous and high out of frame; the old man&#x27;s eyes glisten. Camera holds.</p>
+  
+  <p class="sfx"><b>Sound</b> a single swallow, the hush breaking, one distant voice calling a greeting</p>
+</article><article class="shot" id="s06">
+  <div class="frame"><div class="light" style="--a:#1d2a3d;--b:#3d5670;--c:#c9954a"><span>Wide over rooftops, cropped</span></div></div>
+  <div class="meta"><span class="id">S06</span><span>0:29</span><span>5 s</span><span>Wide over rooftops, cropped</span></div>
+  <p class="desc">Wide view over terracotta tile roofs of an ancient Greek grid city at dawn, rooftops still in blue shadow; at the very top edge of the frame, cropped off, only the curve of an immense bronze knee and shin catching brilliant gold sunrise light, far off and hazy.</p>
+  <p class="move"><b>Camera and motion</b> Gold light crawls slowly down the cropped bronze shin while the roofs below stay blue. Imperceptible drift.</p>
+  <div class="script"><div class="line"><span class="who">DAMAGORAS</span><span class="said">Seventy cubits. Twelve years, I watched him go up. I was grey when they finished.</span></div><div class="line"><span class="who">TIMOKLES</span><span class="paren">(gently)</span><span class="said">I know, Father.</span></div></div>
+  <p class="sfx"><b>Sound</b> wind, swallows</p>
+</article><article class="shot" id="s07">
+  <div class="frame"><div class="light" style="--a:#1d2a3d;--b:#3d5670;--c:#c9954a"><span>Insert, static</span></div></div>
+  <div class="meta"><span class="id">S07</span><span>0:34</span><span>5 s</span><span>Insert, static</span></div>
+  <p class="desc">Insert: a dull brown unpolished bronze breastplate hanging on a peg on a plastered interior wall beside a doorway; an old man&#x27;s heavy hand coming into frame to touch it.</p>
+  <p class="move"><b>Camera and motion</b> The old hand rests on the breastplate for a beat, then withdraws as he leaves. Static.</p>
+  <div class="script"><div class="line"><span class="who">DAMAGORAS</span><span class="said">The city keeps its promises.</span></div></div>
+  <p class="sfx"><b>Sound</b> the faint dull ring of fingers on bronze</p>
+</article><article class="card-title" id="card1"><div class="tc">0:39</div><p class="ct">IN THE PRIESTHOOD OF THE SUN</p><p class="cs">Rhodes, 255 BC</p></article><h3 class="scene"><span>Scene 2</span>The stamps</h3><article class="shot" id="s08">
+  <div class="frame"><div class="light" style="--a:#6b5a45;--b:#a58458;--c:#d8b98a"><span>Wide establishing</span></div></div>
+  <div class="meta"><span class="id">S08</span><span>0:44</span><span>5 s</span><span>Wide establishing</span></div>
+  <p class="desc">Wide shot outside a city wall in morning haze: two domed brick kilns smoking, rows of tall narrow two-handled unfired clay wine amphorae drying in the sun on the ground, clay pits, a few workers.</p>
+  <p class="move"><b>Camera and motion</b> Smoke drifts from the kilns across the rows of jars. Slow lateral dolly.</p>
+  
+  <p class="sfx"><b>Sound</b> kiln roar, crackling wood, a potter&#x27;s wheel turning, birds</p>
+</article><article class="shot" id="s09">
+  <div class="frame"><div class="light" style="--a:#6b5a45;--b:#a58458;--c:#d8b98a"><span>ECU macro</span></div></div>
+  <div class="meta"><span class="id">S09</span><span>0:49</span><span>5 s</span><span>ECU macro</span></div>
+  <p class="desc">Macro close-up: a young man&#x27;s clay-stained fingers pressing a small rectangular bronze stamp into the soft top of a clay amphora handle; beside it an already stamped handle showing a tiny radiate sun-face and Greek letters.</p>
+  <p class="move"><b>Camera and motion</b> The fingers press the stamp down and lift it away, revealing a crisp impression of a radiate sun face. Static macro.</p>
+  
+  <p class="sfx"><b>Sound</b> soft wet press of clay</p>
+</article><article class="shot" id="s10">
+  <div class="frame"><div class="light" style="--a:#6b5a45;--b:#a58458;--c:#d8b98a"><span>MS two-shot</span></div></div>
+  <div class="meta"><span class="id">S10</span><span>0:54</span><span>9 s</span><span>MS two-shot</span></div>
+  <p class="desc">Medium two-shot in an open-sided workshop shed: Timokles at a bench of unfired amphorae stamping handles; behind him old Manes wedging a lump of clay on a wooden bench, bare-chested, forearms scarred.</p>
+  <p class="move"><b>Camera and motion</b> Timokles stamps a handle quickly and carelessly; Manes glances over without stopping his kneading. Slow push in.</p>
+  <div class="script"><div class="line"><span class="who">MANES</span><span class="said">Crooked. And the harbour clerk says we&#x27;re cheats.</span></div><div class="line"><span class="who">TIMOKLES</span><span class="said">Nobody reads the stamps, Manes.</span></div></div>
+  <p class="sfx"><b>Sound</b> thump of clay being wedged</p>
+</article><article class="shot" id="s11">
+  <div class="frame"><div class="light" style="--a:#6b5a45;--b:#a58458;--c:#d8b98a"><span>CU Manes</span></div></div>
+  <div class="meta"><span class="id">S11</span><span>1:03</span><span>9 s</span><span>CU Manes</span></div>
+  <p class="desc">Close-up of Manes kneading clay, not looking up, a faint dry smile, soft light through the shed&#x27;s reed roof.</p>
+  <p class="move"><b>Camera and motion</b> He keeps kneading, then looks up at the boy with amused eyes. Static.</p>
+  <div class="script"><div class="line"><span class="who">MANES</span><span class="said">Somebody always reads them. In a hundred years some fool will pick up your handle and say: this boy couldn&#x27;t press a stamp straight.</span></div><div class="line"><span class="who">TIMOKLES</span><span class="paren">(laughs)</span></div></div>
+  <p class="sfx"><b>Sound</b> clay thumping</p>
+</article><article class="shot" id="s12">
+  <div class="frame"><div class="light" style="--a:#6b5a45;--b:#a58458;--c:#d8b98a"><span>Insert, top down</span></div></div>
+  <div class="meta"><span class="id">S12</span><span>1:12</span><span>4 s</span><span>Insert, top down</span></div>
+  <p class="desc">Top-down insert: a wicker basket half full of dozens of small old bronze stamps, dull green; a hand dropping one more in.</p>
+  <p class="move"><b>Camera and motion</b> The bronze stamp drops into the basket and settles among the others. Static.</p>
+  
+  <p class="sfx"><b>Sound</b> a small clink of bronze on bronze</p>
+</article><h3 class="scene"><span>Scene 3</span>The harbour</h3><article class="shot" id="s13">
+  <div class="frame"><div class="light" style="--a:#9fb6c4;--b:#d9d2bf;--c:#b98a55"><span>Extreme wide</span></div></div>
+  <div class="meta"><span class="id">S13</span><span>1:16</span><span>8 s</span><span>Extreme wide</span></div>
+  <p class="desc">Extreme wide establishing shot of a great ancient Greek commercial harbour at midday: broad-hulled grain merchant ships with square sails moored three deep along stone moles, dockworkers carrying sacks, amphorae stacked on the quay, dust of wheat glittering in hard sunlight, city walls and tile roofs beyond, hazy.</p>
+  <p class="move"><b>Camera and motion</b> Sails flap, workers stream across the quay, dust hangs in the light. Slow crane down.</p>
+  
+  <p class="sfx"><b>Sound</b> harbour roar: shouting in Greek, gulls, creaking ropes and hulls, sacks thudding</p>
+</article><article class="shot" id="s14">
+  <div class="frame"><div class="light" style="--a:#9fb6c4;--b:#d9d2bf;--c:#b98a55"><span>Tracking</span></div></div>
+  <div class="meta"><span class="id">S14</span><span>1:24</span><span>5 s</span><span>Tracking</span></div>
+  <p class="desc">Tracking shot through a crowded quay: Manes leading a donkey cart loaded with straw-packed amphorae, Timokles walking beside it; in the background tax-farmers weighing goods on a big bronze balance at a table.</p>
+  <p class="move"><b>Camera and motion</b> Camera tracks alongside the cart as it pushes through the crowd.</p>
+  
+  <p class="sfx"><b>Sound</b> cart wheels on stone, a clerk calling out weights</p>
+</article><article class="shot" id="s15">
+  <div class="frame"><div class="light" style="--a:#9fb6c4;--b:#d9d2bf;--c:#b98a55"><span>MCU merchant</span></div></div>
+  <div class="meta"><span class="id">S15</span><span>1:29</span><span>9 s</span><span>MCU merchant</span></div>
+  <p class="desc">Medium close-up of a heavy sunburnt Rhodian merchant in a salt-stained himation on the quay, jabbing a finger, furious; over-shoulder of Timokles in soft focus foreground.</p>
+  <p class="move"><b>Camera and motion</b> The merchant gestures angrily, then spits to one side. Handheld.</p>
+  <div class="script"><div class="line"><span class="who">THE</span><span class="said">Storm off Crete. Three hundred jars of oil over the side. Not mine! But the law says I pay my share.</span></div><div class="line"><span class="who">THE</span><span class="paren">(grudging)</span><span class="said">What&#x27;s thrown over for all is made good by all. It&#x27;s fair. I hate it.</span></div></div>
+  <p class="sfx"><b>Sound</b> gulls, harbour noise</p>
+</article><article class="shot" id="s16">
+  <div class="frame"><div class="light" style="--a:#9fb6c4;--b:#d9d2bf;--c:#b98a55"><span>CU Timokles</span></div></div>
+  <div class="meta"><span class="id">S16</span><span>1:38</span><span>4 s</span><span>CU Timokles</span></div>
+  <p class="desc">Close-up of Timokles on the bright quay, the noise around him, his expression going still and inward, thinking.</p>
+  <p class="move"><b>Camera and motion</b> The crowd blurs past behind him; he holds still. Slow push.</p>
+  
+  <p class="sfx"><b>Sound</b> harbour noise dips away to a hush, a faint ring of bronze</p>
+</article><article class="shot" id="s17">
+  <div class="frame"><div class="light" style="--a:#9fb6c4;--b:#d9d2bf;--c:#b98a55"><span>Insert macro</span></div></div>
+  <div class="meta"><span class="id">S17</span><span>1:42</span><span>4 s</span><span>Insert macro</span></div>
+  <p class="desc">Macro insert: heavy silver Rhodian tetradrachm coins poured into a clay-stained open palm; the top coin shows a facing head of the sun god with radiate hair.</p>
+  <p class="move"><b>Camera and motion</b> Coins tumble into the palm and settle, the sun face catching light. Static.</p>
+  
+  <p class="sfx"><b>Sound</b> coins clinking</p>
+</article><article class="shot" id="s18">
+  <div class="frame"><div class="light" style="--a:#9fb6c4;--b:#d9d2bf;--c:#b98a55"><span>Two-shot, low angle</span></div></div>
+  <div class="meta"><span class="id">S18</span><span>1:46</span><span>10 s</span><span>Two-shot, low angle</span></div>
+  <p class="desc">Low-angle two-shot: Lysistratos sitting on a sun-baked stone harbour wall eating a raw onion, grinning down at Timokles; behind them the dark prows of warships in long roofed shipsheds and a guard with a spear.</p>
+  <p class="move"><b>Camera and motion</b> Lysistratos bites the onion and points at Timokles with it; Timokles shades his eyes to look up at him. Static.</p>
+  <div class="script"><div class="line"><span class="who">LYSISTRATOS</span><span class="said">Ten days. Pirate patrol, down to Karpathos. You&#x27;re on my bench.</span></div><div class="line"><span class="who">TIMOKLES</span><span class="said">My mother says eat properly first. You look like an oar.</span></div><div class="line"><span class="who">LYSISTRATOS</span><span class="said">Your mother is the finest woman in the city.</span></div></div>
+  <p class="sfx"><b>Sound</b> water lapping, a guard&#x27;s footsteps</p>
+</article><h3 class="scene"><span>Scene 4</span>The gymnasium</h3><article class="shot" id="s19">
+  <div class="frame"><div class="light" style="--a:#c98f3e;--b:#e3bb74;--c:#8a5a2e"><span>MS, slow motion</span></div></div>
+  <div class="meta"><span class="id">S19</span><span>1:56</span><span>5 s</span><span>MS, slow motion</span></div>
+  <p class="desc">Two young men wrestling in a sandy palaestra, bodies oiled and dusty, afternoon sun, colonnade behind.</p>
+  <p class="move"><b>Camera and motion</b> Slow-motion grapple, sand spraying, oil glinting, one throws the other. Low camera.</p>
+  
+  <p class="sfx"><b>Sound</b> grunts, sand, breath, slowed</p>
+</article><article class="shot" id="s20">
+  <div class="frame"><div class="light" style="--a:#c98f3e;--b:#e3bb74;--c:#8a5a2e"><span>Wide, from colonnade</span></div></div>
+  <div class="meta"><span class="id">S20</span><span>2:01</span><span>9 s</span><span>Wide, from colonnade</span></div>
+  <p class="desc">Wide shot from the shade of a stone colonnade high on a hill: two young men lying on their backs scraping oil off with bronze strigils; beyond them the whole ancient grid city falls away to two harbours and a dark blue sea, mountains of Asia Minor blue on the horizon.</p>
+  <p class="move"><b>Camera and motion</b> Heat shimmer over the city; one lazily scrapes his arm. Very slow push.</p>
+  <div class="script"><div class="line"><span class="who">LYSISTRATOS</span><span class="said">Run at the Games this year.</span></div><div class="line"><span class="who">TIMOKLES</span><span class="said">Too slow.</span></div><div class="line"><span class="who">LYSISTRATOS</span><span class="said">Too lazy.</span></div></div>
+  <p class="sfx"><b>Sound</b> cicadas, distant city murmur</p>
+</article><article class="shot" id="s21">
+  <div class="frame"><div class="light" style="--a:#c98f3e;--b:#e3bb74;--c:#8a5a2e"><span>CU Timokles, profile</span></div></div>
+  <div class="meta"><span class="id">S21</span><span>2:10</span><span>9 s</span><span>CU Timokles, profile</span></div>
+  <p class="desc">Profile close-up of Timokles lying in the colonnade shade, looking out at the sea, dust on his cheek, thinking.</p>
+  <p class="move"><b>Camera and motion</b> He almost smiles; a breeze moves his hair. Static.</p>
+  <div class="script"><div class="line"><span class="who">TIMOKLES</span><span class="said">If I won, they&#x27;d put my name on a stone.</span></div><div class="line"><span class="who">LYSISTRATOS</span><span class="said">In the priesthood of whoever. And every jar your father made that year, you&#x27;d know.</span></div></div>
+  <p class="sfx"><b>Sound</b> cicadas</p>
+</article><article class="shot" id="s22">
+  <div class="frame"><div class="light" style="--a:#c98f3e;--b:#e3bb74;--c:#8a5a2e"><span>Imagined insert, slow motion</span></div></div>
+  <div class="meta"><span class="id">S22</span><span>2:19</span><span>5 s</span><span>Imagined insert, slow motion</span></div>
+  <p class="desc">Dreamlike wide shot: a four-horse bronze-fitted racing chariot, garlanded with white poplar leaves, plunging off a rocky shore into a bright blue sea, spray exploding, golden light.</p>
+  <p class="move"><b>Camera and motion</b> Slow motion: the empty chariot hits the water in a burst of white spray.</p>
+  
+  <p class="sfx"><b>Sound</b> a great muffled splash, crowd roar far away and slowed</p>
+</article><h3 class="scene"><span>Scene 5</span>The club</h3><article class="shot" id="s23">
+  <div class="frame"><div class="light" style="--a:#1a120c;--b:#6b3d1d;--c:#d08a3c"><span>Wide interior, warm</span></div></div>
+  <div class="meta"><span class="id">S23</span><span>2:24</span><span>5 s</span><span>Wide interior, warm</span></div>
+  <p class="desc">Lamp-lit dining room in a Greek house: a dozen men of mixed origins reclining on couches around low tables, fish grilling on a clay brazier, a large painted mixing bowl for wine, warm amber light and deep shadows.</p>
+  <p class="move"><b>Camera and motion</b> A man pours a little wine onto the floor for the gods; lamp flames flicker; laughter. Slow drift.</p>
+  
+  <p class="sfx"><b>Sound</b> laughter, sizzling fish, cups, several conversations</p>
+</article><article class="shot" id="s24">
+  <div class="frame"><div class="light" style="--a:#1a120c;--b:#6b3d1d;--c:#d08a3c"><span>MS freedman</span></div></div>
+  <div class="meta"><span class="id">S24</span><span>2:29</span><span>5 s</span><span>MS freedman</span></div>
+  <p class="desc">Medium shot of Philon the freedman, dark oiled beard, saffron-bordered himation, raising a wine cup in lamplight with ceremony.</p>
+  <p class="move"><b>Camera and motion</b> He lifts the cup high; others&#x27; cups rise into frame. Static.</p>
+  <div class="script"><div class="line"><span class="who">PHILON</span><span class="said">To our treasurer. For his honesty!</span></div><div class="line"><span class="who">ALL</span><span class="said">Honesty!</span></div></div>
+  <p class="sfx"><b>Sound</b> cups clinking</p>
+</article><article class="shot" id="s25">
+  <div class="frame"><div class="light" style="--a:#1a120c;--b:#6b3d1d;--c:#d08a3c"><span>CU father, lamps low</span></div></div>
+  <div class="meta"><span class="id">S25</span><span>2:34</span><span>10 s</span><span>CU father, lamps low</span></div>
+  <p class="desc">Close-up of old Damagoras reclining late at night, lamps burning low, face half in amber light, cup in his hand, speaking quietly to the room.</p>
+  <p class="move"><b>Camera and motion</b> He speaks, then slowly raises his cup. Very slow push in.</p>
+  <div class="script"><div class="line"><span class="who">DAMAGORAS</span><span class="said">Four men made the same speech in council this morning. My father died on that wall so we could sit there and argue about it.</span></div><div class="line"><span class="who">DAMAGORAS</span><span class="said">No king&#x27;s man in our harbour. [raises cup] To wasted mornings.</span></div></div>
+  <p class="sfx"><b>Sound</b> quiet room, a lamp sputtering</p>
+</article><article class="shot" id="s26">
+  <div class="frame"><div class="light" style="--a:#1a120c;--b:#6b3d1d;--c:#d08a3c"><span>CU Timokles</span></div></div>
+  <div class="meta"><span class="id">S26</span><span>2:44</span><span>5 s</span><span>CU Timokles</span></div>
+  <p class="desc">Close-up of Timokles reclining in amber lamplight, watching his father across the room with quiet love.</p>
+  <p class="move"><b>Camera and motion</b> Cups rise around him; he lifts his a beat late. Static.</p>
+  <div class="script"><div class="line"><span class="who">ALL</span><span class="said">To wasted mornings.</span></div></div>
+  <p class="sfx"><b>Sound</b> murmur</p>
+</article><h3 class="scene"><span>Scene 6</span>Night</h3><article class="shot" id="s27">
+  <div class="frame"><div class="light" style="--a:#0c1220;--b:#24334d;--c:#8e9bb3"><span>Wide, moonlight</span></div></div>
+  <div class="meta"><span class="id">S27</span><span>2:49</span><span>5 s</span><span>Wide, moonlight</span></div>
+  <p class="desc">Night: a lone young man walking down the middle of a straight empty ancient Greek street between dark plastered house fronts, moonlight, a single oil lamp in one doorway.</p>
+  <p class="move"><b>Camera and motion</b> He walks away from camera down the street; a dog barks off screen. Static.</p>
+  
+  <p class="sfx"><b>Sound</b> footsteps, a far dog, wind</p>
+</article><article class="shot" id="s28">
+  <div class="frame"><div class="light" style="--a:#0c1220;--b:#24334d;--c:#8e9bb3"><span>Extreme wide, low</span></div></div>
+  <div class="meta"><span class="id">S28</span><span>2:54</span><span>9 s</span><span>Extreme wide, low</span></div>
+  <p class="desc">Night, extreme low wide: a tiny human figure standing at the foot of an enormous smooth white marble pedestal, many times his height, lit by moonlight; at the very top edge of frame only the edge of colossal bronze toes, the rest lost in darkness and stars.</p>
+  <p class="move"><b>Camera and motion</b> He stands still, looking up; stars wheel very slightly. Static.</p>
+  
+  <p class="sfx"><b>Sound</b> wind moving around a huge object, deep silence</p>
+</article><article class="shot" id="s29">
+  <div class="frame"><div class="light" style="--a:#0c1220;--b:#24334d;--c:#8e9bb3"><span>ECU hand on marble</span></div></div>
+  <div class="meta"><span class="id">S29</span><span>3:03</span><span>9 s</span><span>ECU hand on marble</span></div>
+  <p class="desc">Extreme close-up at night: a young man&#x27;s palm flat on white marble, fingertips resting in finely carved ancient Greek letters, moonlight raking across the carving.</p>
+  <p class="move"><b>Camera and motion</b> His fingertips slowly trace along the carved letters. Static.</p>
+  <div class="script"><div class="line"><span class="who">TIMOKLES</span><span class="paren">(whispering)</span><span class="said">...the people of Dorian Rhodes raised high to heaven...</span></div></div>
+  <p class="sfx"><b>Sound</b> skin on stone</p>
+</article><article class="shot" id="s30">
+  <div class="frame"><div class="light" style="--a:#0c1220;--b:#24334d;--c:#8e9bb3"><span>CU face upturned</span></div></div>
+  <div class="meta"><span class="id">S30</span><span>3:12</span><span>5 s</span><span>CU face upturned</span></div>
+  <p class="desc">Close-up of Timokles&#x27;s face tilted up at night, starlight and faint moonlight, a slow private smile.</p>
+  <p class="move"><b>Camera and motion</b> He smiles, eyes on something vast above. Static.</p>
+  
+  <p class="sfx"><b>Sound</b> silence</p>
+</article><article class="shot" id="s31">
+  <div class="frame"><div class="light" style="--a:#0c1220;--b:#24334d;--c:#8e9bb3"><span>Insert, dark</span></div></div>
+  <div class="meta"><span class="id">S31</span><span>3:17</span><span>5 s</span><span>Insert, dark</span></div>
+  <p class="desc">Dark interior at night: the dull bronze breastplate on its peg, a sliver of moonlight across it; beyond, a young man lying down on a pallet.</p>
+  <p class="move"><b>Camera and motion</b> Moonlight shifts slightly on the bronze. Static.</p>
+  
+  <p class="sfx"><b>Sound</b> the city breathing: dogs, far harbour, wind off the strait</p>
+</article><h3 class="scene"><span>Scene 7</span>Morning</h3><article class="shot" id="s32">
+  <div class="frame"><div class="light" style="--a:#1d2a3d;--b:#34506b;--c:#b98646"><span>Wide, static, rooftops</span></div></div>
+  <div class="meta"><span class="id">S32</span><span>3:22</span><span>9 s</span><span>Wide, static, rooftops</span></div>
+  <p class="desc">Wide static shot over terracotta rooftops of the ancient city in blue pre-dawn light, the sea and a far coastline beyond; the sky at top of frame just beginning to warm.</p>
+  <p class="move"><b>Camera and motion</b> A faint gold glow begins at the top edge of frame and starts, very slowly, to descend. Static.</p>
+  
+  <p class="sfx"><b>Sound</b> a rooster, a cistern rope creaking</p>
+</article><article class="card-title" id="card2"><div class="tc">3:31</div><p class="ct">Twenty-eight years later, an earthquake brought the Colossus down.</p><p class="cs">The kings of the world sent money to raise him again. The Rhodians took it, and left him lying.</p></article><h3 class="scene"><span>Scene 8</span>Epilogue</h3><article class="shot" id="s33">
+  <div class="frame"><div class="light" style="--a:#8f8a80;--b:#c8c2b4;--c:#a0714a"><span>ECU, excavation</span></div></div>
+  <div class="meta"><span class="id">S33</span><span>3:37</span><span>5 s</span><span>ECU, excavation</span></div>
+  <p class="desc">Macro close-up in an archaeological trench, modern daylight: blue-gloved fingers lifting a broken terracotta amphora handle out of dry soil; the stamp on it is slightly crooked, a small radiate sun face.</p>
+  <p class="move"><b>Camera and motion</b> A soft brush sweeps dust off the crooked stamp. Static macro.</p>
+  <div class="script"><div class="line"><span class="who">MANES</span><span class="paren">(softly, as memory)</span><span class="said">Somebody always reads them.</span></div></div>
+  <p class="sfx"><b>Sound</b> brush on terracotta, distant modern wind</p>
+</article><article class="card-title" id="card3"><div class="tc">3:42</div><p class="ct">More than a hundred thousand stamped Rhodian jar handles survive.</p><p class="cs">Each one names its year.</p></article></div>
+</section>
+<section class="notes">
+  <h2>Look, sound and the rules</h2>
+  <p>Cinematic still, 2.39:1 feel inside a 16:9 frame, shot on 65mm film, natural and practical light only, soft film grain, restrained colour: terracotta, raw clay, undyed wool, sea blue, olive green, bronze gold only where the Sun&#x27;s light falls. Painterly realism in the spirit of Roger Deakins and Terrence Malick. Human scale, lived-in textures, dust, sweat, soot.</p>
+  <ul><li><b>M1</b> from S01, 95 s. Solo ancient Greek kithara (lyre), plucked slowly, sparse and tender, a single aulos drone underneath, dawn, intimate, no percussion, no modern instruments</li><li><b>M2</b> from S19, 70 s. Warm rhythmic hand frame-drum and kithara ostinato, heat of afternoon, youthful and bright, ancient Mediterranean, no modern instruments</li><li><b>M3</b> from S26, 110 s. Night. A single low aulos breathing long notes over a soft kithara, grief and wonder together, builds very slightly then stops dead in silence, ancient Greek, no percussion</li></ul>
+  <p>Dialogue is staged so that lips rarely carry the line: backs, profiles, hands, wide frames and off-screen voices. It suits the film's reticence, and it keeps generated faces from having to lip-sync.</p>
+  <p>The Colossus appears only as light on faces, a cropped bronze shin at dawn, the face on a stamp and a coin, and its toes above a pedestal at night. It is never shown whole.</p>
+</section>
+</div>

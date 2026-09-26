@@ -1,0 +1,17 @@
+{
+  "title": "In the Priesthood of the Sun",
+  "logline": "Rhodes, 255 BC. One ordinary day in the life of a nineteen-year-old jar-maker, lived under a bronze god he never quite looks at.",
+  "rule": "The Colossus is context, never subject. We see its light, its shadow, its face on stamps and coins, its toes at night. Never the whole statue. Never a hero shot.",
+  "look": "Cinematic still, 2.39:1 feel inside a 16:9 frame, shot on 65mm film, natural and practical light only, soft film grain, restrained colour: terracotta, raw clay, undyed wool, sea blue, olive green, bronze gold only where the Sun's light falls. Painterly realism in the spirit of Roger Deakins and Terrence Malick. Human scale, lived-in textures, dust, sweat, soot.",
+  "period": "Hellenistic Greek city of Rhodes, c. 255 BC. Straight grid streets 5 to 6 metres wide with a covered central drain, two-storey plastered houses with terracotta tile roofs, courtyard houses with a stone cistern mouth. Men wear knee-length wool chitons and draped himatia, sandals or barefoot; young men clean-shaven with short hair, old men bearded. Women in long peplos or chiton with a himation over the head outdoors. Painted, not white, marble. Oil lamps, clay braziers, wooden looms.",
+  "avoid": "no Roman togas or Roman armour, no helmets, no swords in civic scenes, no torch-bearing statue, no statue straddling a harbour, no white unpainted marble temples, no medieval castle walls, no Gothic arches, no modern objects, no text or captions or watermarks in the image, no fantasy glow, no crowds staring at camera",
+  "aspect": "16:9",
+  "runway": {"model": "gen4_turbo", "ratio": "1280:720"},
+  "gemini": {"image_model": "gemini-2.5-flash-image"},
+  "elevenlabs": {"tts_model": "eleven_v3", "music": true},
+  "music": [
+    {"id": "m1", "at": "s01", "len": 95, "prompt": "Solo ancient Greek kithara (lyre), plucked slowly, sparse and tender, a single aulos drone underneath, dawn, intimate, no percussion, no modern instruments"},
+    {"id": "m2", "at": "s19", "len": 70, "prompt": "Warm rhythmic hand frame-drum and kithara ostinato, heat of afternoon, youthful and bright, ancient Mediterranean, no modern instruments"},
+    {"id": "m3", "at": "s26", "len": 110, "prompt": "Night. A single low aulos breathing long notes over a soft kithara, grief and wonder together, builds very slightly then stops dead in silence, ancient Greek, no percussion"}
+  ]
+}

@@ -4,3 +4,4 @@ scripts/data
 scripts/tiles
 album/
 .playwright-mcp/
+film/out/
