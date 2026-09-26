@@ -220,7 +220,7 @@ def assemble():
             f"concat=n={n}:v=1:a=0,fade=t=in:d=0.5,fade=t=out:st={length - 0.5:.3f}:d=0.5[v]"
         f = work / f"{sc['id']}.mp4"
         subprocess.run([FFMPEG, "-y", "-v", "error", *inputs, "-filter_complex", graph, "-map", "[v]",
-                        "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", str(f)], check=True)
+                        "-c:v", "libx264", "-crf", "22", "-preset", "slow", "-pix_fmt", "yuv420p", str(f)], check=True)
         scene_files.append(f)
         starts[sc["id"]] = (t, length)
         t += length
@@ -252,7 +252,7 @@ def assemble():
     graph = ";".join(chains) + ";" + "".join(mix) + f"amix=inputs={len(mix)}:duration=longest:normalize=0,atrim=0:{total:.3f},loudnorm=I=-16:TP=-1.5:LRA=11[a]"
     dest = HERE / "seventy-cubits.mp4"
     subprocess.run([FFMPEG, "-y", "-v", "error", *inputs, "-filter_complex", graph, "-map", "0:v", "-map", "[a]",
-                    "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-t", f"{total:.3f}", "-movflags", "+faststart", str(dest)], check=True)
+                    "-c:v", "copy", "-c:a", "aac", "-ar", "48000", "-b:a", "160k", "-t", f"{total:.3f}", "-movflags", "+faststart", str(dest)], check=True)
     print(f"wrote {dest} ({total / 60:.1f} min)")
 
 
