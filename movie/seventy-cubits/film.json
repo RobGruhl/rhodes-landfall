@@ -3,7 +3,7 @@
  "logline": "The morning after the earthquake of 226 BC, an old man walks up to the fallen Colossus and remembers the siege that orphaned him, the twelve years he spent building the god, and the day he first touched its face.",
  "style": "cinematic film still, Hellenistic Greek city of Rhodes in the 3rd century BC, historically accurate, natural light, 35mm, warm muted palette, no text, no modern objects, no medieval buildings",
  "characters": {
-  "timon": "portrait of a lean Greek man of about 25, short dark curly hair, short dark beard, sun-browned skin, a thin pale scar across his left forearm, plain undyed wool tunic fastened on one shoulder, standing in a stone courtyard, neutral daylight",
+  "youth": "portrait of a lean Greek man of about 25, short dark curly hair, short dark beard, sun-browned skin, a thin pale scar across his left forearm, plain undyed wool tunic fastened on one shoulder, standing in a stone courtyard, neutral daylight",
   "boy": "portrait of a skinny Greek boy of about 10, short dark curly hair, large dark eyes, bare feet, plain undyed short tunic, standing in a stone courtyard, neutral daylight",
   "old": "portrait of a very old Greek man of about 89, white curly hair and short white beard, deeply lined sun-browned face, dark eyes, a thin pale scar across his left forearm, plain undyed wool cloak, olive-wood walking stick, standing in a stone courtyard, neutral daylight",
   "helios": "colossal bronze head of the Greek sun god Helios, youthful clean-shaven face, thick wavy hair, a crown of sharp bronze rays, classical Hellenistic sculpture in the style of the facing Helios on Rhodian coins, warm bronze with a golden sheen, plain sky behind"
@@ -122,16 +122,16 @@
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "@timon stands on the stage of an ancient Greek theatre receiving a bronze helmet from a grey-haired official in a white robe, rows of citizens watching from the stone seats",
+     "still": "@youth stands on the stage of an ancient Greek theatre receiving a bronze helmet from a grey-haired official in a white robe, rows of citizens watching from the stone seats",
      "motion": "the official places the helmet in his hands"
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "@timon alone at dusk holding a bronze helmet, looking down at it thoughtfully",
+     "still": "@youth alone at dusk holding a bronze helmet, looking down at it thoughtfully",
      "motion": "slow push-in as he turns the helmet in his hands"
     }
    ],
@@ -152,16 +152,16 @@
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "@timon carries a heavy basket of charcoal on his shoulder through the foundry smoke",
+     "still": "@youth carries a heavy basket of charcoal on his shoulder through the foundry smoke",
      "motion": "he walks through the smoke toward camera"
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "three soot-covered workers pumping leather bellows at a glowing furnace: @timon, a Carian man with a red headband, and a slave with a cropped head",
+     "still": "three soot-covered workers pumping leather bellows at a glowing furnace: @youth, a Carian man with a red headband, and a slave with a cropped head",
      "motion": "they pump the bellows and the fire flares"
     },
     {
@@ -182,9 +182,9 @@
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "@timon climbs a wooden ramp on a steep earth mound with a basket of earth on his back, the sea far below behind him",
+     "still": "@youth climbs a wooden ramp on a steep earth mound with a basket of earth on his back, the sea far below behind him",
      "motion": "he climbs steadily up the ramp"
     },
     {
@@ -193,9 +193,9 @@
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "@timon sits on the top of the earth mound at dusk eating bread and olives, looking out over the city to the sea",
+     "still": "@youth sits on the top of the earth mound at dusk eating bread and olives, looking out over the city to the sea",
      "motion": "wind moves his hair, sails move on the distant sea"
     }
    ],
@@ -212,16 +212,16 @@
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "@timon and a young dark-haired woman at a simple Greek wedding feast in a courtyard at night, garlands, torches, family",
+     "still": "@youth and a young dark-haired woman at a simple Greek wedding feast in a courtyard at night, garlands, torches, family",
      "motion": "torches flicker, the guests clap"
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "close shot: @timon counts silver coins stamped with a rose into an older man's open palm",
+     "still": "close shot: @youth counts silver coins stamped with a rose into an older man's open palm",
      "motion": "the coins drop one by one into the palm"
     }
    ],
@@ -241,10 +241,10 @@
     },
     {
      "refs": [
-      "timon",
+      "youth",
       "helios"
      ],
-     "still": "@timon stands on the top of an earth mound beside the colossal bronze face of @helios, the man tiny beside it",
+     "still": "@youth stands on the top of an earth mound beside the colossal bronze face of @helios, the man tiny beside it",
      "motion": "slow pull back revealing the scale of the face"
     },
     {
@@ -287,9 +287,9 @@
     },
     {
      "refs": [
-      "timon"
+      "youth"
      ],
-     "still": "@timon, now about thirty-five, with a small boy on his shoulders, pointing up at a colossal bronze statue in a festival crowd",
+     "still": "@youth, now about thirty-five, with a small boy on his shoulders, pointing up at a colossal bronze statue in a festival crowd",
      "motion": "the father points up, the boy looks up in wonder"
     }
    ],
