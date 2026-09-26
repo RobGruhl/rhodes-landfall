@@ -103,8 +103,8 @@ def narration(yes):
         sys.exit("set voice.preset in film.json first (run `film.py audition` and listen)")
     jobs = []
     for sc in SCENES:
-        txt = OUT / f"nar-{sc['id']}.txt"
-        OUT.mkdir(exist_ok=True)
+        txt = OUT / "text" / f"{sc['id']}.txt"   # outside OUT itself: rwy refuses any file sharing the output stem
+        txt.parent.mkdir(parents=True, exist_ok=True)
         txt.write_text(sc["text"] + "\n")
         jobs.append((OUT / f"nar-{sc['id']}.mp3",
                      ["speech", "--text-file", str(txt), "--voice", v["preset"], "--model", v["model"],
