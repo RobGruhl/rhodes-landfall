@@ -2,7 +2,7 @@
 """Build the Landfall short from shots.json.
 
   make.py keyframes [--yes]   one gen4_image still per shot            -> renders/<id>.png
-  make.py clips [--yes]       animate each still with gen4_turbo       -> renders/<id>.mp4
+  make.py clips [--yes]       animate each still with gen4_turbo       -> renders/<id>-clip.mp4
   make.py ambience [--yes]    a 30 s looping harbour bed               -> renders/ambience.mp3
   make.py assemble            cut to the narration, mix, write landfall.mp4 (free)
 
@@ -36,7 +36,7 @@ def keyframes(yes):
 
 
 def clips(yes):
-    todo = [s for s in SPEC["shots"] if not (OUT / f"{s['id']}.mp4").exists()]
+    todo = [s for s in SPEC["shots"] if not (OUT / f"{s['id']}-clip.mp4").exists()]
     for s in todo:
         still = OUT / f"{s['id']}.png"
         if not still.exists():
@@ -46,7 +46,7 @@ def clips(yes):
                   f"{s['dur'] * TURBO_PER_S} credits: {s['motion']}")
             continue
         if rwy(["video", s["motion"], "--image", str(still), "--model", "gen4_turbo",
-                "--ratio", "1280:720", "--duration", str(s["dur"]), "--name", s["id"]], yes):
+                "--ratio", "1280:720", "--duration", str(s["dur"]), "--name", f"{s['id']}-clip"], yes):
             sys.exit(f"{s['id']}: rwy failed")
     return sum(s["dur"] for s in todo) * TURBO_PER_S
 
@@ -74,7 +74,7 @@ def assemble():
 
     inputs, parts = [], []
     for i, (s, n) in enumerate(zip(shots, lengths)):
-        inputs += ["-i", str(OUT / f"{s['id']}.mp4")]
+        inputs += ["-i", str(OUT / f"{s['id']}-clip.mp4")]
         parts.append(f"[{i}:v]trim=0:{n:.3f},setpts=PTS-STARTPTS,scale=1280:720,fps=24,setsar=1[v{i}]")
     k = len(shots)
     video = "".join(f"[v{i}]" for i in range(k)) + f"concat=n={k}:v=1:a=0," \
