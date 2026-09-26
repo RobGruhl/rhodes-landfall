@@ -10,7 +10,7 @@
  },
  "voice": {
   "model": "eleven_v3",
-  "preset": null,
+  "preset": "Elias",
   "stability": 0.5,
   "speed": 0.92
  },
