@@ -1,0 +1,122 @@
+{
+ "title": "Landfall",
+ "narration": "../docs/audio/rob/01-landfall-short.mp3",
+ "style": "cinematic 35mm film still, warm late-September Aegean light, honey-coloured limestone, deep blue sea, natural colour, no text, no logos",
+ "ambience": "gentle Mediterranean harbour at morning: small waves lapping a stone quay, distant gulls, soft wind, faint rigging chimes",
+ "shots": [
+  {
+   "id": "s01",
+   "dur": 9,
+   "line": "Welcome to Rhodes. Stand still at the bottom of the gangway and look west, at the wall.",
+   "still": "view from the foot of a cruise ship gangway on a stone quay at dawn, looking across the harbour at the massive medieval walls and towers of Rhodes old town",
+   "motion": "slow push-in toward the walls, morning haze lifting, water glinting",
+   "at": 0
+  },
+  {
+   "id": "s02",
+   "dur": 8,
+   "line": "For three thousand years people have arrived on this shore from the water, looking at the town.",
+   "still": "low over the water approaching the fortified harbour of Rhodes, crenellated walls, windmills on the mole, domes and a minaret behind the ramparts",
+   "motion": "gliding forward over gentle swell toward the harbour mouth",
+   "at": 8.44
+  },
+  {
+   "id": "s03",
+   "dur": 2,
+   "line": "Greeks.",
+   "still": "an ancient Greek trireme with a painted eye on the bow rowing into a sunlit bay, bronze ram cutting the water",
+   "motion": "oars sweep in unison, spray off the ram",
+   "at": 16.05
+  },
+  {
+   "id": "s04",
+   "dur": 2,
+   "line": "Romans.",
+   "still": "a Roman merchant galley with a square red sail entering a harbour lined with white marble colonnades",
+   "motion": "sail fills with wind, galley glides past the camera",
+   "at": 17.03
+  },
+  {
+   "id": "s05",
+   "dur": 2,
+   "line": "Byzantines.",
+   "still": "candlelit interior of a small Byzantine chapel, gold mosaic and faded frescoes of saints on plaster walls",
+   "motion": "candle flames flicker, slow drift across the fresco",
+   "at": 17.98
+  },
+  {
+   "id": "s06",
+   "dur": 2,
+   "line": "Crusaders.",
+   "still": "armoured knights of St John in black surcoats with a white cross, on horseback under a stone gatehouse, red banner with a white cross",
+   "motion": "banners stir, horses shift and stamp",
+   "at": 19.16
+  },
+  {
+   "id": "s07",
+   "dur": 2,
+   "line": "Ottomans.",
+   "still": "an Ottoman fleet of galleys with crimson crescent banners anchored in a wide blue bay beneath a walled city",
+   "motion": "banners ripple, galleys rock on the swell",
+   "at": 20.3
+  },
+  {
+   "id": "s08",
+   "dur": 2,
+   "line": "Italians.",
+   "still": "a 1930s steamship moored at a stone quay beside a pale rationalist colonnaded building, figures in linen suits and hats",
+   "motion": "smoke curls from the funnel, people stroll along the quay",
+   "at": 21.32
+  },
+  {
+   "id": "s09",
+   "dur": 2,
+   "line": "You.",
+   "still": "modern travellers seen from behind, walking down a cruise ship gangway onto a sunny stone quay toward medieval walls, a huge white ship beside them",
+   "motion": "travellers walk away from camera toward the walls",
+   "at": 22.71
+  },
+  {
+   "id": "s10",
+   "dur": 2,
+   "line": "Some came to trade.",
+   "still": "ancient harbour market at the quayside, stacked clay amphorae, bales of cloth, merchants haggling beside moored wooden ships",
+   "motion": "merchants gesture and carry amphorae, gulls cross the frame",
+   "at": 24.1
+  },
+  {
+   "id": "s11",
+   "dur": 3,
+   "line": "Some came to take it.",
+   "still": "night siege of a walled harbour city, warships in the bay, fire arrows and burning braziers on the ramparts, orange glow on the water",
+   "motion": "arrows streak across the sky, flames surge, smoke rolls",
+   "at": 25.5
+  },
+  {
+   "id": "s12",
+   "dur": 7,
+   "line": "The city was built around a single certainty: that someone was always coming.",
+   "still": "a lone sentry in a simple medieval tunic on a stone rampart at dusk, looking out over the empty sea toward the horizon",
+   "motion": "wind moves the sentry's cloak, slow push past his shoulder toward the horizon",
+   "at": 27.64
+  },
+  {
+   "id": "s13",
+   "dur": 7,
+   "line": "The moat, the bastions, the gates: an answer to that.",
+   "still": "a deep dry moat below the medieval walls of Rhodes, grass and wild fig trees, stone cannonballs piled in the grass, a massive round bastion and a gate with a stone bridge",
+   "motion": "slow crane along the moat toward the gate and bridge",
+   "at": 34.14
+  },
+  {
+   "id": "s14",
+   "dur": 9,
+   "line": "Walk toward the wall, and keep the sea on your left.",
+   "still": "point of view walking along a sunny harbour promenade, calm blue sea on the left, the golden medieval walls and a gate tower ahead on the right",
+   "motion": "steady forward walk toward the gate, sea sparkling on the left",
+   "at": 40.53
+  }
+ ],
+ "narration_offset": 0.5,
+ "tail": 1.0
+}
