@@ -76,6 +76,18 @@ for _set in ('rob','jamie'):
     for _f in sorted(_g2.glob(_os.path.join(_repo,'narration',_set+'-*.json'))): _l+=json.load(open(_f))
     _l.sort(key=lambda x:x['n']); _stops[_set]=[{k:x[k] for k in ('n','slug','title','short','long')} for x in _l]
 _places={p['aud']:p['name'] for p in pins if p.get('aud')}
+# map stops: the reader numbers each track by the route pin(s) it plays at (a pin with no track of
+# its own names the one it shares via "with"), so the reader and the map agree; `n` stays the track
+# number the audio files and albums use. Tracks with no route pin are B-sides, numbered in order.
+_mapstops={}
+for p in pins:
+    if p.get('cat')=='route' and (p.get('aud') or p.get('with')):
+        _mapstops.setdefault(p.get('aud') or p['with'],[]).append(p['n'])
+for _set in _stops:
+    _b=0
+    for x in _stops[_set]:
+        if x['slug'] in _mapstops: x['stops']=sorted(_mapstops[x['slug']])
+        else: _b+=1; x['bside']=_b
 # the Colossus long-form extra: chapters + a text-only sources page, audio in several voices
 import re as _re
 _col=json.load(open(_os.path.join(_repo,'narration','colossus.json')))

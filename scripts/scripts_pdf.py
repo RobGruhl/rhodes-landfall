@@ -18,7 +18,22 @@ def build(narr_set):
     for f in sorted(glob.glob(str(ROOT / "narration" / f"{narr_set}-*.json"))):
         stops += json.load(open(f))
     stops.sort(key=lambda s: s["n"])
-    pins = {p.get("aud"): p for p in json.load(open(ROOT / "data" / "pins.json")) if p.get("aud")}
+    allpins = json.load(open(ROOT / "data" / "pins.json"))
+    pins = {p.get("aud"): p for p in allpins if p.get("aud")}
+    # headings carry the map stop number(s), as the reader does; tracks off the route are B-sides
+    mapstops = {}
+    for p in allpins:
+        if p.get("cat") == "route" and (p.get("aud") or p.get("with")):
+            mapstops.setdefault(p.get("aud") or p["with"], []).append(p["n"])
+    labels, bside = {}, 0
+    for s in stops:
+        ms = sorted(mapstops.get(s["slug"], []))
+        if ms:
+            nums = [f"{x:02d}" for x in ms]
+            labels[s["slug"]] = f"Stop {nums[0]}" if len(nums) == 1 else f"Stops {', '.join(nums[:-1])} and {nums[-1]}"
+        else:
+            bside += 1
+            labels[s["slug"]] = f"B{bside}"
     name = NAMES.get(narr_set, narr_set.title())
     out = [f'''#set page(paper: "a5", margin: (x: 16mm, y: 18mm), numbering: "1", number-align: center)
 #set text(font: ("Cardo", "Georgia", "Times New Roman"), size: 10.5pt, lang: "en")
@@ -32,7 +47,7 @@ def build(narr_set):
     for s in stops:
         pin = pins.get(s["slug"], {})
         place = pin.get("name", "")
-        out.append(f'= {s["n"]:02d} · {esc(s["title"])}\n')
+        out.append(f'= {labels[s["slug"]]} · {esc(s["title"])}\n')
         if place:
             out.append(f'#text(size: 9.5pt, fill: luma(90), style: "italic")[{esc(place)}]\n#v(0.4em)\n')
         for para in [p.strip() for p in s["long"].split("\n") if p.strip()]:

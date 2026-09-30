@@ -56,7 +56,8 @@
   "blurb": "The heart of the Burgh, the merchants' town the Knights ruled but did not live in. The Castellania (1507) with its outside staircase was the Order's court; a stone owl tops the fountain. Ignore the table-hustlers here; the good restaurants are one lane off. Under the Castellania stairs, the Cellar of Knights has poured Rhodian wine by the glass since 1963.",
   "dnd": "The town square where the quest-giver posts the notice. The tavern under the courthouse stairs is where rumours are bought.",
   "hours": "Public square; Cellar of Knights Wed 11:00 to 23:00",
-  "src": "https://www.tripadvisor.com/Attraction_Review-g635613-d10336660-Reviews-The_Cellar_Of_Knights-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html"
+  "src": "https://www.tripadvisor.com/Attraction_Review-g635613-d10336660-Reviews-The_Cellar_Of_Knights-Rhodes_Town_Rhodes_Dodecanese_South_Aegean.html",
+  "with": "sea-law"
  },
  {
   "n": 5,
@@ -191,7 +192,8 @@
   "sub": "Where the rampart walk comes down. Named for the blood of 1522, by legend.",
   "blurb": "The south-east corner where the walls walk drops down steep concrete steps. Kokkini Porta, the Red Gate, because the legend says the blood of the 1522 dead dyed its stones. Suleiman made his second ceremonial entry through this gate on 29 December 1522 and went down to admire the harbour chain. The Jewish quarter is five minutes north.",
   "hours": "Gate always open; walls exit only during the walk",
-  "src": "https://www.kastra.eu/castleen.php?kastro=rodoscity"
+  "src": "https://www.kastra.eu/castleen.php?kastro=rodoscity",
+  "with": "faction-map"
  },
  {
   "n": 13,
@@ -222,7 +224,8 @@
   "sub": "Six-language memorial of 2002 and the bronze seahorse fountain.",
   "blurb": "The assembly point of July 1944. The black six-sided memorial (dedicated 23 June 2002) speaks in English, French, Greek, Hebrew, Italian and Judaeo-Spanish; the seahorse fountain a few steps east is the square's older, gentler landmark. In 1480 the fighting reached this quarter and Jewish houses were pulled down for rubble to reinforce the wall behind it. La Veranda's rooftop overlooks the square if you want the view with lunch.",
   "hours": "Public square, always",
-  "src": "https://rhodesjewishmuseum.org/history/holocaust/"
+  "src": "https://rhodesjewishmuseum.org/history/holocaust/",
+  "with": "juderia"
  },
  {
   "n": 15,
