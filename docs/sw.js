@@ -1,7 +1,7 @@
 // Rhodes Landfall service worker: keeps the pages, fonts and saved audio on the phone.
 // Pages live in a versioned cache (build.py stamps VERSION); audio lives in its own
 // unversioned cache so a page update never throws away 100+ MB of downloaded clips.
-const VERSION = '7b9d1c09bbb5';
+const VERSION = '69fd5fa3848c';
 const SHELL = 'rhodes-shell-' + VERSION;
 const AUDIO = 'rhodes-audio';
 const FONTS = 'rhodes-fonts';

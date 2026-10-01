@@ -95,6 +95,15 @@ _stops['colossus']=[{'n':c['n'],'slug':c['slug'],'title':c['title'],'short':c['t
     **({'html':_re.sub(r'<sup>.*?</sup>','',c['html']).replace('<table','<div class="tw"><table').replace('</table>','</table></div>')} if c.get('html') else {})} for c in _col['chapters']]
 _stops['colossus'].append({'n':len(_col['chapters']),'slug':'sources','title':'Chronology, evidence and sources','short':'','long':'',
     'html':_col['appendix'].replace('<table','<div class="tw"><table').replace('</table>','</table></div>')})
+_books={'colossus':{'title':_col['title'],'map':'colossus'}}
+# reading-only long reads (no audio): Süleyman's side of 1522, and the case for the Ottoman era
+for _k,_f in (('suleiman','suleiman.json'),('ottoman','ottoman-era.json')):
+    _sp=_os.path.join(_repo,'narration',_f)
+    if not _os.path.exists(_sp): continue
+    _b=json.load(open(_sp))
+    _stops[_k]=[{'n':c['n'],'slug':c['slug'],'title':c['title'],'short':c['text'],'long':c['text']} for c in _b['chapters']]
+    _stops[_k].append({'n':len(_b['chapters']),'slug':'sources','title':'Evidence and sources','short':'','long':'','html':_b['sources']})
+    _books[_k]={'title':_b['title'],'map':'minaret'}
 _xm=_os.path.join(DOCS,'audio','colossus','manifest.json')
 _extra=json.load(open(_xm)) if _os.path.exists(_xm) else {'voices':{}}
 _extra={'voices':{k:{'name':v['name'],'blurb':v.get('blurb',''),'clips':v['clips']} for k,v in _extra['voices'].items()}}
@@ -102,6 +111,7 @@ rd=open('reader.html').read()
 rd=rd.replace('/*__STOPS__*/{}',json.dumps(_stops,ensure_ascii=False,separators=(',',':')))
 rd=rd.replace('/*__AUDIO__*/{}',json.dumps(aud,separators=(',',':')))
 rd=rd.replace('/*__EXTRA__*/{voices:{}}',json.dumps(_extra,ensure_ascii=False,separators=(',',':')))
+rd=rd.replace('/*__BOOKS__*/{}',json.dumps(_books,ensure_ascii=False,separators=(',',':')))
 rd=rd.replace('/*__PLACES__*/{}',json.dumps(_places,ensure_ascii=False,separators=(',',':')))
 rd=rd.replace("/*__AUDIO_BASE__*/''","''")
 rd=rd.replace('<!--__PWA_HEAD__-->',PWA_HEAD)
